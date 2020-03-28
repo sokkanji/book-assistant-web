@@ -1,0 +1,35 @@
+
+body{
+    width: 100%;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+ul li a{
+    text-decoration: none;
+}
+
+/* .header{
+    position: fixed;
+} */
+
+.header .menubar .dropdown .mb01{
+    float: left;
+    margin-left: 130px;
+}
+
+.header .menubar .dropdown .mb01 ul{
+    position: absolute;
+    display: none;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.header .menubar .dropdown .mb01:hover ul{
+    position: absolute;
+    display: block;
+    margin-top: 20px;
+}
