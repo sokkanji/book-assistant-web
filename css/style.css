@@ -11,9 +11,14 @@ ul li a{
     text-decoration: none;
 }
 
-/* .header{
+.header{
     position: fixed;
-} */
+}
+
+.header .menubar .dropdown{
+    margin-left: 200px;
+    width: 1100px;
+}
 
 .header .menubar .dropdown .mb01{
     float: left;
@@ -29,13 +34,39 @@ ul li a{
     padding: 0;
 }
 
+/* 가상클래스 */
+
+.header .menubar .dropdown:link a{
+    color: #000000;
+}
+
+.header .menubar .dropdown:visited a{
+    color: #000000;
+}
+
 .header .menubar .dropdown:hover ul{
+    color: #000000;
     position: absolute;
     display: block;
     margin-top: 20px;
 }
 
-.header .menubar .dropdown{
-    margin-left: 200px;
-    width: 1100px;
+.header .menubar .dropdown:active a{
+    color: #000000;
+}
+
+.header .menubar .dropdown ul li a:link {
+    color: #000000;
+}
+
+.header .menubar .dropdown ul li a:visited{
+    color: #000000;
+}
+
+.header .menubar .dropdown ul li a:hover{
+    color: #000000;
+}
+
+.header .menubar .dropdown ul li a:active{
+    color: #000000;
 }
