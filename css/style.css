@@ -17,10 +17,11 @@ ul li a{
 
 .header .menubar .dropdown .mb01{
     float: left;
-    margin-left: 130px;
+    width: 20%;
+    height: 150px;
 }
 
-.header .menubar .dropdown .mb01 ul{
+.header .menubar .dropdown .mb01 ul {
     position: absolute;
     display: none;
     line-height: 30px;
@@ -28,8 +29,13 @@ ul li a{
     padding: 0;
 }
 
-.header .menubar .dropdown .mb01:hover ul{
+.header .menubar .dropdown:hover ul{
     position: absolute;
     display: block;
     margin-top: 20px;
+}
+
+.header .menubar .dropdown{
+    margin-left: 200px;
+    width: 1100px;
 }
