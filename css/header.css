@@ -1,16 +1,3 @@
-
-body{
-    width: 100%;
-}
-
-ul li{
-    list-style-type: none;
-}
-
-ul li a{
-    text-decoration: none;
-}
-
 .header{
     position: fixed;
 }
