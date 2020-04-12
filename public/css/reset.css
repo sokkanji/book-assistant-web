@@ -16,12 +16,12 @@ a:hover{
     color: #390;
 }
 
-/* body, input, textarea, select, button, table {
-    font-family: 'Nanum Gothic', '돋움', '맑은 고딕';
-    color: #222;
-    font-size: 13px;
+body, input, textarea, select, button, table {
+    font-family: "Nanum Gothic", "돋움", "맑은 고딕";
+    color: #000000;
+    font-size: 14px;
     line-height: 1.5;
-} */
+}
 
 .ir_pm{
     display: block;
