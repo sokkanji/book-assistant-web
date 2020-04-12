@@ -1,59 +1,29 @@
-
 body{
     width: 100%;
 }
 
-body,
-div,
-ul,
-li,
-dl,
-dt,
-ol,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-input,
-fieldset,
-legend,
-p,
-select,
-table,
-tr,
-th,
-td,
-textarea,
-button,
-form {
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, tr, th, td, textarea, button, form{
     margin: 0;
     padding: 0;
 }
 
-a {
+a{
     color: #000000;
     text-decoration: none;
 }
 
-a:hover {
+a:hover{
     color: #390;
 }
 
-/* body,
-input,
-textarea,
-select,
-button,
-table {
+/* body, input, textarea, select, button, table {
     font-family: 'Nanum Gothic', '돋움', '맑은 고딕';
     color: #222;
     font-size: 13px;
     line-height: 1.5;
 } */
 
-.ir_pm {
+.ir_pm{
     display: block;
     overflow: hidden;
     font-size: 0;
@@ -61,7 +31,7 @@ table {
     text-indent: -99999;
 }
 
-.ir_wa {
+.ir_wa{
     display: block;
     overflow: hidden;
     position: relative;
@@ -69,11 +39,11 @@ table {
     height: 100%;
 }
 
-ul, li, ol, dl, menu {
+ul, li, ol, dl, menu{
     list-style: none;
 }
 
 
-img, fieldset {
+img, fieldset{
     border: 0;
 }
