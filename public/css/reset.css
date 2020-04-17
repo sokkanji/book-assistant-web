@@ -13,7 +13,7 @@ a{
 }
 
 a:hover{
-    color: #390;
+    color: #65A478;
 }
 
 body, input, textarea, select, button, table {
@@ -41,7 +41,6 @@ body, input, textarea, select, button, table {
 ul, li, ol, dl, menu{
     list-style: none;
 }
-
 
 img, fieldset{
     border: 0;
