@@ -13,16 +13,13 @@
 }
 
 #header #login-img{
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    top: 40px;
-    right: 195px;
+    width: 30px;
+    height: 30px;
 }
 
 #header .menubar .dropdown{
     width: 1000px;
-    height: 150px;
+    height: 165px;
     position: absolute;
     left: 500px;
     top: 50px;

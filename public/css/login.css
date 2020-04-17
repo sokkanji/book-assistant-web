@@ -1,0 +1,35 @@
+#login{
+    max-width: 380px;
+    margin: 0 auto;
+    padding : 120px 0 100px 0;
+}
+
+#login #login_btn{
+   height: 110px;
+   width: 110px;
+}
+
+#login h1{
+    padding-bottom: 40px;
+}
+
+#login table{
+    padding : 0 0 30px 0;
+}
+
+#login table tr td{
+    padding : 0px 10px 2px 0;
+}
+
+#login table tr td input{
+    width: 300px;
+    height: 30px;
+}
+
+#login .find_pw{
+    text-decoration: underline;
+}
+
+#login .table_row{
+    padding-bottom: 15px;
+}
