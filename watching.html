@@ -2,48 +2,39 @@
 <html>
 
 <head>
-    <!-- meata tag -->
-    <meta charset="UTF-8">
-    <meta name="author" content="MinjiSo">
-    <meta name="generator" content="vscode">
-
     <title>책잡이</title>
 
-    <!-- <link rel="shortcut icon" href="http:// /favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="http:// /favicon.ico" type="image/x-icon" /> -->
-    <!-- test http:// /favicon.ico -->
-
-    <!-- css style -->
     <link rel="stylesheet" href="public\css\reset.css?ver=1">
     <link rel="stylesheet" href="public\css\header.css?ver=1">
-    <link rel="stylesheet" href="public\css\contents.css?ver=2">
-    <link rel="stylesheet" href="public\css\footer.css?ver=5">
+    <link rel="stylesheet" href="public\css\login.css">
+    <link rel="stylesheet" href="public\css\footer.css?ver=2">
     <link rel="stylesheet" href="fonts\font.css">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/includeHtml.js"></script>
     <script type="text/javascript">
         function headerCompleted() {
             $("#header").html();
         }
-        function contentsCompleted() {
-            $("#contents").html();
-        }
         function footerCompleted() {
             $("#footer").html();
         }
     </script>
+
 </head>
 
 <body>
-
     <include-html target="header.html" completed="headerCompleted"></include-html>
-    <include-html target="contents.html" completed="contentsCompleted"></include-html>
+
+    <div id="watching">
+
+
+    </div>
+
     <include-html target="footer.html" completed="footerCompleted"></include-html>
 
     <script>includeHtml();</script>
-
 </body>
 
 </html>

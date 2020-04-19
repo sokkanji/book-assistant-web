@@ -1,15 +1,17 @@
 #login{
     max-width: 380px;
     margin: 0 auto;
-    padding : 120px 0 100px 0;
+    padding : 60px 0 120px 0;
 }
 
 #login #login_btn{
    height: 110px;
    width: 110px;
+   cursor: pointer;
 }
 
 #login h1{
+    text-align: center;
     padding-bottom: 40px;
 }
 
