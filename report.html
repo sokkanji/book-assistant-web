@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>책잡이</title>
+
+    <link rel="stylesheet" href="public\css\reset.css?ver=1">
+    <link rel="stylesheet" href="public\css\header.css?ver=1">
+    <link rel="stylesheet" href="public\css\footer.css?ver=2">
+    <link rel="stylesheet" href="fonts\font.css">
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/includeHtml.js"></script>
+    <script type="text/javascript">
+        function headerCompleted() {
+            $("#header").html();
+        }
+        function footerCompleted() {
+            $("#footer").html();
+        }
+    </script>
+
+</head>
+
+<body>
+    <include-html target="header.html" completed="headerCompleted"></include-html>
+
+    <div id="report">
+        <h1>제보하기</h1>
+        <hr>
+        <p>*로그인 필수<br> 모르는 내용은 비워두셔도 됩니다 :)
+        </p>
+        <div>독립서점 이름</div>
+        <input type="text" placeholder="한글(영어)">
+        <div>주소</div>
+        <input type="text" placeholder="주소"><br>
+        <input type="text" placeholder="상세주소">
+        <div>전화번호</div>
+        <input type="text" placeholder="전화번호">
+        <div>홈페이지</div>
+        <input type="text" placeholder="http://">
+        <div>소개</div>
+        <textarea rows="10" cols="100" placeholder="300자 이내 간략히 작성해주세요."></textarea>
+        <div>의견 및 기타</div>
+        <textarea rows="10" cols="100"></textarea><br>
+        <div>사진</div>
+        <input type="image">
+        <div><button>작성완료</button></div>
+    </div>
+
+    <include-html target="footer.html" completed="footerCompleted"></include-html>
+
+    <script>includeHtml();</script>
+</body>
+
+</html>
