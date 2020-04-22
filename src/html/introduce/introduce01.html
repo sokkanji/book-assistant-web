@@ -4,15 +4,15 @@
 <head>
     <title>책잡이</title>
 
-    <link rel="stylesheet" href="..\public\css\reset.css?ver=1">
-    <link rel="stylesheet" href="..\public\css\header.css?ver=1">
-    <link rel="stylesheet" href="..\public\css\footer.css?ver=2">
-    <link rel="stylesheet" href="..\public\css\introduce.css">
-    <link rel="stylesheet" href="..\fonts\font.css">
+    <link rel="stylesheet" href="..\..\..\public\css\reset.css">
+    <link rel="stylesheet" href="..\..\..\public\css\header.css">
+    <link rel="stylesheet" href="..\..\..\public\css\footer.css">
+    <link rel="stylesheet" href="..\..\..\public\css\introduce.css">
+    <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
 
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="..\src\js\includeHtml.js"></script>
+    <script type="text/javascript" src="..\..\js\includeHtml.js"></script>
     <script type="text/javascript">
         function headerCompleted() {
             $("#header").html();
@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <include-html target="header.html" completed="headerCompleted"></include-html>
+    <include-html target="..\base\header.html" completed="headerCompleted"></include-html>
 
     <div id="introduce">
         <h1>책잡이란?</h1>
@@ -47,7 +47,7 @@
 
     </div>
 
-    <include-html target="footer.html" completed="footerCompleted"></include-html>
+    <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>
 
     <script>includeHtml();</script>
 </body>
