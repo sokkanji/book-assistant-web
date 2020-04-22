@@ -1,0 +1,74 @@
+#report{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 0 120px 0;
+}
+
+#report h1{
+    position: relative;
+    font-family: "NotoSansKR-Regular";
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding: 0 0 22px 0;
+}
+
+#report hr{
+    width: 80px;
+    border: 1px solid #65A478;
+}
+
+#report p{
+    font-size: 16px;
+    text-align: center;
+    padding: 40px 0 40px 0;
+}
+
+#report table{
+    margin: 0 auto;
+}
+
+#report table td{
+    padding-bottom: 25px;
+}
+
+#report div{
+    font-family: "NotoSansKR-Regular";
+    font-size: 18px;
+    color: #333;
+    text-indent: .3em;
+    margin-bottom: 5px;
+}
+
+#report input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #a6a6a6;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+#report input::placeholder{
+    font-size: 16px;
+}
+
+#report textarea{
+    height: 150px;
+    border: none;
+    border-bottom: 1px solid #a6a6a6;
+    font-family: "NotoSansCJKKr Regular";
+    font-size: 16px;
+    text-indent: .3em;
+    resize: none;
+}
+
+.report textarea:focus{
+    outline: none;
+}
+
+#report button{
+    float: right;
+    margin-right: 110px;
+}

@@ -1,0 +1,52 @@
+#activity{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 0 120px 0;
+    position: relative;
+}
+
+#activity h1{
+    position: relative;
+    font-family: "NotoSansKR-Regular";
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding: 0 0 22px 0;
+}
+
+#activity hr{
+    width: 80px;
+    border: 1px solid #65A478;
+}
+
+#activity p{
+    text-align: center;
+    font-size: 16px;
+    padding-top: 20px;
+}
+
+#activity table{
+    margin: 0 auto;
+    padding-top: 70px;
+    font-size: 17px;
+}
+
+#activity table tr{
+    border-bottom: 1px solid #333;
+}
+
+#activity table tbody tr td{
+    width: 400px;
+    height: 50px;
+    font-family: "NotoSansKR-Light";
+    font-size: 16px;
+    text-align: center;
+
+}
+
+#activity .write_btn{
+    float: right;
+    margin: 40px 100px 0 0;
+}

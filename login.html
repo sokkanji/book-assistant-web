@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="public\css\reset.css?ver=1">
     <link rel="stylesheet" href="public\css\header.css?ver=1">
-    <link rel="stylesheet" href="public\css\login.css?ver=3">
+    <link rel="stylesheet" href="public\css\login.css">
     <link rel=" stylesheet" href="public\css\footer.css?ver=5">
     <link rel="stylesheet" href="fonts\font.css">
 
@@ -32,18 +32,18 @@
         <form method="post" action="login.php">
             <table>
                 <tr>
-                    <td>email</td>
+                    <td class="name_row">email</td>
                 </tr>
                 <tr>
                     <td class="table_row">
-                        <input type="email" name="email" autocomplete="off" placeholder=" user@email.com"></td>
+                        <input type="email" id="email" autocomplete="off" placeholder=" user@email.com"></td>
                     <td rowspan="3"><input type="submit" id="login_btn" value="로그인"></td>
                 </tr>
                 <tr>
-                    <td>password</td>
+                    <td class="name_row">password</td>
                 </tr>
-                <tr>
-                    <td><input type="password" placeholder=" 비밀번호" id="pw"></td>
+                <tr class="table_row">
+                    <td><input type="password" id="pw" placeholder=" 비밀번호"></td>
                 </tr>
             </table>
         </form>
