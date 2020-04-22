@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="public\css\reset.css?ver=1">
     <link rel="stylesheet" href="public\css\header.css?ver=1">
     <link rel="stylesheet" href="public\css\footer.css?ver=2">
+    <link rel="stylesheet" href="public\css\report.css">
     <link rel="stylesheet" href="fonts\font.css">
 
 
@@ -29,24 +30,65 @@
     <div id="report">
         <h1>제보하기</h1>
         <hr>
-        <p>*로그인 필수<br> 모르는 내용은 비워두셔도 됩니다 :)
-        </p>
-        <div>독립서점 이름</div>
-        <input type="text" placeholder="한글(영어)">
-        <div>주소</div>
-        <input type="text" placeholder="주소"><br>
-        <input type="text" placeholder="상세주소">
-        <div>전화번호</div>
-        <input type="text" placeholder="전화번호">
-        <div>홈페이지</div>
-        <input type="text" placeholder="http://">
-        <div>소개</div>
-        <textarea rows="10" cols="100" placeholder="300자 이내 간략히 작성해주세요."></textarea>
-        <div>의견 및 기타</div>
-        <textarea rows="10" cols="100"></textarea><br>
-        <div>사진</div>
-        <input type="image">
-        <div><button>작성완료</button></div>
+        <p>*로그인 필수<br> 모르는 내용은 비워두셔도 됩니다 :)</p>
+
+        <form method="post" action="#">
+            <table>
+                <tr>
+                    <td>
+                        <div>독립서점 이름</div>
+                        <input type="text" placeholder="한글(영어)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>주소</div>
+                        <input type="text" placeholder="주소"><br>
+                        <input type="text" placeholder="상세주소">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>전화번호</div>
+                        <input type="text" placeholder="전화번호">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>홈페이지
+                        </div>
+                        <input type="text" placeholder="http://">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>소개</div>
+                        <textarea rows="12" cols="100" placeholder="300자 이내 간략히 작성해주세요."></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>의견 및 기타</div>
+                        <textarea rows="12" cols="100" placeholder="자유롭게 의견을 작성해주세요."></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>사진</div>
+                        <input type="image">
+                    </td>
+                </tr>
+
+            </table>
+
+            <button>작성완료</button>
+        </form>
+
     </div>
 
     <include-html target="footer.html" completed="footerCompleted"></include-html>
