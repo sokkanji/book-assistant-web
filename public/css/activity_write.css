@@ -1,0 +1,30 @@
+#activity_write{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 300px 0 120px 0;
+}
+
+#activity_write h1{
+    position: relative;
+    font-family: "NotoSansKR-Regular";
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding: 0 0 22px 0;
+}
+
+#activity_write hr{
+    width: 80px;
+    border: 1.5px solid #65A478;
+}
+
+#activity_write table{
+    text-align: center;
+    padding-top: 50px; 
+    margin: 0 auto;
+    font-size: 17px;
+    color: #333;
+    line-height: 26px;
+}

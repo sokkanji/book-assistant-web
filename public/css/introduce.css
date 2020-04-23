@@ -1,7 +1,7 @@
 #introduce{
     max-width: 1000px;
     margin: 0 auto;
-    padding: 60px 0 120px 0;
+    padding: 300px 0 120px 0;
 }
 
 #introduce h1{
@@ -17,13 +17,13 @@
 
 #introduce hr{
     width: 80px;
-    border: 1px solid #65A478;
+    border: 1.5px solid #65A478;
 }
 
 #introduce div{
     text-align: center;
     padding-top: 50px; 
-    margin: 0 auto 70px;
+    margin: 0 auto;
     font-size: 17px;
     color: #333;
     line-height: 26px;
