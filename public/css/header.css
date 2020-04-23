@@ -1,10 +1,24 @@
 #header{
     width: 100%;
-    height: 190px;
-    /* position: relative; */
+    height: 180px;
+    position: fixed;    
+    z-index: 30002;
 }
 
-#header #logo-img{
+#header .header{
+    width: 100%;
+    height: 110px;
+    background-color: #FFFFFF;
+    /* background-color: lightcoral; */
+}
+
+/* #header .header .menubar .dropdown .mb01:hover+.header{
+    height: 230px;
+    background-color: #FFFFFF;
+    background-color: lavender;
+} */
+
+#header .header #logo-img{
     width: 200px;
     height: 80px;
     position: absolute;
@@ -12,16 +26,16 @@
     left: 235px;
 }
 
-#header #login-img{
+#header .header #login-img{
     width: 30px;
     height: 30px;
 }
 
-#header .menubar{
-    height: 160px;
+#header .header .menubar{
+    height: 110px;
 }
 
-#header .menubar .dropdown{
+#header .header .menubar .dropdown{
     height: 160px;
     position: absolute;
     left: 550px;
@@ -31,43 +45,44 @@
     font-size: 18px;
 }
 
-#header .menubar .dropdown .mb01{
+#header .header .menubar .dropdown .mb01{
     width: 15%;
     height: 155px;
     float: left;
     font-family: "NotoSansKR-Regular";
 }
 
-#header .menubar .dropdown .mb01 .m1{
+#header .header .menubar .dropdown .mb01 .m1{
     font-family: "NotoSansKR-Medium";
+        color: #000000;
     line-height: 45px;
     font-size: 19px;
     color: #111;
     font-weight: 500;
 }
 
-#header .menubar .dropdown .mb01 .m2{
+#header .header .menubar .dropdown .mb01 .m2{
     display: none;
     font-size: 14px;
     line-height: 30px;
     margin-top: 10px;
 }
 
-#header .menubar .dropdown .mb01 .m2 li{
+#header .header .menubar .dropdown .mb01 .m2 li{
     font-family: "NotoSansKR-Light";
     font-size: 16px;
 }
 
-#header .menubar .dropdown .mb01:hover > a{
+/* 가상클래스 */
+#header .header .menubar .dropdown .mb01:hover > a{
     color: #65A478;
     border-bottom: 1.5px solid #65A478;
 }
 
-#header .menubar .dropdown .mb01:nth-child(5):hover > a{
+#header .header .menubar .dropdown .mb01:nth-child(5):hover > a{
     border-bottom: none;
 }
 
-#header .menubar .dropdown:hover .mb01 .m2{
-    color: #000000;
+#header .header .menubar .dropdown:hover .mb01 .m2{
     display: block;
 }

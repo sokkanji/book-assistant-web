@@ -1,7 +1,8 @@
 #report{
     max-width: 900px;
     margin: 0 auto;
-    padding: 60px 0 120px 0;
+    padding: 300px 0 120px 0;
+    position: relative;
 }
 
 #report h1{
@@ -17,7 +18,7 @@
 
 #report hr{
     width: 80px;
-    border: 1px solid #65A478;
+    border: 1.5px solid #65A478;
 }
 
 #report p{
