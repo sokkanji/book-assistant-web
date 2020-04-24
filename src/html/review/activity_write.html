@@ -30,25 +30,28 @@
     <div id="activity_write">
         <h1>활동 기록하기</h1>
         <hr>
+        <p>독립서점 또는 독립서적물에 대한 자신만의 이야기를 적어주세요!</p>
         <form method="post" action="#">
             <table>
                 <tr>
-                    <td>제목</td>
+                    <td>
+                        <div class="activity_write_title">제목</div>
+                        <input type="text" placeholder="제목">
+                    </td>
                 </tr>
                 <tr>
-                    <td><input type="text"></td>
+                    <td>
+                        <div class="activity_write_contents">내용</div>
+                        <textarea rows="14" cols="100" placeholder="내용"></textarea>
+                    </td>
                 </tr>
-
                 <tr>
-                    <td>내용</td>
-                </tr>
-                <tr>
-                    <td><textarea rows="10" cols="100"></textarea> </td>
+                    <td>
+                        <a href=" #" class="activity_write_btn">작성완료</a>
+                    </td>
                 </tr>
             </table>
-            <div><a href="#">작성완료</a></div>
         </form>
-
     </div>
 
     <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>

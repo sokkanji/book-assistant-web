@@ -1,88 +1,136 @@
 #header{
     width: 100%;
-    height: 180px;
+    height: 215px;
     position: fixed;    
     z-index: 30002;
 }
 
-#header .header{
-    width: 100%;
-    height: 110px;
-    background-color: #FFFFFF;
-    /* background-color: lightcoral; */
-}
-
-/* #header .header .menubar .dropdown .mb01:hover+.header{
-    height: 230px;
-    background-color: #FFFFFF;
-    background-color: lavender;
-} */
-
-#header .header #logo-img{
+#header #logo-img{
     width: 200px;
     height: 80px;
     position: absolute;
-    top: 28px;
+    top: 15px;
     left: 235px;
 }
 
-#header .header #login-img{
+#header #login-img{
     width: 30px;
     height: 30px;
+    position: absolute;
+    top: 45px;
+    right: 210px;
 }
 
-#header .header .menubar{
+#header .menubar{
+    width: 100%;
     height: 110px;
+    background-color: #FFFFFF;
+    /* background-color: peru; */
+    border-bottom: 1px solid #E6E6E6;
 }
 
-#header .header .menubar .dropdown{
-    height: 160px;
+#header .menubar .gnb{
+    width: 690px;
+    height: 170px;
     position: absolute;
     left: 550px;
-    top: 50px;
+    top: 45px;
     right: 0;
     text-align: center;
     font-size: 18px;
 }
 
-#header .header .menubar .dropdown .mb01{
-    width: 15%;
+#header .menubar .gnb .dropdown{
+    
+}
+
+#header .menubar .gnb .dropdown .mb01, #header .menubar .gnb .dropdown .mb02, 
+#header .menubar .gnb .dropdown .mb03, #header .menubar .gnb .dropdown .mb04{
+    width: 145px;
     height: 155px;
     float: left;
     font-family: "NotoSansKR-Regular";
+    margin-right: 25px;
 }
 
-#header .header .menubar .dropdown .mb01 .m1{
+#header .menubar .gnb .dropdown .mb05{
+    width: 145px;
+    height: 155px;
+    float: left;
+}
+
+#header .menubar .gnb .dropdown .mb01 .m1, #header .menubar .gnb .dropdown .mb02 .m1, 
+#header .menubar .gnb .dropdown .mb03 .m1, #header .menubar .gnb .dropdown .mb04 .m1{
     font-family: "NotoSansKR-Medium";
-        color: #000000;
-    line-height: 45px;
-    font-size: 19px;
-    color: #111;
+    color: #000000;
+    font-size: 20px;
     font-weight: 500;
+    margin: 0 40px 0 40px;
+    padding: 0 0 15px 0;
 }
 
-#header .header .menubar .dropdown .mb01 .m2{
+#header .menubar .gnb .dropdown .mb01 .m2, #header .menubar .gnb .dropdown .mb02 .m2, 
+#header .menubar .gnb .dropdown .mb03 .m2, #header .menubar .gnb .dropdown .mb04 .m2{
     display: none;
-    font-size: 14px;
-    line-height: 30px;
-    margin-top: 10px;
-}
-
-#header .header .menubar .dropdown .mb01 .m2 li{
     font-family: "NotoSansKR-Light";
     font-size: 16px;
+    line-height: 30px;
+    margin-top: 35px;
 }
 
 /* 가상클래스 */
-#header .header .menubar .dropdown .mb01:hover > a{
+
+/* 
+#header .menubar .gnb .dropdown .mb01 .m1:hover+.m2{
+    display: block;
+    color: #000000;
+    background-color: lightpink;
+}
+
+ #header .menubar .gnb .dropdown .mb02 .m1:hover+.m2{
+    display: block;
+    color: #000000;
+    background-color: lightpink;
+}
+
+#header .menubar .gnb .dropdown .mb03 .m1:hover+.m2{
+    display: block;
+    color: #000000;
+    background-color: lightpink;
+}
+ #header .menubar .gnb .dropdown .mb04 .m1:hover+.m2{
+    display: block;
+    color: #000000;
+    background-color: lightpink;
+} */
+
+#header .menubar .gnb .dropdown .mb01:hover+#header .menubar .gnb{
+    border-bottom: none;
+}
+
+/* 임시(수정 필요) */
+#header .menubar .gnb .dropdown:hover .m2{
+    display: block;
+    color: #000000;
+    /* background-color: lightpink; */
+}
+
+#header .menubar .gnb .dropdown .mb01:hover .m1{
     color: #65A478;
     border-bottom: 1.5px solid #65A478;
 }
 
-#header .header .menubar .dropdown .mb01:nth-child(5):hover > a{
-    border-bottom: none;
+#header .menubar .gnb .dropdown .mb02:hover .m1{
+    color: #65A478;
+    border-bottom: 1.5px solid #65A478;
+} 
+
+#header .menubar .gnb .dropdown .mb03:hover .m1{
+    color: #65A478;
+    border-bottom: 1.5px solid #65A478;
 }
 
-#header .header .menubar .dropdown:hover .mb01 .m2{
-    display: block;
+#header .menubar .gnb .dropdown .mb04:hover .m1{
+    color: #65A478;
+    border-bottom: 1.5px solid #65A478;
 }

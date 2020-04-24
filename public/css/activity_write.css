@@ -1,7 +1,7 @@
 #activity_write{
     max-width: 1000px;
     margin: 0 auto;
-    padding: 300px 0 120px 0;
+    padding: 260px 0 80px 0;
 }
 
 #activity_write h1{
@@ -20,6 +20,12 @@
     border: 1.5px solid #65A478;
 }
 
+#activity_write p{
+    font-size: 16px;
+    text-align: center;
+    padding: 40px 0 40px 0;
+}
+
 #activity_write table{
     text-align: center;
     padding-top: 50px; 
@@ -27,4 +33,52 @@
     font-size: 17px;
     color: #333;
     line-height: 26px;
+}
+
+#activity_write table tr td{
+    padding-bottom: 25px;
+}
+
+#activity_write div{
+    float: left;
+    font-family: "NotoSansKR-Regular";
+    font-size: 18px;
+    color: #333;
+    text-indent: .3em;
+    margin-bottom: 5px;
+}
+
+#activity_write input{
+    width: 100%;
+    border: 1px solid #a6a6a6;
+    outline: none;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+#activity_write input::placeholder{
+    font-size: 16px;
+}
+
+#activity_write textarea{
+    width: 100%;
+    font-family: "NotoSansCJKKr Regular";
+    font-size: 16px;
+    text-indent: .3em;
+    resize: none;
+    outline: none;
+    padding-top: 8px;
+}
+
+#activity_write .activity_write_btn{
+    float: right;
+    padding: 0 12px;
+    height: 42px !important;
+    line-height: 42px !important;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border: 0;
+    background: #65A478;
+    border-radius: 5px;
 }
