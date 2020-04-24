@@ -40,27 +40,12 @@
     font-size: 18px;
 }
 
-#header .menubar .gnb .dropdown{
-    
-}
-
-#header .menubar .gnb .dropdown .mb01, #header .menubar .gnb .dropdown .mb02, 
-#header .menubar .gnb .dropdown .mb03, #header .menubar .gnb .dropdown .mb04{
+#header .menubar .gnb .dropdown li{
     width: 145px;
-    height: 155px;
-    float: left;
-    font-family: "NotoSansKR-Regular";
-    margin-right: 25px;
-}
-
-#header .menubar .gnb .dropdown .mb05{
-    width: 145px;
-    height: 155px;
     float: left;
 }
 
-#header .menubar .gnb .dropdown .mb01 .m1, #header .menubar .gnb .dropdown .mb02 .m1, 
-#header .menubar .gnb .dropdown .mb03 .m1, #header .menubar .gnb .dropdown .mb04 .m1{
+#header .menubar .gnb .dropdown li .m1{
     font-family: "NotoSansKR-Medium";
     color: #000000;
     font-size: 20px;
@@ -69,68 +54,30 @@
     padding: 0 0 15px 0;
 }
 
-#header .menubar .gnb .dropdown .mb01 .m2, #header .menubar .gnb .dropdown .mb02 .m2, 
-#header .menubar .gnb .dropdown .mb03 .m2, #header .menubar .gnb .dropdown .mb04 .m2{
+#header .menubar .gnb .dropdown li .m2{
     display: none;
     font-family: "NotoSansKR-Light";
     font-size: 16px;
     line-height: 30px;
-    margin-top: 35px;
+    padding-top: 35px;
 }
 
 /* 가상클래스 */
-
-/* 
-#header .menubar .gnb .dropdown .mb01 .m1:hover+.m2{
-    display: block;
-    color: #000000;
-    background-color: lightpink;
+#header .menubar .gnb .dropdown li .m1:hover {
+    color: #65A478;
+    border-bottom: 1.5px solid #65A478;
 }
 
- #header .menubar .gnb .dropdown .mb02 .m1:hover+.m2{
+#header .menubar .gnb .dropdown li .m1:hover+.m2{ 
     display: block;
-    color: #000000;
-    background-color: lightpink;
 }
 
-#header .menubar .gnb .dropdown .mb03 .m1:hover+.m2{
+#header .menubar .gnb .dropdown li .m2:hover{
     display: block;
-    color: #000000;
-    background-color: lightpink;
 }
- #header .menubar .gnb .dropdown .mb04 .m1:hover+.m2{
-    display: block;
-    color: #000000;
-    background-color: lightpink;
+
+
+/* #header .menubar .gnb .dropdown li .m2:hover+.m1{
+    color: #65A478;
+    border-bottom: 1.5px solid #65A478;
 } */
-
-#header .menubar .gnb .dropdown .mb01:hover+#header .menubar .gnb{
-    border-bottom: none;
-}
-
-/* 임시(수정 필요) */
-#header .menubar .gnb .dropdown:hover .m2{
-    display: block;
-    color: #000000;
-    /* background-color: lightpink; */
-}
-
-#header .menubar .gnb .dropdown .mb01:hover .m1{
-    color: #65A478;
-    border-bottom: 1.5px solid #65A478;
-}
-
-#header .menubar .gnb .dropdown .mb02:hover .m1{
-    color: #65A478;
-    border-bottom: 1.5px solid #65A478;
-} 
-
-#header .menubar .gnb .dropdown .mb03:hover .m1{
-    color: #65A478;
-    border-bottom: 1.5px solid #65A478;
-}
-
-#header .menubar .gnb .dropdown .mb04:hover .m1{
-    color: #65A478;
-    border-bottom: 1.5px solid #65A478;
-}
