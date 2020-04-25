@@ -1,13 +1,7 @@
 #login{
-    max-width: 430px;
+    max-width: 445px;
     margin: 0 auto;
     padding: 260px 0 80px 0;
-}
-
-#login #login_btn{
-   height: 120px;
-   width: 110px;
-   cursor: pointer;
 }
 
 #login h1{
@@ -20,37 +14,48 @@
     padding-bottom: 40px;
 }
 
-#login table{
-    padding : 0 0 30px 0;
+#login form table{
+    margin: 0 auto;
 }
 
-#login table tr .name_row{
+#login form table tr .name_row{
+    font-family: "NotoSansKR-Regular";
+    font-size: 17px;
+    color: #333;
+    letter-spacing: -1px;
     padding: 4px;
 }
 
-#login table tr td{
-    font-family: "NotoSansKR-Regular";
-    font-size: 17px;
-    letter-spacing: -1px;
-    color: #333;
+#login form table tr .table_row{
+    padding-bottom: 15px;
 }
 
-#login table tr td input{
+#login form table tr #email, #login form table tr #pw{
     width: 300px;
     height: 25px;
     padding: 4px;
 }
 
-#login .find_pw{
+#login form table tr td .login_btn{
+   height: 120px;
+   width: 110px;
+   cursor: pointer;
+   margin-left: 12px;
+}
+
+#login form table tr td .find_pw{
     text-decoration: underline;
 }
 
-#login .table_row{
-    padding: 0 10px 15px 0;
+#login form table tr td .sign_up{
+    height: 42px;
+    font-family: "NotoSansKR-Regular";
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 42px;
+    border: 0;
+    background: #65A478;
+    border-radius: 5px;
+    padding: 10px 107px;
 }
-/* 
-#login .sign_up{
-    color: #FF3333 !important;
-    background-color: transparent !important;
-    border-color: #FF3333 !important;
-} */
