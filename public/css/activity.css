@@ -1,8 +1,8 @@
 #activity{
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     padding: 260px 0 80px 0;
-    /* position: relative; */
 }
 
 #activity h1{
@@ -27,40 +27,36 @@
     padding: 20px 0 40px;
 }
 
-#activity table{
+#activity form table{
     width: 100%;
     margin: 0 auto;
-    font-size: 17px;
+    font-size: 16px;
     border-top: 2px solid #65A478;
     border-bottom: 2px solid #ddd;
 }
 
-#activity form table tbody tr {
+#activity form table tr{
     border: 1px solid #333;
 }
 
-#activity table .title{
+#activity form table tbody tr .title{
     width: 400px;
 }
 
-#activity table tbody tr td{
+#activity form table tbody tr td{
     width: 150px;
     height: 50px;
     font-family: "NotoSansKR-Light";
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
 }
 
-#activity .activity_btn{
-
-
-    padding: 20px 0;
+#activity form .activity_btn{
     text-align: right;
-
-    /* margin-top: 50px; */
+    padding: 20px 0;
 }
 
-#activity .activity_btn a{
+#activity form .activity_btn a{
     float: right;
     padding: 0 12px;
     height: 42px !important;
