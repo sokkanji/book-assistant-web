@@ -71,14 +71,14 @@
 }
 
 #activity_write .activity_write_btn{
+    height: 42px;
+    line-height: 42px;
     float: right;
-    padding: 0 12px;
-    height: 42px !important;
-    line-height: 42px !important;
     font-size: 14px;
     font-weight: 500;
     color: #fff;
     border: 0;
     background: #65A478;
     border-radius: 5px;
+    padding: 0 12px;
 }

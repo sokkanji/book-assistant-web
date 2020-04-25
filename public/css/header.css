@@ -25,7 +25,6 @@
     width: 100%;
     height: 110px;
     background-color: #FFFFFF;
-    /* background-color: peru; */
     border-bottom: 1px solid #E6E6E6;
 }
 
@@ -50,8 +49,7 @@
     color: #000000;
     font-size: 20px;
     font-weight: 500;
-    margin: 0 40px 0 40px;
-    padding: 0 0 15px 0;
+    padding: 0 40px 10px 40px;
 }
 
 #header .menubar .gnb .dropdown li .m2{
@@ -59,24 +57,10 @@
     font-family: "NotoSansKR-Light";
     font-size: 16px;
     line-height: 30px;
-    padding-top: 35px;
+    padding-top: 23px;
 }
 
-/* 가상클래스 */
-#header .menubar .gnb .dropdown li .m1:hover {
+#header .menubar .gnb .dropdown li:hover .m1{
     color: #65A478;
     border-bottom: 1.5px solid #65A478;
 }
-
-#header .menubar .gnb .dropdown li .m1:hover+.m2{ 
-    display: block;
-}
-
-#header .menubar .gnb .dropdown li .m2:hover{
-    display: block;
-}
-
-/* #header .menubar .gnb .dropdown li .m2:hover+.m1{
-    color: #65A478;
-    border-bottom: 1.5px solid #65A478;
-} */
