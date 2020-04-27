@@ -82,7 +82,6 @@
 
 #report form table tr td .report_btn{
     float: right;
-    padding: 8px 15px;
     height: 42px !important;
     line-height: 42px !important;
     font-size: 14px;
@@ -91,4 +90,5 @@
     border: 0;
     background: #65A478;
     border-radius: 5px;
+    padding: 0 15px;
 }

@@ -22,30 +22,30 @@
         <h1>활동 기록하기</h1>
         <hr>
         <p>독립서점 또는 독립서적물에 대한 자신만의 이야기를 적어주세요!</p>
-        <form method="post" action="#">
+        <form action="..\..\php\activity_write.php" method="post">
             <table>
                 <tr>
                     <td>
                         <div class="activity_write_title">제목</div>
-                        <input type="text" placeholder="제목">
+                        <input type="text" placeholder="제목" name="a_title">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="activity_write_contents">내용</div>
-                        <textarea rows="14" cols="100" placeholder="내용"></textarea>
+                        <textarea rows="14" cols="100" placeholder="내용" name="a_content"></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div>사진</div>
-                        <input type="file" class="image_input" accept="img/*" required multiple>
+                        <input type="file" class="image_input" accept="img/*" multiple>
                         <button class="photo_btn">사진업로드</botton>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href=" #" class="activity_write_btn">작성완료</a>
+                        <button class="activity_write_btn">작성완료</button>
                     </td>
                 </tr>
             </table>
