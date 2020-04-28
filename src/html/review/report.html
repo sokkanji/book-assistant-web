@@ -23,55 +23,55 @@
         <hr>
         <p>* 표시는 필수 입력란이라는 뜻입니다 :)</p>
 
-        <form method="post" action="#">
+        <form action="..\..\php\report.php" method="post">
             <table>
                 <tr>
                     <td>
                         <div>독립서점 이름*</div>
-                        <input type="text" placeholder="한글(영어)">
+                        <input type="text" placeholder="한글(영어)" name="s_name">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div>주소*</div>
-                        <input type="text" placeholder="주소"><br>
-                        <input type="text" placeholder="상세주소">
+                        <input type="text" placeholder="주소" name="s_addr01"><br>
+                        <input type="text" placeholder="상세주소" name="s_addr02">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div>전화번호</div>
-                        <input type="text" placeholder="전화번호">
+                        <input type="text" placeholder="전화번호" name="s_tel">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div>홈페이지</div>
-                        <input type="text" placeholder="http://">
+                        <input type="text" placeholder="http://" name="s_web">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div>소개*</div>
-                        <textarea rows="12" cols="100" placeholder="300자 이내 간략히 작성해주세요."></textarea>
+                        <div>소개</div>
+                        <textarea rows="12" cols="100" placeholder="300자 이내 간략히 작성해주세요." name="s_intro"></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div>의견 및 기타</div>
-                        <textarea rows="12" cols="100" placeholder="자유롭게 의견을 작성해주세요."></textarea>
+                        <textarea rows="12" cols="100" placeholder="자유롭게 의견을 작성해주세요." name="s_etc"></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div>사진</div>
-                        <input type="file" class="image_input" accept="img/*" required multiple>
+                        <input type="file" class="image_input" accept="img/*" multiple name="s_photo">
                         <button class="photo_btn">사진업로드</botton>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="#" class="report_btn">작성완료</a>
+                        <button class="report_btn">작성완료</button>
                     </td>
                 </tr>
             </table>
