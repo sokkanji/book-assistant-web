@@ -1,5 +1,5 @@
 <?php
-    require_once("..\..\php\dbconfig.php");
+require_once("../base/dbconfig.php");
 ?>
 
 <html>

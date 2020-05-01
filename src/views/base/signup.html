@@ -6,10 +6,9 @@
 
     <link rel="stylesheet" href="..\..\..\public\css\reset.css">
     <link rel="stylesheet" href="..\..\..\public\css\header.css">
-    <link rel="stylesheet" href="..\..\..\public\css\login.css">
     <link rel="stylesheet" href="..\..\..\public\css\footer.css">
     <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
-
+    <link rel="stylesheet" href="..\..\..\public\css\signup.css">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="..\..\js\includeHtml.js"></script>
@@ -20,8 +19,8 @@
 <body>
     <include-html target="..\base\header.html" completed="headerCompleted"></include-html>
 
-    <div id="login">
-        <h1>로그인</h1>
+    <div id="signup">
+        <h1>회원가입</h1>
         <form method="post" action="login.php">
             <table>
                 <tr>
@@ -29,7 +28,7 @@
                 </tr>
                 <tr>
                     <td class="table_row">
-                        <input type="email" id="email" autocomplete="off" placeholder=" user@email.com">
+                        <input type="email" id="email" autocomplete="off" placeholder="user@email.com">
                     </td>
                     <td rowspan="3" class="table_row">
                         <input type="submit" class="login_btn" value="로그인">

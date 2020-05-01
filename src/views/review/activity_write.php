@@ -1,5 +1,5 @@
 <?php
-require_once("dbconfig.php");
+require_once("../base/dbconfig.php");
 $a_title=$_POST['a_title'];
 $a_content=$_POST['a_content'];
 // $a_id=$_POST['a_id'];
