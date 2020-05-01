@@ -17,11 +17,11 @@
 
 #project hr{
     width: 80px;
-    border: px solid #65A478;
+    border: 1px solid #65A478;
 }
 
 #project p{
     font-size: 16px;
     text-align: center;
-    padding: 40px 0 40px 0;
+    padding: 40px 0 70px;
 }
