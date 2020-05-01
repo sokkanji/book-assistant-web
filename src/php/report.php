@@ -16,12 +16,13 @@ VALUES("' . $s_name . '","'. $s_addr01 . " " . $s_addr02 . '","' . $s_tel . '","
 $result = mysqli_query($con, $sql);
 if($result){ 
 	$msg = "정상적으로 글이 등록되었습니다.";
-	// $a_no = $db->insert_id;
-	// $replaceURL = 'activity.php?a_no=' . $a_no;
-}
-else $msg = "글을 등록하지 못했습니다.";
+	echo "<script>alert('$msg'); 
+	location.href='../html/review/report.html'; 
+	</script>";
+} else{
+	$msg = "글을 등록하지 못했습니다.";
+	echo "<script>alert('$msg'); history.back();</script>";
+} 
 
-echo "<script>alert('$msg');</script>";
 mysqli_close($con);
-// echo "<script>location.replace('<?php echo $repalceURL');</script>";
 ?>

@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+    require_once("..\..\php\dbconfig.php");
+?>
+
 <html>
 
 <head>
@@ -23,38 +26,35 @@
         <hr>
         <p>자신의 독립서점 또는 독립출판물 이야기를 공유해주세요 :)</p>
 
-        <form method="post" action="#">
-            <table>
-                <thead>
-                    <tr>
-                        <th>번호</th>
-                        <th class="title">제목</th>
-                        <th>작성자</th>
-                        <th>날짜</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>165</td>
-                        <td class="title">study</td>
-                        <td>소깐지</td>
-                        <td>2020.02.19</td>
-                    </tr>
-                    <tr>
-                        <td>164</td>
-                        <td class="title">bootstrap 강좌 입니다.</td>
-                        <td>관리자</td>
-                        <td>2020.02.18</td>
-                    </tr>
-                    <tr>
-                        <td>163</td>
-                        <td class="title">작은아씨</td>
-                        <td>시얼샤 로넌</td>
-                        <td>2020.02.17</td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th class="title">제목</th>
+                    <th>작성자</th>
+                    <th>날짜</th>
+                </tr>
+            </thead>
+
+            <?php
+                $sql = 'SELECT a_title, a_id, a_date, a_no FROM activity ORDER BY a_no DESC LIMIT 0, 10;';
+                $result = mysqli_query($con, $sql);
+                while($board = mysqli_fetch_array($result)){
+            ?>
+
+            <tbody>
+                <tr>
+                    <td class="num"><?php echo $board['a_no']?></td>
+                    <td class="title"><a herf=#><?php echo $board['a_title']?></a></td>
+                    <td><?php echo $board['a_id']?></td>
+                    <td><?php echo $board['a_date']?></td>
+                </tr>
+            </tbody>
+
+            <?php } ?>
+
+        </table>
+
         <div class="activity_btn"><a href="activity_write.html">글쓰기</a></div>
     </div>
 
