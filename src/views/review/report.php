@@ -1,5 +1,5 @@
 <?php
-require_once("dbconfig.php");
+require_once("../base/dbconfig.php");
 
 $s_name=$_POST['s_name'];
 $s_addr01=$_POST['s_addr01'];
