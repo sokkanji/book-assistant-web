@@ -17,7 +17,7 @@
 
 #activity hr{
     width: 80px;
-    border: 1.5px solid #65A478;
+    border: 1px solid #65A478;
 }
 
 #activity p{
@@ -26,7 +26,7 @@
     padding: 20px 0 40px;
 }
 
-#activity form table{
+#activity table{
     width: 100%;
     margin: 0 auto;
     font-size: 16px;
@@ -35,19 +35,19 @@
     border-bottom: 2px solid #ddd;
 }
 
-#activity form table thead tr th{
+#activity table thead tr th{
     padding: 10px;
 }
 
-#activity form table thead tr{
+#activity table thead tr{
     border-bottom: 2px solid #BDBDBD;
 }
 
-#activity form table tr{
+#activity table tr{
     border-bottom: 1px solid #ddd;
 }
 
-#activity form table tbody tr td{
+#activity table tbody tr td{
     width: 150px;
     height: 50px;
     font-family: "NotoSansKR-Light";
@@ -55,8 +55,12 @@
     text-align: center;
 }
 
-#activity form table tbody tr .title{
-    width: 400px;
+#activity table tbody tr .no{
+    width: 80px;
+}
+
+#activity table tbody tr .title{
+    width: 370px;
 }
 
 #activity .activity_btn{
