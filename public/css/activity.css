@@ -55,12 +55,12 @@
     text-align: center;
 }
 
-#activity table tbody tr .no{
-    width: 80px;
+#activity table thead tr .title{
+    width: 600px;
 }
 
-#activity table tbody tr .title{
-    width: 370px;
+#activity table thead tr .table_row{
+    width: 90px;
 }
 
 #activity .activity_btn{

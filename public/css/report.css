@@ -47,13 +47,14 @@
     border: none;
     border-bottom: 1px solid #a6a6a6;
     outline: none;
+    font-size: 15px;
     padding: 8px;
     margin-bottom: 16px;
 }
 
-#report form table tr td input::placeholder{
-    font-size: 16px;
-}
+/* #report form table tr td input::placeholder{
+    font-size: 17px;
+} */
 
 #report form table tr td textarea{
     width: 100%;
