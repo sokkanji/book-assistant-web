@@ -3,3 +3,66 @@
     margin: 0 auto;
     padding: 230px 0 110px 0;
 }
+
+#signup h1{
+    font-family: "NotoSansKR-Regular";
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding-bottom: 22px;
+}
+
+#signup hr{
+    width: 80px;
+    background: #65a478;
+    border: 1px solid #65A478;
+}
+
+#signup p{
+    font-size: 16px;
+    text-align: center;
+    padding: 20px 0 40px;
+}
+
+#signup a{
+    color: #65A478;
+    text-decoration: underline;
+}
+
+#signup form table{
+    margin: 0 auto;
+}
+
+#signup form table tr td{
+    font-family: "NotoSansKR-Regular";
+    font-size: 17px;
+    color: #333;
+    letter-spacing: -1px;
+    padding: 5px;
+}
+
+#signup form table tr .table_row{
+    padding-bottom: 25px;
+}
+
+#signup form table tr .name, #signup form table tr .email, #signup form table tr .pw{
+    width: 350px;
+    height: 25px;
+    padding: 4px;
+}
+
+#signup form table tr td .signOk_btn{
+    width: 360px;
+    height: 42px;
+    font-family: "NotoSansKR-Regular";
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    border: 0;
+    background: #65A478;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px 107px;
+}
