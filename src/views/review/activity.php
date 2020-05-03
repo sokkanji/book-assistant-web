@@ -29,15 +29,16 @@ require_once("../base/dbconfig.php");
         <table>
             <thead>
                 <tr>
-                    <th>번호</th>
+                    <th class="table_row">번호</th>
                     <th class="title">제목</th>
-                    <th>작성자</th>
-                    <th>날짜</th>
+                    <th class="table_row">작성자</th>
+                    <th class="table_row">작성일</th>
+                    <th class="table_row">조회수</th>
                 </tr>
             </thead>
 
             <?php
-                $sql = 'SELECT a_title, a_id, a_date, a_no FROM activity ORDER BY a_no DESC LIMIT 0, 10;';
+                $sql = 'SELECT a_no, a_title,u_name, a_date, a_hit FROM activity ORDER BY a_no DESC LIMIT 0, 10;';
                 $result = mysqli_query($con, $sql);
                 while($board = mysqli_fetch_array($result)){
             ?>
@@ -45,9 +46,10 @@ require_once("../base/dbconfig.php");
             <tbody>
                 <tr>
                     <td class="num"><?php echo $board['a_no']?></td>
-                    <td class="title"><a herf=#><?php echo $board['a_title']?></a></td>
-                    <td><?php echo $board['a_id']?></td>
+                    <td class="title"><a herf=#><?php echo $board['a_title']?></a></td>               
+                    <td><?php echo $board['u_name']?></td>
                     <td><?php echo $board['a_date']?></td>
+                    <td><?php echo $board['a_hit']?></td>
                 </tr>
             </tbody>
 
