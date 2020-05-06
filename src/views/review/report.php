@@ -19,7 +19,9 @@ if($result){
 	location.href='../review/report.html'; 
 	</script>";
 } else{
-	echo "<script>alert('전송 실패했습니다.'); history.back();</script>";
+	echo "<script>alert('전송 실패했습니다.');
+	history.back();
+	</script>";
 } 
 
 mysqli_close($con);

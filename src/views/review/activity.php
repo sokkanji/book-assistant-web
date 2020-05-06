@@ -25,7 +25,7 @@ require_once("../base/dbconfig.php");
         <h1>활동 기록하기</h1>
         <hr>
         <p>자신의 독립서점 또는 독립출판물 이야기를 공유해주세요 :)</p>
-
+        
         <table>
             <thead>
                 <tr>

@@ -12,10 +12,12 @@ $result = mysqli_query($con, $sql);
 
 if($result){ 
 	echo "<script>alert('정상적으로 글이 등록되었습니다.'); 
-	document.location.href='../review/activity.php'; 
+	location.href='../review/activity.php'; 
 	</script>";
 } else{
-	echo "<script>alert('글을 등록하지 못했습니다.');</script>";	
+	echo "<script>alert('글을 등록하지 못했습니다.'); 
+	history.back();
+	</script>";	
 } 
 
 mysqli_close($con);
