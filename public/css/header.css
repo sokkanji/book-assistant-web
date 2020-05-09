@@ -10,7 +10,7 @@
     height: 80px;
     position: absolute;
     top: 15px;
-    left: 235px;
+    left: 260px;
 }
 
 #header #login-img{
@@ -18,7 +18,7 @@
     height: 30px;
     position: absolute;
     top: 45px;
-    right: 280px;
+    right: 260px;
 }
 
 #header .menubar{
@@ -32,7 +32,7 @@
     width: 690px;
     height: 170px;
     position: absolute;
-    left: 550px;
+    left: 560px;
     top: 45px;
     right: 0;
     text-align: center;
