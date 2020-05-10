@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION['email'])) { 
+        echo "<script> alert('로그인 해주세요.'); 
+        location.href='../login/login.html';</script>"; 
+    }
+?>
 <!DOCTYPE html>
 <html>
 

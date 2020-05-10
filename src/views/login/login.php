@@ -17,7 +17,7 @@ while($row = mysqli_fetch_array($result)) {
     if($row['pw'] == $pw) {
         $_SESSION['email'] = $email;
         $_SESSION['u_name'] = $row['u_name'];
-         echo "<script> location.href='../base/index.html'; </script>";
+        echo "<script> location.href='../base/index.html'; </script>";
     }
 }
 mysqli_stmt_close($stmt);

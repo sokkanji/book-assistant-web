@@ -57,7 +57,7 @@ require_once("../base/dbconfig.php");
 
         </table>
 
-        <div class="activity_btn"><a href="activity_write.html">글쓰기</a></div>
+        <div class="activity_btn"><a href="activity_write_html.php">글쓰기</a></div>
     </div>
 
     <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>
