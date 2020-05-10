@@ -58,3 +58,9 @@
 #recommend table tr div:hover{
     opacity: 0.6;
 }
+
+#recommend span{
+    float: right;
+    font-size: 11px;
+    color: #BDBDBD;
+}
