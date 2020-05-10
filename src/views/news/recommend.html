@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>책잡이</title>
+
+    <link rel="stylesheet" href="..\..\..\public\css\reset.css">
+    <link rel="stylesheet" href="..\..\..\public\css\header.css">
+    <link rel="stylesheet" href="..\..\..\public\css\recommend.css">
+    <link rel="stylesheet" href="..\..\..\public\css\footer.css">
+    <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="..\..\js\includeHtml.js"></script>
+    <script type="text/javascript" src="..\..\js\completed.js"></script>
+</head>
+
+<body>
+    <include-html target="..\base\header.html" completed="headerCompleted"></include-html>
+
+    <div id="recommend">
+        <h1>독립출판물 추천</h1>
+        <hr>
+        <p>독립서점 사장님들이 추천한 독립출판물들을 소개합니다.</p>
+
+        <table>
+            <tr>
+                <td>
+                    <div><img src="..\..\..\public\img\book1.jpg" class="web" alt="나는 너를 영원히 오해하기로 했다"></div>
+                </td>
+                <td>
+                    <div><img src="..\..\..\public\img\book2.jpg" class="web" alt="느려도 괜찮아 여기는"></div>
+                </td>
+                <td>
+                    <div><img src="..\..\..\public\img\book3.png" class="web" alt="도쿄규림일기"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="line">나는 너를 영원히 오해하기로 했다</td>
+                <td class="line">느려도 괜찮아 여기는</td>
+                <td class="line">도쿄규림일기</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div><img src="..\..\..\public\img\book4.jpg" class="web" alt="모든 시도는 따뜻할 수밖에"></div>
+                </td>
+                <td>
+                    <div><img src="..\..\..\public\img\book5.png" class="web" alt="이슬아수필집"></div>
+                </td>
+                <td>
+                    <div><img src="..\..\..\public\img\book6.jpg" class=" web" alt="저 청소일 하는데요."></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="line">모든 시도는 따뜻할 수밖에</td>
+                <td class="line">이슬아수필집</td>
+                <td class="line">저 청소일 하는데요.</td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>
+
+    <script>includeHtml();</script>
+
+</body>
+
+</html>
