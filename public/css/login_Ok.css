@@ -1,0 +1,57 @@
+#login_Ok{
+    max-width: 445px;
+    margin: 0 auto;
+    padding: 230px 0 110px 0;
+}
+
+#login_Ok h1{
+    font-family: "NotoSansKR-Regular";
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+#login_Ok .user-img{
+    width: 120px;
+    padding-right: 50px;
+}
+
+#login_Ok form table tr td{
+    font-family: "NotoSansKR-Regular";
+    font-size: 17px;
+    color: #333;
+    letter-spacing: -1px;
+}
+
+#login_Ok form table tr .t1{
+    width: 60px;
+}
+
+#login_Ok form table tr .t2{
+    width: 220px;
+}
+
+#login_Ok .btn2{
+    font-family: "NotoSansKR-Regular";
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 42px;
+    border: 0;
+    background: #65A478;
+    border-radius: 5px;
+    padding: 9px 150px;
+    margin: 28px 0 0 12px;
+}
+
+#login_Ok .btns div{
+    margin-bottom: 25px;
+}
+
+#login_Ok .btns{
+    padding-top: 70px;
+}
+

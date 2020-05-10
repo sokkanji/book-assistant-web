@@ -19,7 +19,7 @@ require_once("../base/dbconfig.php");
 </head>
 
 <body>
-    <include-html target="..\base\header.html" completed="headerCompleted"></include-html>
+    <include-html target="..\base\header.php" completed="headerCompleted"></include-html>
 
     <div id="activity">
         <h1>활동 기록하기</h1>

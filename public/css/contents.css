@@ -1,5 +1,10 @@
 #contents{
-    min-height: 100%;
-    position: relative;
-    padding: 260px 0 80px 0;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 110px;
+}
+
+#contents .bookstore-img{
+    width: 1519px;
+    height: 800px;
 }
