@@ -1,11 +1,11 @@
 #watching{
     max-width: 1000px;
+    height: 1200px;
     margin: 0 auto;
     padding: 230px 0 110px 0;
 }
 
 #watching h1{
-    position: relative;
     font-family: "NotoSansKR-Regular";
     font-size: 33px;
     font-weight: 700;
@@ -23,5 +23,38 @@
 #watching p{
     font-size: 16px;
     text-align: center;
-    padding: 40px 0 70px;
+    padding: 40px 0 110px;
+}
+
+#watching table{
+    margin : 0 auto;
+    border-collapse: separate;
+}
+
+#watching table .line{
+    padding-bottom: 100px;
+}
+
+#watching table tr td{
+    width: 600px;
+    font-family: "NotoSansKR-Regular";
+    font-size: 17px;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding: 0 10px 40px 10px;
+}
+
+#watching table tr td div{
+    width: 300px;
+    box-shadow: 2px 2px 10px 1px grey;
+    margin: 0 auto;
+}
+
+#watching table tr td .web{
+    width: 300px;
+}
+
+#watching table tr td .web:hover{
+    opacity: 0.6;
 }
