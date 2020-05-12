@@ -40,16 +40,17 @@ require_once("../base/dbconfig.php");
             <?php
                 $sql = 'SELECT a_no, a_title,u_name, a_date, a_hit FROM activity ORDER BY a_no DESC LIMIT 0, 10;';
                 $result = mysqli_query($con, $sql);
-                while($board = mysqli_fetch_array($result)){
+                while($activity = mysqli_fetch_array($result)){
             ?>
 
             <tbody>
                 <tr>
-                    <td class="num"><?php echo $board['a_no']?></td>
-                    <td class="title"><a herf=#><?php echo $board['a_title']?></a></td>               
-                    <td><?php echo $board['u_name']?></td>
-                    <td><?php echo $board['a_date']?></td>
-                    <td><?php echo $board['a_hit']?></td>
+                    <td class="num"><?php echo $activity['a_no']?></td>
+                    <td class="title"><a href="activity_read.php?a_no=<?php echo $activity['a_no'];?>">
+                        <?php echo $activity['a_title']?></a></td>               
+                    <td><?php echo $activity['u_name']?></td>
+                    <td><?php echo $activity['a_date']?></td>
+                    <td><?php echo $activity['a_hit']?></td>
                 </tr>
             </tbody>
 
