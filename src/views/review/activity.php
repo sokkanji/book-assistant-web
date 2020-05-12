@@ -40,6 +40,9 @@ require_once("../base/dbconfig.php");
             <?php
                 $sql = 'SELECT a_no, a_title,u_name, a_date, a_hit FROM activity ORDER BY a_no DESC LIMIT 0, 10;';
                 $result = mysqli_query($con, $sql);
+                if (mysqli_connect_errno()){
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
                 while($activity = mysqli_fetch_array($result)){
             ?>
 
