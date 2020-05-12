@@ -1,5 +1,10 @@
 <?php
-require_once("../base/dbconfig.php");
+    require_once("../base/dbconfig.php");
+
+    if(!isset($_SESSION['email'])) { 
+        echo "<script> alert('로그인 해주세요.'); 
+        location.href='../login/login.html';</script>"; 
+    }
 ?>
 
 <html>
@@ -28,9 +33,16 @@ require_once("../base/dbconfig.php");
         <?php
         $sql = "UPDATE activity SET a_hit = a_hit + 1 WHERE a_no = '".$_GET['a_no']."'";
         $result = mysqli_query($con, $sql);
+        if (mysqli_connect_errno()){
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
 
         $sql = "SELECT * FROM activity WHERE a_no= '".$_GET['a_no']."' ";
         $result = mysqli_query($con, $sql);
+
+        if (mysqli_connect_errno()){
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
         $activity = mysqli_fetch_array($result);
         ?>
 
@@ -49,8 +61,8 @@ require_once("../base/dbconfig.php");
         <div class="r_content"><?php echo $activity['a_content']?></div>
         
         <div class="activity_list_btn"><a href="activity.php">목록</a></div>
-        <div class="activity_list_btn"><a href="activity.php">삭제</a></div>
-        <div class="activity_list_btn"><a href="activity.php">수정</a></div>
+        <div class="activity_list_btn"><a href="activity_delete.php?a_no=<?php echo $activity['a_no'];?>">삭제</a></div>
+        <div class="activity_list_btn"><a href="activity_delete.php?a_no=<?php echo $activity['a_no'];?>">수정</a></div>
     </div>
 
     <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>

@@ -14,6 +14,10 @@ $sql = 'INSERT INTO report(s_store, s_addr, s_tel, s_web, s_intro, s_etc, s_phot
 VALUES("' . $s_store . '","'. $s_addr01 . " " . $s_addr02 . '","' . $s_tel . '","' . $s_web . '","'. $s_intro . '","'. $s_etc . '","'. $s_photo .'")';
 
 $result = mysqli_query($con, $sql);
+if (mysqli_connect_errno()){
+	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
 if($result){ 
 	echo "<script>alert('정상적으로 제보되었습니다.'); 
 	location.href='../review/report.html'; 
