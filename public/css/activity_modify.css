@@ -1,0 +1,97 @@
+#activity_modify{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 230px 0 110px 0;
+}
+
+#activity_modify h1{
+    font-family: "NotoSansKR-Regular";
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding: 0 0 22px 0;
+}
+
+#activity_modify hr{
+    width: 80px;
+    border: 1px solid #65A478;
+}
+
+#activity_modify p{
+    font-size: 16px;
+    text-align: center;
+    padding: 40px 0 70px;
+}
+
+#activity_modify form table{
+    text-align: center;
+    padding-top: 50px; 
+    margin: 0 auto;
+    font-size: 17px;
+    color: #333;
+    line-height: 26px;
+}
+
+#activity_modify form table tr td{
+    padding-bottom: 25px;
+}
+
+#activity_modify form table tr td div{
+    display: block;
+    float: left;
+    font-family: "NotoSansKR-Regular";
+    font-size: 18px;
+    color: #333;
+    text-indent: .3em;
+    margin-bottom: 5px;
+}
+
+#activity_modify form table tr td input{
+    width: 100%;
+    border: 1px solid #a6a6a6;
+    outline: none;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+#activity_modify form table tr td input::placeholder{
+    font-size: 16px;
+}
+
+#activity_modify form table tr td textarea{
+    width: 100%;
+    font-family: "NotoSansCJKKr Regular";
+    font-size: 16px;
+    text-indent: .3em;
+    resize: none;
+    outline: none;
+    padding-top: 8px;
+}
+
+#activity_modify form table tr td .image_input{
+    border: none;
+    border-bottom: none;
+    outline: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+#activity_modify form table tr td .photo_btn{
+    float: left;
+    padding: 1px 2.8px;
+}
+
+#activity_modify form table tr td .activity_modify_btn{
+    height: 42px;
+    line-height: 42px;
+    float: right;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border: 0;
+    background: #65A478;
+    border-radius: 5px;
+    padding: 0 15px;
+}
