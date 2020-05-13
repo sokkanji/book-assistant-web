@@ -81,3 +81,22 @@
     border-radius: 5px;
     padding: 8px 15px;
 }
+
+#activity_read .activity_list_btn2{
+    float: left;
+    padding-top: 40px;
+    margin-right: 5px;
+  
+}
+
+#activity_read .activity_list_btn2>a{
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border: 0;
+    background: #65A478;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
