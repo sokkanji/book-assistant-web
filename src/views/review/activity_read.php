@@ -59,10 +59,16 @@
         </table>
 
         <div class="r_content"><?php echo $activity['a_content']?></div>
-        
+
+        <?php
+            if( $_SESSION['u_name']==$activity['u_name']) {
+                echo '<div class="activity_list_btn"><a href="activity_delete.php?a_no='. $activity["a_no"] . ' ">삭제</a></div>';
+                echo '<div class="activity_list_btn"><a href="activity_modify.php?a_no='. $activity["a_no"] . ' ">수정</a></div>';
+            }
+        ?>
+
         <div class="activity_list_btn"><a href="activity.php">목록</a></div>
-        <div class="activity_list_btn"><a href="activity_delete.php?a_no=<?php echo $activity['a_no'];?>">삭제</a></div>
-        <div class="activity_list_btn"><a href="activity_delete.php?a_no=<?php echo $activity['a_no'];?>">수정</a></div>
+            
     </div>
 
     <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>
