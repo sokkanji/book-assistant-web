@@ -62,8 +62,8 @@
 
         <?php
             if( $_SESSION['u_name']==$activity['u_name']) {
-                echo '<div class="activity_list_btn"><a href="activity_delete.php?a_no='. $activity["a_no"] . ' ">삭제</a></div>';
-                echo '<div class="activity_list_btn"><a href="activity_modify.php?a_no='. $activity["a_no"] . ' ">수정</a></div>';
+                echo '<div class="activity_list_btn2"><a href="activity_delete.php?a_no='. $activity["a_no"] . ' ">삭제</a></div>';
+                echo '<div class="activity_list_btn2"><a href="activity_modify.php?a_no='. $activity["a_no"] . ' ">수정</a></div>';
             }
         ?>
 
