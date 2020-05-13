@@ -8,7 +8,7 @@ if (mysqli_connect_errno()){
 }
 
 if($result){ 
-	echo "<script'>alert('글이 정상적으로 삭제되었습니다.');
+	echo "<script>alert('정상적으로 삭제되었습니다.');
 	location.href='../review/activity.php'; 
 	</script>";
 } else{
