@@ -18,7 +18,6 @@
                         <ul class="m2">
                             <li><a href="#">독립서점 검색</a></li>
                             <li><a href="#">인생책 찾기 테스트</a></li>
-                            <li><a href="#">서점도서 검색</a></li>
                         </ul>
                     </li>
                     <li class="mb03">
