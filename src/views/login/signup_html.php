@@ -57,7 +57,7 @@
                     <td>비밀번호</td>
                 </tr>
                 <tr>
-                    <td><input type="password" class="pw" required placeholder="비밀번호">
+                    <td><input type="password" id="pw" class="pw1" required placeholder="비밀번호">
                     </td>
                 </tr>
                 <tr>
@@ -69,12 +69,12 @@
                     <td>비밀번호 확인</td>
                 </tr>
                 <tr>
-                    <td><input type="password" class="pw" name="pw" required placeholder="비밀번호 확인">
+                    <td><input type="password" id="pw" class="pw2" name="pw" required placeholder="비밀번호 확인">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div class="result3_div"></div>
+                        <div class="result3_div" id="result3_div"></div>
                     </td>
                 </tr>
                 <tr>
@@ -90,14 +90,14 @@
 
     <script>includeHtml();
 
-    function chkname(name) {    
-        var regex=/^[가-힣|a-z|A-Z|0-9|\*]+$/;
+    chkname=(name)=> {    
+        let regex=/^[가-힣|a-z|A-Z|0-9|\*]+$/;
         return (name != '' && name != 'undefined' && regex.test(name)); 
     }
 
     $(".name").blur(function() {
-        var name = $(this).val();
-        if( name == '' || name == 'undefined') return;
+        const name = $(this).val();
+        if(name == '' || name == 'undefined') return;
 
         if (! chkname(name)) {
             $('.result_div').text('이름을 확인해주세요.');
@@ -107,13 +107,13 @@
         }
     });
 
-    function chkemail(email) {    
-        var regex=/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    chkemail=(email)=> {    
+        let regex=/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         return (email != '' && email != 'undefined' && regex.test(email)); 
     }
 
     $(".email").blur(function() {
-        var email = $(this).val();
+        const email = $(this).val();
         if( email == '' || email == 'undefined') return;
 
         if(! chkemail(email) ) {
@@ -127,11 +127,11 @@
         }
     });
 
-    $('.pw').blur(function() { 
-        var pw = $(".pw").val();
-        var num = pw.search(/[0-9]/g);
-        var eng = pw.search(/[a-z]/ig);
-        var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+    $('#pw').blur(function() { 
+        const pw = $("#pw").val();
+        const num = pw.search(/[0-9]/g);
+        const eng = pw.search(/[a-z]/ig);
+        const spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 
         if(pw.length < 8 || pw.length > 20){
             $('.result3_div').text('8자리 ~ 20자리 이내로 입력해주세요.');
@@ -142,8 +142,22 @@
         }else if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
             $('.result3_div').text('영문, 숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.');
              return false;
+        }else{
+            $('.result3_div').text('');
+             return false;
         }
     });
+
+    $('.pw2').blur(function() { 
+        const pw1 = $(".pw1").val(); 
+        const pw2 = $(".pw2").val(); 
+        if(pw1 != pw2){ 
+            $("#result3_div").text("비밀번호가 일치하지 않습니다."); 
+        } else { 
+            $("#result3_div").text(""); 
+        }
+    });
+
     </script>
 </body>
 
