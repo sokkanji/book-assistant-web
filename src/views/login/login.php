@@ -22,5 +22,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 mysqli_stmt_close($stmt);
 
-echo "<script> alert('이메일 혹은 패스워드가 일치하지 않습니다.'); </script>";
+echo "<script> alert('이메일 혹은 패스워드가 일치하지 않습니다.'); 
+history.back();
+</script>";
 ?>
