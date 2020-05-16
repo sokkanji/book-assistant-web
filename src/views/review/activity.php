@@ -52,6 +52,7 @@ require_once("../base/dbconfig.php");
     
                 $list = 10; 
                 $block_ct = 5; 
+                $cnt = -1;
     
                 $block_num = ceil($page/$block_ct); 
                 echo "<script>console.log('2>>'+".$page.");</script>";
@@ -67,20 +68,18 @@ require_once("../base/dbconfig.php");
                 $result = mysqli_query($con, $sql2);
                 while($board = mysqli_fetch_array($result)){
                     $title=$board['a_title']; 
-                        if(strlen($title)>30)
-                        { 
-                            $title=str_replace($board["a_title"], substr($board["a_title"], 0, 30) . "...", $board["a_title"]);
-                        }
-                    $sql3 = "SELECT * FROM activity WHERE a_no='".$board['a_no']."'";
-                    $result3 = mysqli_query($con, $sql3);
-                    $rep_count = mysqli_num_rows($result3);
+                    if(strlen($title)>25)
+                    { 
+                        $title=str_replace($board["a_title"], iconv_substr($board["a_title"], 0, 25, "utf-8") . "...", $board["a_title"]);
+                    }
             ?>
 
             <tbody>
                 <tr>
-                    <td class="num"><?php echo $board['a_no']?></td>
+                    <td class="num"><?php 
+                     echo $num_row-$start_num-(++$cnt); ?></td>
                     <td class="title"><a href="activity_read.php?a_no=<?php echo $board['a_no'];?>">
-                            <?php echo $board['a_title']?></a></td>
+                            <?php echo $title?></a></td>
                     <td><?php echo $board['u_name']?></td>
                     <td><?php echo $board['a_date']?></td>
                     <td><?php echo $board['a_hit']?></td>
@@ -90,10 +89,8 @@ require_once("../base/dbconfig.php");
             <?php } ?>
 
         </table>
-
         <div class="activity_btn"><a href="activity_write_html.php">글쓰기</a></div>
 
-        <!-- page part -->
         <div class="page">
             <ul>
                 <?php
