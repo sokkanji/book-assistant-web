@@ -43,14 +43,15 @@
     padding: 5px;
 }
 
-#signup form table tr .table_row{
-    padding-bottom: 25px;
-}
-
 #signup form table tr .name, #signup form table tr .email, #signup form table tr .pw{
     width: 350px;
     height: 25px;
     padding: 4px;
+}
+
+#signup .result_div, #signup .result2_div, #signup .result3_div{
+    font-size: 13px;
+    color: red;
 }
 
 #signup form table tr td .signOk_btn{
