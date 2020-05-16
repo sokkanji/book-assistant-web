@@ -47,6 +47,10 @@ require_once("../base/dbconfig.php");
     
                 $sql = "SELECT * FROM activity";
                 $result = mysqli_query($con, $sql);
+                if (mysqli_connect_errno()){
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+                
                 $num_row = mysqli_num_rows($result);
     
                 $list = 10; 
@@ -64,6 +68,9 @@ require_once("../base/dbconfig.php");
     
                 $sql2 = "SELECT * FROM activity ORDER BY a_no DESC LIMIT $start_num, $list";  
                 $result = mysqli_query($con, $sql2);
+                if (mysqli_connect_errno()){
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
                 while($board = mysqli_fetch_array($result)){
                     $title=$board['a_title']; 
                     if(strlen($title)>25)
