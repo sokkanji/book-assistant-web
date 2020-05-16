@@ -43,7 +43,7 @@
     padding: 5px;
 }
 
-#signup form table tr .name, #signup form table tr .email, #signup form table tr .pw{
+#signup form table tr .name, #signup form table tr .email, #signup form table tr .pw1, #signup form table tr .pw2{
     width: 350px;
     height: 25px;
     padding: 4px;
