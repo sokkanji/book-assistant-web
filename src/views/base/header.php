@@ -7,10 +7,10 @@
             <div class="gnb">
                 <ul class="dropdown">
                     <li class="mb01">
-                        <a href="..\..\..\src\views\introduce\introduce.html" class="m1">소개</a>
+                        <a href="..\..\..\src\views\base\introduce.html" class="m1">소개</a>
                         <ul class="m2">
-                            <li><a href="..\..\..\src\views\introduce\introduce.html">책잡이란?</a></li>
-                            <li><a href="..\..\..\src\views\introduce\introduce.html">독립서점이란?</a></li>
+                            <li><a href="..\..\..\src\views\base\introduce.html">책잡이란?</a></li>
+                            <li><a href="..\..\..\src\views\base\introduce.html">독립서점이란?</a></li>
                         </ul>
                     </li>
                     <li class="mb02">

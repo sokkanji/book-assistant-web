@@ -9,11 +9,11 @@
 
 <head>
     <title>책잡이</title>
-
-    <link rel="stylesheet" href="..\..\..\public\css\reset.css">
-    <link rel="stylesheet" href="..\..\..\public\css\header.css">
-    <link rel="stylesheet" href="..\..\..\public\css\footer.css">
-    <link rel="stylesheet" href="..\..\..\public\css\activity_write.css">
+    
+    <link rel="stylesheet" href="..\..\..\public\css\base_css\reset.css">
+    <link rel="stylesheet" href="..\..\..\public\css\base_css\header.css">
+    <link rel="stylesheet" href="..\..\..\public\css\base_css\footer.css">
+    <link rel="stylesheet" href="..\..\..\public\css\review_css\activity_write.css">
     <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

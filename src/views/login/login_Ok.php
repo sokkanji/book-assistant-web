@@ -4,10 +4,10 @@
 <head>
     <title>책잡이</title>
 
-    <link rel="stylesheet" href="..\..\..\public\css\reset.css">
-    <link rel="stylesheet" href="..\..\..\public\css\header.css">
-    <link rel="stylesheet" href="..\..\..\public\css\footer.css">
-    <link rel="stylesheet" href="..\..\..\public\css\login_Ok.css">
+    <link rel="stylesheet" href="..\..\..\public\css\base_css\reset.css">
+    <link rel="stylesheet" href="..\..\..\public\css\base_css\header.css">
+    <link rel="stylesheet" href="..\..\..\public\css\base_css\footer.css">
+    <link rel="stylesheet" href="..\..\..\public\css\login_css\login_Ok.css">
     <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -38,7 +38,7 @@
             <div><a href="logout.php" class="btn2">로그아웃 하기</a></div>
             <div><a href="#" class="btn2">비밀번호 찾기</a></div>
             <div><a href="#" class="btn2">비밀번호 변경</a></div>
-            <div><a href="user_del.php" class="btn2">회원탈퇴 하기</a></div>
+            <div><a href="user_del.html" class="btn2">회원탈퇴 하기</a></div>
         </div>
 
     </div>

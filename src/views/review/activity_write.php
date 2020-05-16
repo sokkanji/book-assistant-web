@@ -5,7 +5,7 @@ $a_title=$_POST['a_title'];
 $a_content=$_POST['a_content'];
 $a_date=date("Y-m-d");                          
 
-$mq = 'ALTER TABLE activity auto_increment = 1'; //auto_increment 값 초기화
+$mq = 'ALTER TABLE activity auto_increment = 1';
 $result1 = mysqli_query($con, $mq);
 
 $sql = 'INSERT INTO activity(a_title, a_content, u_name, a_date) VALUES("' . $a_title . '", "' . $a_content . '","' . $_SESSION['u_name'] .'","' . $a_date . '")';
