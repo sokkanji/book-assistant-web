@@ -97,13 +97,13 @@ require_once("../base/dbconfig.php");
         <div class="page">
             <ul>
                 <?php
-                for($i=$block_start; $i<=$block_end; $i++){ 
-                    if($page == $i){ 
-                    echo "<li class='page_num'>[$i]</li>"; 
-                    }else{
-                    echo "<li><a href='?page=$i'>[$i]</a></li>"; 
+                    for($i=$block_start; $i<=$block_end; $i++){ 
+                        if($page == $i){ 
+                            echo "<li class='page_num'>[$i]</li>"; 
+                        } else{
+                            echo "<li><a href='?page=$i'>[$i]</a></li>"; 
+                        }
                     }
-                }
                 ?>
             </ul>
         </div>
