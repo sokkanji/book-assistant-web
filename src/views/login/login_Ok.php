@@ -20,28 +20,25 @@
 
     <div id="login_Ok">
         <h1>회원 정보</h1>
-
-        <form method="GET">
-            <table>
-                <tr>
-                    <td rowspan="4"><img src="..\..\..\public\img\user_icon.png" class="user-img" alt="회원정보이미지"></td>
-                </tr>
-                <tr>
-                    <td class="t1">이름</td>
-                    <td class="t2">소민지</td>
-                </tr>
-                <tr>
-                    <td class="t1">이메일</td>
-                    <td class="t2">thalswl01@naver.com</td>
-                </tr>
-            </table>
-        </form>
+        <table>
+            <tr>
+                <td rowspan="4"><img src="..\..\..\public\img\user_icon.png" class="user-img" alt="회원정보이미지"></td>
+            </tr>
+            <tr>
+                <td class="t1">이름</td>
+                <td class="t2"><?php echo $_SESSION['u_name']?></td>
+            </tr>
+            <tr>
+                <td class="t1">이메일</td>
+                <td class="t2"><?php echo $_SESSION['email']?></td>
+            </tr>
+        </table>
 
         <div class="btns">
             <div><a href="logout.php" class="btn2">로그아웃 하기</a></div>
             <div><a href="#" class="btn2">비밀번호 찾기</a></div>
             <div><a href="#" class="btn2">비밀번호 변경</a></div>
-            <div><a href="#" class="btn2">회원탈퇴 하기</a></div>
+            <div><a href="user_del.php" class="btn2">회원탈퇴 하기</a></div>
         </div>
 
     </div>
