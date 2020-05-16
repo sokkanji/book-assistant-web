@@ -1,4 +1,4 @@
-function headerCompleted() {
+headerCompleted = () => {
     $("#header").html();
     $(document).on('mouseover', '.dropdown>li', function () {
         $('.m2').slideDown(200);
@@ -13,10 +13,10 @@ function headerCompleted() {
     });
 }
 
-function contentsCompleted() {
+contentsCompleted = () => {
     $("#contents").html();
 }
 
-function footerCompleted() {
+footerCompleted = () => {
     $("#footer").html();
 }
