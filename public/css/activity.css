@@ -79,3 +79,19 @@
     border-radius: 5px;
     padding: 8px 15px;
 }
+
+#activity .page{
+    width: 100px;
+    margin : 0 auto;
+    padding : 50px 0;
+}
+
+#activity .page ul li{
+    float: left;
+    text-align: center;
+    margin-left: 10px; 
+}
+
+#activity .page .page_num{
+    color : #65A478;
+}
