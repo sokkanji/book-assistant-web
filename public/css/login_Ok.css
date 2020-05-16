@@ -19,18 +19,18 @@
     padding-right: 50px;
 }
 
-#login_Ok form table tr td{
+#login_Ok table tr td{
     font-family: "NotoSansKR-Regular";
     font-size: 17px;
     color: #333;
     letter-spacing: -1px;
 }
 
-#login_Ok form table tr .t1{
+#login_Ok table tr .t1{
     width: 60px;
 }
 
-#login_Ok form table tr .t2{
+#login_Ok table tr .t2{
     width: 220px;
 }
 

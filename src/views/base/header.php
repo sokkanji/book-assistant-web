@@ -44,7 +44,7 @@
                 alt="로그인 이미지"></img></a>';
         }
         else{
-            echo '<a href="..\..\..\src\views\login\login_Ok.html"><img src="..\..\..\public\img\login_icon.png" id="login-img"
+            echo '<a href="..\..\..\src\views\login\login_Ok.php"><img src="..\..\..\public\img\login_icon.png" id="login-img"
             alt="로그인 이미지"></img></a>';
         }
         ?>
