@@ -40,7 +40,6 @@ require_once("../base/dbconfig.php");
             <?php
                 if(isset($_GET['page'])){
                     $page = $_GET['page'];
-                    echo "<script>console.log('1>>'+".$page.");</script>";
                 }else{
                     $page = 1;
                 }
@@ -55,7 +54,6 @@ require_once("../base/dbconfig.php");
                 $cnt = -1;
     
                 $block_num = ceil($page/$block_ct); 
-                echo "<script>console.log('2>>'+".$page.");</script>";
                 $block_start = (($block_num - 1) * $block_ct) + 1; 
                 $block_end = $block_start + $block_ct - 1; 
     
