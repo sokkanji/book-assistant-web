@@ -1,0 +1,73 @@
+#user_del{
+    max-width: 445px;
+    margin: 0 auto;
+    padding: 230px 0 110px 0;
+}
+
+#user_del h1{
+    font-family: "NotoSansKR-Regular";
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding-bottom: 22px;
+}
+
+#user_del hr{
+    width: 80px;
+    background: #65a478;
+    border: 1px solid #65A478;
+}
+
+#user_del p{
+    font-size: 16px;
+    text-align: center;
+    padding: 20px 0 40px;
+}
+
+#user_del a{
+    color: #65A478;
+    text-decoration: underline;
+}
+
+#user_del table{
+    margin: 0 auto;
+}
+
+#user_del table tr td{
+    font-family: "NotoSansKR-Regular";
+    font-size: 17px;
+    color: #333;
+    letter-spacing: -1px;
+    padding: 5px;
+}
+
+#user_del table tr .pw1, #user_del table tr .pw2{
+    width: 350px;
+    height: 25px;
+    padding: 4px;
+}
+
+#user_del .table_row{
+    padding-bottom: 30px;
+}
+
+#user_del .result_div{
+    font-size: 13px;
+    color: red;
+}
+
+#user_del table tr td .user_del_btn{
+    width: 360px;
+    height: 42px;
+    font-family: "NotoSansKR-Regular";
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    border: 0;
+    background: #65A478;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px 107px;
+}
