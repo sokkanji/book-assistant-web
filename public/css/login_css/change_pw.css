@@ -1,0 +1,73 @@
+#change_pw{
+    max-width: 445px;
+    margin: 0 auto;
+    padding: 230px 0 110px 0;
+}
+
+#change_pw h1{
+    font-family: "NotoSansKR-Regular";
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding-bottom: 22px;
+}
+
+#change_pw hr{
+    width: 80px;
+    background: #65a478;
+    border: 1px solid #65A478;
+}
+
+#change_pw p{
+    font-size: 16px;
+    text-align: center;
+    padding: 20px 0 40px;
+}
+
+#change_pw a{
+    color: #65A478;
+    text-decoration: underline;
+}
+
+#change_pw table{
+    margin: 0 auto;
+}
+
+#change_pw table tr td{
+    font-family: "NotoSansKR-Regular";
+    font-size: 17px;
+    color: #333;
+    letter-spacing: -1px;
+    padding: 5px;
+}
+
+#change_pw table tr .pw1, #change_pw table tr .pw2{
+    width: 350px;
+    height: 25px;
+    padding: 4px;
+}
+
+#change_pw .table_row{
+    padding-bottom: 30px;
+}
+
+#change_pw .result_div{
+    font-size: 13px;
+    color: red;
+}
+
+#change_pw table tr td .change_pw_btn{
+    width: 360px;
+    height: 42px;
+    font-family: "NotoSansKR-Regular";
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    border: 0;
+    background: #65A478;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px 107px;
+}
