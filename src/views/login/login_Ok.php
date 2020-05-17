@@ -35,9 +35,9 @@
         </table>
 
         <div class="btns">
-            <div><a href="logout.php" class="btn2">로그아웃 하기</a></div>
-            <div><a href="#" class="btn2">비밀번호 변경</a></div>
-            <div><a href="user_del.html" class="btn2">회원탈퇴 하기</a></div>
+            <div><a href="./logout.php" class="btn2">로그아웃 하기</a></div>
+            <div><a href="change_chk_pw.html" class="btn2">비밀번호 변경</a></div>
+            <div><a href="./user_del.html" class="btn2">회원탈퇴 하기</a></div>
         </div>
 
     </div>
