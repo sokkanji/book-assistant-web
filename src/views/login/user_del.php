@@ -1,6 +1,6 @@
 <?php
 require_once("../base/dbconfig.php");
-include "./password.php";
+require_once("./password.php");
 
 $pw=$_POST['pw'];
 
@@ -22,7 +22,11 @@ if(password_verify($pw, $board['pw'])){
 		echo "<script>alert('회원탈퇴 완료되었습니다.'); 
 		location.href='../base/index.html'; 
 		</script>";
-	} 
+	} else{
+        echo "<script> alert('회원탈퇴 실패했습니다.'); 
+        history.back(); 
+        </script>";
+    }
 } else{
 	echo "<script>alert('비밀번호가 일치하지 않습니다.');
 	history.back();
