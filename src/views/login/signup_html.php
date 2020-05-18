@@ -57,7 +57,7 @@
                     <td>비밀번호</td>
                 </tr>
                 <tr>
-                    <td><input type="password" id="pw" class="pw1" name="pw1" required placeholder="비밀번호">
+                    <td><input type="password" id="pw" class="pw1" name="pw1" maxlength="16" required placeholder="비밀번호">
                     </td>
                 </tr>
                 <tr>
@@ -69,7 +69,7 @@
                     <td>비밀번호 확인</td>
                 </tr>
                 <tr>
-                    <td><input type="password" id="pw" class="pw2" name="pw2" required placeholder="비밀번호 확인">
+                    <td><input type="password" id="pw" class="pw2" name="pw2" maxlength="16" required placeholder="비밀번호 확인">
                     </td>
                 </tr>
                 <tr>
@@ -130,8 +130,8 @@
             const eng = pw.search(/[a-z]/ig);
             const spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 
-            if (pw.length < 8 || pw.length > 20) {
-                $('.result3_div').text('8자리 ~ 20자리 이내로 입력해주세요.');
+            if (pw.length < 8 || pw.length > 16) {
+                $('.result3_div').text('8자리 ~ 16자리 이내로 입력해주세요.');
             } else if (pw.search(/\s/) != -1) {
                 $('.result3_div').text('공백 없이 입력해주세요.');
             } else if ((num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0)) {
