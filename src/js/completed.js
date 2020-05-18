@@ -9,7 +9,8 @@ headerCompleted = () => {
     });
     $(document).on('mouseout', '.m2', '.dropdown>li', function () {
         $('.m2').stop().slideUp(170);
-        $('.menubar').css('height', '110px').css('border-bottom', '1px solid #E6E6E6');
+        // $('.menubar').css('height', '110px').css('border-bottom', '1px solid #E6E6E6');
+        $('.menubar').css('height', '110px').css('box-shadow', '0px 1.4px 0px 0px rgba(0, 0, 0, 0.08)');
     });
 }
 
