@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>책잡이</title>
+
+    <link rel="stylesheet" href="..\..\..\public\css\base_css\reset.css">
+    <link rel="stylesheet" href="..\..\..\public\css\base_css\header.css">
+    <link rel="stylesheet" href="..\..\..\public\css\base_css\footer.css">
+    <link rel="stylesheet" href="..\..\..\public\css\find\book_test.css">
+    <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="..\..\js\includeHtml.js"></script>
+    <script type="text/javascript" src="..\..\js\completed.js"></script>
+</head>
+
+<body>
+    <include-html target="..\base\header.php" completed="headerCompleted"></include-html>
+
+    <div id="book_test">
+        <h1>인생 책 찾기 테스트</h1>
+        <hr>
+        <p>자신에게 맞는 책을 추천해드립니다 :D</p>
+
+        <div> 다음 보기의 책들 중에서 읽은 후 제일 인상깊었던 책을 선택해주세요!<br>
+            만약 읽은 책이 없다면, 줄거리를 참고하여 제일 읽고 싶은 책을 선택하시면 됩니다.</div>
+
+        <div class="container">
+            <div class="book-img"></div>
+            <div class="summary"></div>
+        </div>
+
+        <div class="container">
+            <div class="book-img"></div>
+            <div class="summary"></div>
+        </div>
+
+    </div>
+    <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>
+
+    <script>includeHtml();</script>
+</body>
+
+</html>

@@ -14,10 +14,10 @@
                         </ul>
                     </li>
                     <li class="mb02">
-                        <a href="#" class="m1">찾기</a>
+                        <a href="..\..\..\src\views\find\store_search.html" class="m1">찾기</a>
                         <ul class="m2">
-                            <li><a href="#">독립서점 검색</a></li>
-                            <li><a href="#">인생책 찾기 테스트</a></li>
+                            <li><a href="..\..\..\src\views\find\store_search.html">독립서점 검색</a></li>
+                            <li><a href="..\..\..\src\views\find\book_test.html">인생책 찾기 테스트</a></li>
                         </ul>
                     </li>
                     <li class="mb03">
