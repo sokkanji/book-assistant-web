@@ -1,0 +1,27 @@
+#store_search{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 230px 0 110px 0;
+}
+
+#store_search h1{
+    font-family: "NotoSansKR-Regular";
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding: 0 0 22px 0;
+}
+
+#store_search hr{
+    width: 80px;
+    border: 1px solid #65A478;
+}
+
+#store_search p{
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 0 70px;
+}
+

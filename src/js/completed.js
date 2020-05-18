@@ -2,7 +2,7 @@ headerCompleted = () => {
     $("#header").html();
     $(document).on('mouseover', '.dropdown>li', function () {
         $('.m2').slideDown(200);
-        $('.menubar').css('height', '225px').css('box-shadow', 'none');
+        $('.menubar').css('height', '200px').css('box-shadow', 'none');
     });
     $(document).on('mouseover', '.m2', function () {
         $('.m2').stop().slideDown(200);
