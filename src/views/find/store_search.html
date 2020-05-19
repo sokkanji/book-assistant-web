@@ -14,6 +14,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="..\..\js\includeHtml.js"></script>
     <script type="text/javascript" src="..\..\js\completed.js"></script>
+
 </head>
 
 <body>
@@ -22,10 +23,23 @@
     <div id="store_search">
         <h1>독립서점 검색</h1>
         <hr>
+        <div id="map" style="width:500px; height:400px; "></div>
+        <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8db120071616bb6456be718062f2b41e"></script>
+        <script>
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(33.450701, 126.570667),
+                level: 3
+            };
+
+            var map = new kakao.maps.Map(container, options);
+        </script>
 
 
     </div>
     <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>
+
 
     <script>includeHtml();</script>
 </body>
