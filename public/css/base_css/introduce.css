@@ -24,6 +24,7 @@
 #introduce img{
     width: 500px;
     height: 300px;
+    padding-top: 50px;
 }
 
 #introduce table{
@@ -44,7 +45,7 @@
     font-family: "NotoSansKR-Light";
     font-size: 18px;
     font-weight: 200;
-    letter-spacing: -1px;
+    letter-spacing: 1px;
     color: #333;
     text-align: left;
     padding: 0 50px;
