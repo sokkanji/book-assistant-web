@@ -28,3 +28,8 @@
 #book_test .bookstore-img{
     width: 1000px;
 }
+
+#book_test .question{
+    text-align: center;
+    font-size: 17px;
+}
