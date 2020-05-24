@@ -17,6 +17,8 @@
 #store_search hr{
     width: 80px;
     border: 1px solid #65A478;
+    background-color: #65A478;
+    margin-bottom: 100px;
 }
 
 #store_search p{
@@ -24,4 +26,3 @@
     font-size: 16px;
     padding: 20px 0 70px;
 }
-
