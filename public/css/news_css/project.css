@@ -2,7 +2,7 @@
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    padding: 230px 0 110px 0;
+    padding: 180px 0 110px 0;
 }
 
 #project h1{
@@ -17,6 +17,7 @@
 
 #project hr{
     width: 80px;
+    background-color : #65A478;
     border: 1px solid #65A478;
 }
 
