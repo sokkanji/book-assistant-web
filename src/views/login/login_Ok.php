@@ -1,50 +1,32 @@
-<!DOCTYPE html>
-<html>
+<?php
+session_start();
+require_once("../base/dbconfig.php");
+require_once("./password.php");
 
-<head>
-    <title>책잡이</title>
+$email=$_POST['email'];
+$pw=$_POST['pw'];
 
-    <link rel="stylesheet" href="..\..\..\public\css\base_css\reset.css">
-    <link rel="stylesheet" href="..\..\..\public\css\base_css\header.css">
-    <link rel="stylesheet" href="..\..\..\public\css\base_css\footer.css">
-    <link rel="stylesheet" href="..\..\..\public\css\login_css\login_Ok.css">
-    <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="..\..\js\includeHtml.js"></script>
-    <script type="text/javascript" src="..\..\js\completed.js"></script>
-</head>
+$sql = "SELECT pw, u_name FROM user WHERE email = ?";
 
-<body>
-    <include-html target="..\base\header.php" completed="headerCompleted"></include-html>
+$stmt = mysqli_prepare($con, $sql);
+$bind = mysqli_stmt_bind_param($stmt, "s", $email);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+if (mysqli_connect_errno()){
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
 
-    <div id="login_Ok">
-        <h1>회원 정보</h1>
-        <table>
-            <tr>
-                <td rowspan="4"><img src="..\..\..\public\img\user_icon.png" class="user-img" alt="회원정보이미지"></td>
-            </tr>
-            <tr>
-                <td class="t1">이름</td>
-                <td class="t2"><?php echo $_SESSION['u_name']?></td>
-            </tr>
-            <tr>
-                <td class="t1">이메일</td>
-                <td class="t2"><?php echo $_SESSION['email']?></td>
-            </tr>
-        </table>
+$board = mysqli_fetch_array($result);
+if(password_verify($pw, $board['pw'])){
+    $_SESSION['email'] = $email;
+    $_SESSION['u_name'] = $board['u_name'];
+    echo "<script> location.href='../base/index.html'; </script>";
+} else{
+    echo "<script> alert('이메일 혹은 패스워드가 일치하지 않습니다.'); 
+    history.back(); 
+    </script>";
+}
 
-        <div class="btns">
-            <div><a href="./logout.php" class="btn2">로그아웃 하기</a></div>
-            <div><a href="change_chk_pw.html" class="btn2">비밀번호 변경</a></div>
-            <div><a href="./user_del.html" class="btn2">회원탈퇴 하기</a></div>
-        </div>
-
-    </div>
-
-    <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>
-
-    <script>includeHtml();</script>
-</body>
-
-</html>
+mysqli_stmt_close($stmt);
+?>

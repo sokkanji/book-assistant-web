@@ -30,17 +30,27 @@
     padding-bottom: 15px;
 }
 
-#login form table tr #email, #login form table tr #pw{
-    width: 300px;
-    height: 25px;
+#login form table tr td .email, #login form table tr td .pw{
+    width: 290px;
+    height: 35px;
     padding: 4px;
+    border: 1px solid #848484;
+    border-radius: 5px;
 }
 
 #login form table tr td .login_btn{
-   height: 120px;
-   width: 110px;
-   cursor: pointer;
-   margin-left: 12px;
+    height: 135px;
+    width: 120px;
+    cursor: pointer;
+    margin-left: 12px;
+    font-family: "NotoSansKR-Regular";
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 42px;
+    border: 0;
+    background: #65A478;
+    border-radius: 5px;
 }
 
 #login form table tr td .find_pw{
@@ -57,5 +67,5 @@
     border: 0;
     background: #65A478;
     border-radius: 5px;
-    padding: 10px 107px;
+    padding: 10px 104px;
 }
