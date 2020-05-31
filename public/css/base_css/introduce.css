@@ -1,7 +1,7 @@
 #introduce{
     max-width: 1000px;
     margin: 0 auto;
-    padding: 230px 0 0 0;
+    padding: 190px 0 0 0;
 }
 
 #introduce h1{
@@ -29,6 +29,15 @@
 #introduce table{
     margin-bottom: 200px;
 }
+#introduce .sub-title{
+    font-family: "NotoSansKR-Light";
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color :  #458766;
+    text-align: left;
+    padding: 50px 25px 0;
+}
 
 #introduce .title{
     font-family: "NotoSansKR-Regular";
@@ -37,15 +46,26 @@
     letter-spacing: -1px;
     color :  #458766;
     text-align: left;
-    padding: 50px 25px 20px;
+    padding: 0px 25px 20px;
+}
+
+#introduce .title2{
+    font-family: "NotoSansKR-Regular";
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color :  #458766;
+    text-align: left;
+    padding: 20px 25px 20px;
 }
 
 #introduce .content{
     font-family: "NotoSansKR-Light";
+    color: #333;
+    text-align: left;
     font-size: 18px;
     font-weight: 200;
     letter-spacing: -1px;
-    color: #333;
-    text-align: left;
+    line-height: 32px;
     padding: 0 25px;
 }
