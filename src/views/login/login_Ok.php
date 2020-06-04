@@ -21,7 +21,7 @@ $board = mysqli_fetch_array($result);
 if(password_verify($pw, $board['pw'])){
     $_SESSION['email'] = $email;
     $_SESSION['u_name'] = $board['u_name'];
-    echo "<script> location.href='../base/index.html'; </script>";
+    echo "<script> location.href='../base/index.php'; </script>";
 } else{
     echo "<script> alert('이메일 혹은 패스워드가 일치하지 않습니다.'); 
     history.back(); 

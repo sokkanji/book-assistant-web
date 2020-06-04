@@ -87,7 +87,7 @@
             <hr>
             <details open>
                 <summary>&lt;동네 서점 X 쏜살문고&gt; 민음사의 '쏜살문고 동네서점 에디션'</summary>
-                <img src="..\..\..\public\img\project1.jpg" class="img1" alt="민음사의'쏜살문고동네서점에디션'">
+                <img src="..\..\..\public\img\project3.png" class="img1" alt="민음사의'쏜살문고동네서점에디션'">
                 <div class="content">
                     '동네 서점X쏜살문고' 프로젝트는 독립서점 '51페이지' 김종원 대표와 민음사가 '동네 서점에서만 살 수 있는 책'을 판매해보자며 출발한 프로젝트이다.
                     동네서점 살리자는 말은 많이 하면서도 정작 책 판매를 위한 이벤트는 대형 인터넷 서점을 통해서만 이뤄지는 출판계 세태에 대한 반발에서 시작한 것이다. 민음사의

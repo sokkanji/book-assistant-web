@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="..\..\..\public\css\base_css\reset.css">
     <link rel="stylesheet" href="..\..\..\public\css\base_css\header.css">
     <link rel="stylesheet" href="..\..\..\public\css\base_css\footer.css">
-    <link rel="stylesheet" href="..\..\..\public\css\find\book_test.css">
+    <link rel="stylesheet" href="..\..\..\public\css\find_css\book_test.css">
     <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -36,9 +36,9 @@
             '피곤하다, 얼른 씻고 자자', '친구가 창피해하지 않도록 같이 넘어져준다', '아싸~', '너무 내 생각만 하나?',
             '선생님께 여쭤본다.', '중요한 부분만', '현실적인 조언을 해주는 사람', '얼마 전 집 앞에 생긴 치킨집에서 치킨을 산다.'];
 
-        //랜덤, 중복제거, 로직, css, 결과화면
+
         $(function () {
-            $('.puls').on('click', function () {
+            $('.arrow_right').on('click', function () {
 
                 if (cnt < 20) {
                     cnt++;
@@ -53,7 +53,7 @@
                 $(".question").html(question[cnt]);
             })
 
-            $(".minus").on('click', function () {
+            $(".arrow_left").on('click', function () {
                 if (cnt > 0) {
                     cnt--;
                     console.log('index: ' + cnt);
@@ -77,22 +77,24 @@
         <h1>인생 책 찾기 테스트</h1>
         <hr>
         <div class="test-wrap">
+
             <img img src="..\..\..\public\img\title4.jpg" class="bookstore-img" alt="책잡이일러스트">
+            <!-- <img img src="..\..\..\public\img\test1.jpg" class="bookstore-img" alt="테스트사진1"> -->
             <div class='question'>질문들을 통해 당신에게<br>어울리는 책을 추천해드려요.<br><br>
-                질문은 총 12문항이고<br>소요시간은 약 3분정도 입니다.
+                질문은 총 12문항이고<br>소요시간은 약 2분정도 입니다.
             </div>
             <div class="options">
                 <div class="op1"></div>
                 <div class="op2"></div>
             </div>
+
+            <div class='editbtn'><img src="../../../public/img/arrow_left.png" class='arrow_left'></div>
+            <div class='editbtn'><img src="../../../public/img/arrow_right.png" class='arrow_right'></div>
+
+            <!-- <div class="progressBar">
+                <div class="bar"></div>
+            </div> -->
         </div>
-
-
-
-
-        <div class='editbtn'><button type='button' class='minus'>이전</button></div>
-        <div class='editbtn'><button type='button' class='puls'>다음</button></div>
-
 
     </div>
     <include-html target="..\base\footer.html" completed="footerCompleted"></include-html>

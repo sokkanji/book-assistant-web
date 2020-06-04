@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="..\..\..\public\css\base_css\reset.css">
     <link rel="stylesheet" href="..\..\..\public\css\base_css\header.css">
     <link rel="stylesheet" href="..\..\..\public\css\base_css\footer.css">
-    <link rel="stylesheet" href="..\..\..\public\css\find\store_search.css">
+    <link rel="stylesheet" href="..\..\..\public\css\find_css\store_search.css">
     <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -22,7 +22,6 @@
     <div id="store_search">
         <h1>독립서점 검색</h1>
         <hr>
-
         <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8db120071616bb6456be718062f2b41e&libraries=services,clusterer"></script>
 
@@ -33,7 +32,7 @@
                 <div class="option">
                     <div>
                         <form onsubmit="searchPlaces(); return false;">
-                            <input type="text" placeholder="독립서점 또는 독립출판물 이름" value="이태원맛집" id="keyword" size="15"> 
+                            <input type="text" placeholder="독립서점 또는 독립출판물 이름" value="이태원" id="keyword" size="15"> 
                             <button type="submit">검색하기</button> 
                         </form>
                     </div>
