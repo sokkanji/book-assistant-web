@@ -20,7 +20,7 @@ if(password_verify($pw, $board['pw'])){
 	if($result){ 
 		session_destroy();
 		echo "<script>alert('회원탈퇴 완료되었습니다.'); 
-		location.href='../base/index.html'; 
+		location.href='../base/index.php'; 
 		</script>";
 	} else{
         echo "<script> alert('회원탈퇴 실패했습니다.'); 

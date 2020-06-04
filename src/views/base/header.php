@@ -1,7 +1,7 @@
 <html>
 <div id="header">
     <div class="menubar">
-        <a href="..\..\views\base\index.html"><img src="..\..\..\public\img\logo_icon.png" id="logo-img"
+        <a href="..\..\views\base\index.php"><img src="..\..\..\public\img\logo_icon.png" id="logo-img"
                 alt="책잡이로고"></img></a>
         <nav>
             <div class="gnb">
@@ -17,6 +17,7 @@
                         <a href="..\..\..\src\views\find\store_search.php" class="m1">찾기</a>
                         <ul class="m2">
                             <li><a href="..\..\..\src\views\find\store_search.php">독립서점 검색</a></li>
+                            <li><a href="..\..\..\src\views\find\book_search.php">독립출판물 검색</a></li>
                             <li><a href="..\..\..\src\views\find\book_test.html">인생책 찾기 테스트</a></li>
                         </ul>
                     </li>
