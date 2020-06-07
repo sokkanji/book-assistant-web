@@ -1,8 +1,8 @@
 #book_test{
     max-width: 900px;
+    min-height: 650px;
     margin: 0 auto;
     padding: 180px 0 110px 0;
-    position: relative;
 }
 
 #book_test h1{
@@ -17,36 +17,97 @@
 
 #book_test hr{
     width: 80px;
-    border: 1px solid #65A478;
-    background-color: #65A478;
+    border: 1px solid #6B5AE4;
+    background-color: #6B5AE4;
+    margin-bottom: 50px;
+}
+
+#book_test .wrap{
+    width: 600px;
+    margin: 0 auto;
+}
+
+#book_test .progressBar{
+    display: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 500px;
+    height: 14px;
+    border-radius: 30px;
+    border: 1px solid #6B5AE4;
+    vertical-align: middle;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+#book_test .bar{
+    width: 0%;
+    height: 4px;
+    border-radius: 30px;
+    background: #6B5AE4;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: left
+}
+
+#book_test .test-img{
+    width: 480px;
+    float: right;
+    padding-top: 80px;
+}
+
+#book_test .test-img2{
+    display: none;
+    width: 50px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#book_test .startQuestion{
+    font-family: "NotoSansKR-Regular";
+    text-align: left;
+    font-size: 20px;
+    padding-top: 100px;
     margin-bottom: 70px;
 }
 
-#book_test .book-wrap{
-    position: relative;
-}
-
-#book_test .bookstore-img{
-    width: 800px;
+#book_test .startbtn{
     display: block;
-    margin: 0px auto;
+    width: 120px;
+    border: 1px solid #b6b6b6;
+    background-color: #6B5AE4;
+    padding: 10px 26px;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 150px;
 }
 
 #book_test .question{
-    position: absolute;
-    left: 120px;
-    top: 460px;
-    text-align: left;
+    display: none;
+    height: 100px;
+    font-family: "NotoSansKR-Regular";
+    font-size: 25px;
+    padding: 50px 0 0 50px;
+}
+
+#book_test ul{
+    display: none;
+    padding: 40px 0 0 50px;
+}
+
+#book_test ul li label{
     font-size: 20px;
+    padding-left: 10px;
 }
 
 #book_test .options .op1, #book_test .options .op2{
-    position: absolute;
-    left: 120px;
-    bottom: 230px;
     cursor: pointer;
-    background-color: #F2F2F2;
-    text-align: center;
+    padding-left: 10px;
     font-size: 20px;
 }
 
@@ -59,27 +120,26 @@
     display: inline-block;
 }
 
-#book_test .test-wrap .arrow_left{
-    width: 38px;
-    position: relative;
-    top: -250px;
-    left: 70px;
+#book_test .arrow{
+    margin: 0 auto;
+    width: 500px;
+}
+
+#book_test .arrow_left{
+    width: 20px;
     cursor: pointer;
-}
-
-#book_test .test-wrap .arrow_right{
-    width: 40px;
     position: relative;
-    top: -240px;
-    left: 750px;
+    bottom: -100px;
+}
+
+#book_test .arrow_right{
+    width: 20px;
     cursor: pointer;
+    float: right;
+    position: relative;
+    bottom: -75px;
 }
 
-#book_test .testBody{
-    background-color: #65A478;
-}
-
-#book_test .progressBar{
-    width: 10px;
-    height: 150px;
+#book_test .mar{
+    margin-bottom: 150px;
 }
