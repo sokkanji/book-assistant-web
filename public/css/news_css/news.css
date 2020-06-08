@@ -17,8 +17,8 @@
 
 #project .p-hr{
     width: 80px;
-    background-color : #65A478;
-    border: 1px solid #65A478;
+    background-color : #6B5AE4;
+    border: 1px solid #6B5AE4;
     margin-top: 0;
 }
 
@@ -51,7 +51,7 @@
     font-weight: 500;
     color: #fff;
     border: 0;
-    background: #65A478;
+    background: #6B5AE4;
     border-radius: 5px;
     margin: 0 10px 0;
     padding: 0 20px;
@@ -116,5 +116,5 @@
 }
 
 #project .home_link a{
-    color : #65a478;
+    color : #6B5AE4;
 }

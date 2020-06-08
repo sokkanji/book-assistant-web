@@ -7,7 +7,7 @@
 
 #header #logo-img{
     width: 200px;
-    height: 80px;
+    height: 75px;
     position: absolute;
     top: 15px;
     left: 260px;
@@ -61,6 +61,6 @@
 }
 
 #header .menubar .gnb .dropdown li:hover .m1{
-    color: #65A478;
-    border-bottom: 1.5px solid #65A478;
+    color: #6B5AE4;
+    border-bottom: 1.5px solid #6B5AE4;
 }
