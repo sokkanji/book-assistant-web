@@ -29,7 +29,7 @@ $search_con = $_GET['search'];
       <form method="get" action="activity_search.php">
         <select name="catgo">
           <option value="a_title">제목</option>
-          <option value="u_name">글쓴이</option>
+          <option value="u_name">작성자</option>
         </select>
         <input type="text" name="search" size="40" required="required"><button>검색</button>
       </form>
