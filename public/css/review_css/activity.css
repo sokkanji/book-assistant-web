@@ -1,5 +1,6 @@
 #activity{
     max-width: 1000px;
+    min-height: 600px;
     margin: 0 auto;
     padding: 180px 0 110px 0;
 }
@@ -16,14 +17,59 @@
 
 #activity hr{
     width: 80px;
-    background-color : #65A478;
-    border: 1px solid #65A478;
+    background-color : #6B5AE4;
+    border: 1px solid #6B5AE4;
+    margin-bottom: 20px;
 }
 
 #activity p{
     text-align: center;
     font-size: 16px;
-    padding: 20px 0 70px;
+    padding-bottom: 60px;
+}
+
+#activity form{
+    float: right;
+    padding-bottom: 20px;
+}
+
+#activity form select{
+    float: left;
+    height: 35px;
+    line-height: 42px;
+    border-radius: 5px;
+    padding: 5px 20px 3px 5px;
+    margin-right: 5px;
+    vertical-align: top;
+    font-size: 14px;
+    font-weight: normal;
+    border: 1px solid #ddd;
+}
+
+#activity form input{
+    float: left;
+    width: 200px;
+    height: 35px ;
+    line-height: 40px;
+    margin: 0 5px 0 0;
+    padding: 0 5px;
+    font-size: 13px;
+    color: #777;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#activity form button{
+    position: relative;
+    top: 0px;
+    padding: 0 12px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border: 0;
+    background: #6B5AE4;
+    border-radius: 5px;
 }
 
 #activity table{
@@ -31,7 +77,7 @@
     margin: 0 auto;
     font-size: 16px;
     border-collapse: collapse;
-    border-top: 2px solid #65A478;
+    border-top: 2px solid #6B5AE4;
     border-bottom: 2px solid #ddd;
 }
 
@@ -76,7 +122,7 @@
     font-weight: 500;
     color: #fff;
     border: 0;
-    background: #65A478;
+    background: #6B5AE4;
     border-radius: 5px;
     padding: 8px 15px;
 }
@@ -94,5 +140,5 @@
 }
 
 #activity .page .page_num{
-    color : #65A478;
+    color : #6B5AE4;
 }

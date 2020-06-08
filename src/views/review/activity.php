@@ -26,18 +26,27 @@ require_once("../base/dbconfig.php");
         <hr>
         <p>자신의 독립서점 또는 독립출판물 이야기를 공유해주세요 :)</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th class="table_row">번호</th>
-                    <th class="title">제목</th>
-                    <th class="table_row">작성자</th>
-                    <th class="table_row">작성일</th>
-                    <th class="table_row">조회수</th>
-                </tr>
-            </thead>
+        <form method="get" action=".\activity_search.php">
+            <select name="catgo">
+                <option value="a_title" selected>제목
+                <option value="u_name">글쓴이
+            </select>
+            <input type="text" size="45" name="search">
+            <button>검색</button>
+        </form>
 
-            <?php
+            <table>
+                <thead>
+                    <tr>
+                        <th class="table_row">번호</th>
+                        <th class="title">제목</th>
+                        <th class="table_row">작성자</th>
+                        <th class="table_row">작성일</th>
+                        <th class="table_row">조회수</th>
+                    </tr>
+                </thead>
+
+                <?php
                 if(isset($_GET['page'])){
                     $page = $_GET['page'];
                 }else{
@@ -79,21 +88,22 @@ require_once("../base/dbconfig.php");
                     }
             ?>
 
-            <tbody>
-                <tr>
-                    <td class="num"><?php 
+                <tbody>
+                    <tr>
+                        <td class="num"><?php 
                      echo $num_row-$start_num-(++$cnt); ?></td>
-                    <td class="title"><a href="activity_read.php?a_no=<?php echo $board['a_no'];?>">
-                            <?php echo $title?></a></td>
-                    <td><?php echo $board['u_name']?></td>
-                    <td><?php echo $board['a_date']?></td>
-                    <td><?php echo $board['a_hit']?></td>
-                </tr>
-            </tbody>
+                        <td class="title"><a href="activity_read.php?a_no=<?php echo $board['a_no'];?>">
+                                <?php echo $title?></a></td>
+                        <td><?php echo $board['u_name']?></td>
+                        <td><?php echo $board['a_date']?></td>
+                        <td><?php echo $board['a_hit']?></td>
+                    </tr>
+                </tbody>
 
-            <?php } ?>
+                <?php } ?>
 
-        </table>
+            </table>
+
         <div class="activity_btn"><a href="activity_write_html.php">글쓰기</a></div>
 
         <div class="page">

@@ -16,8 +16,8 @@
 
 #introduce hr{
     width: 80px;
-    background-color: #65A478;
-    border: 1px solid #65A478;
+    background-color: #6B5AE4;
+    border: 1px solid #6B5AE4;
 }
 
 #introduce img{
@@ -34,7 +34,7 @@
     font-size: 30px;
     font-weight: 300;
     letter-spacing: -1px;
-    color :  #458766;
+    color :  #6B5AE4;
     text-align: left;
     padding: 50px 25px 0;
 }
@@ -44,7 +44,7 @@
     font-size: 30px;
     font-weight: 300;
     letter-spacing: -1px;
-    color :  #458766;
+    color :  #6B5AE4;
     text-align: left;
     padding: 0px 25px 20px;
 }
@@ -54,7 +54,7 @@
     font-size: 30px;
     font-weight: 300;
     letter-spacing: -1px;
-    color :  #458766;
+    color :  #6B5AE4;
     text-align: left;
     padding: 20px 25px 20px;
 }
