@@ -29,7 +29,7 @@ require_once("../base/dbconfig.php");
         <form method="get" action=".\activity_search.php">
             <select name="catgo">
                 <option value="a_title" selected>제목
-                <option value="u_name">글쓴이
+                <option value="u_name">작성자
             </select>
             <input type="text" size="45" name="search">
             <button>검색</button>
