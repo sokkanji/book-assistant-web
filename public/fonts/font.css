@@ -19,7 +19,7 @@
 @font-face{
     font-family: "NotoSansKR-Bold";
     font-weight: normal;
-    src: url(".//NotoSansKR-Bold.otf") format("opentype");
+    src: url("./NotoSansKR-Bold.otf") format("opentype");
 }
 
 @font-face{
