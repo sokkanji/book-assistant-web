@@ -6,15 +6,96 @@
     overflow: hidden;
 }
 
-#contents .slide{
-    height:800px;
-    overflow:hidden;
-}
-
 #contents h3{
     font-family: "NotoSansKR-Bold";
     font-size: 20px;
     margin-bottom: 40px;
+}
+
+#contents .main-img{
+        width: 850px;
+        float: right;
+        position: relative;
+        top: -10px;
+        right: 160px;
+        margin-right: 40px;
+}
+
+#contents .girls_one{
+        width: 250px;
+        position: relative;
+        top: 290px;
+        left: 390px;
+}
+
+#contents .girls_two{
+        width: 270px;
+        position: relative;
+        top: 210px;
+        left: 760px;
+}
+
+#contents .boy{
+        width: 250px;
+        position: relative;
+        top: 60px;
+        left: 700px;
+}
+
+#contents .point1{
+        position: absolute;
+        top: -20px;
+        width: 150px;
+        left: 485px;
+        z-index: -1;
+}
+
+#contents .point2{
+        position: absolute;
+        top: 45px;
+        width: 125px;
+        left: 90px;
+        z-index: -1;
+}
+
+#contents .recommend3 .news form .inputs{
+        width: 700px;
+        margin-left: 30px;
+}
+
+#contents .testBtn{
+        background-color: white;
+        position: relative;
+        left: 0;
+        top: 60px;
+        width: 110px;
+        border: 2px solid #6B5AE4;
+        padding: 10px 10px;
+        border-radius: 30px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: 5px;
+}
+
+#contents .sentence{
+        position: relative;
+        top: 100px;
+        left: 360px;
+        font-size: 30px;
+        color: black;
+        z-index: 1;
+        line-height: 1.9;
+}
+
+#contents .sentence .testBtn a{
+        font-family: 'NotoSansKR-Bold';
+        color: #6B5AE4;
+        text-align: center;
+}
+
+#contents .sentence p>span{
+        font-family: 'NotoSansKR-Bold';
 }
 
 #contents .icon{
@@ -89,76 +170,6 @@
     border-radius: 5px;
     margin: 0 10px 0;
     padding: 0 20px;
-}
-
-#contents .main-img{
-        width: 850px;
-        float: right;
-        position: relative;
-        top: -40px;
-        right: 160px;
-        margin-right: 40px;
-}
-
-#contents .girls_one{
-        width: 250px;
-        position: relative;
-        top: 270px;
-        left: 390px;
-}
-
-#contents .girls_two{
-        width: 270px;
-        position: relative;
-        top: 180px;
-        left: 760px;
-}
-
-#contents .boy{
-        width: 250px;
-        position: relative;
-        top: 60px;
-        left: 700px;
-}
-
-#contents .recommend3 .news form .inputs{
-        width: 700px;
-        margin-left: 30px;
-}
-
-#contents .sentence{
-        position: relative;
-        top: 100px;
-        left: 270px;
-        font-size: 30px;
-        color: black;
-        z-index: 1;
-        line-height: 1.9;
-}
-
-#contents .testBtn{
-        background-color: white;
-        position: relative;
-        left: 0;
-        top: 60px;
-        width: 110px;
-        border: 2px solid #6B5AE4;
-        padding: 10px 10px;
-        border-radius: 30px;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        margin-left: 5px;
-}
-
-#contents .sentence .testBtn a{
-        font-family: 'NotoSansKR-Bold';
-        color: #6B5AE4;
-        text-align: center;
-}
-
-#contents .sentence p>span{
-        font-family: 'NotoSansKR-Bold';
 }
 
 @-webkit-keyframes swing-in-right-bck {

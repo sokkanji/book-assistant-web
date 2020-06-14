@@ -30,15 +30,18 @@ require_once("../base/dbconfig.php");
     <div id="contents">
 
     <div class="sentence">
-        <p>테스트를 통해 자신의 독서타입에 맞는 <span>독립출판물</span>을 추천받고,</p>
-        <p>가까운 <span>독립서점</span>을 검색해보세요.</p>
+        <img src="..\..\..\public\img\point.png" class="point1" >
+        <p id="swing-in-top-bck" >테스트를 통해 자신의 독서타입에 맞는 &nbsp<span>독립출판물</span>&nbsp을 추천받고,</p>
+        <img src="..\..\..\public\img\point.png" class="point2" id="swing-in-top-bck">
+        <p id="swing-in-top-bck">가까운 <span>&nbsp독립서점&nbsp</span>을 검색해보세요.</p>
         <div class="testBtn"><a href="..\find\book_test.html">테스트 하러가기</a></div>
-
     </div>
-        <img src="..\..\..\public\img\메인표지3.jpg" class="main-img">
-        <img src="..\..\..\public\img\girls_one.png" class="girls_one" id="swing-in-right-bck">
-        <img src="..\..\..\public\img\girls_two.png" class="girls_two" id="swing-in-left-fwd">
-        <img src="..\..\..\public\img\boy.png" class="boy" id="swing-in-top-bck">
+
+    <img src="..\..\..\public\img\메인표지3.jpg" class="main-img">
+    <img src="..\..\..\public\img\girls_one.png" class="girls_one" id="swing-in-right-bck">
+    <img src="..\..\..\public\img\girls_two.png" class="girls_two" id="swing-in-left-fwd">
+    <img src="..\..\..\public\img\boy.png" class="boy" id="swing-in-top-bck">
+     
 
     <div class="recommend3">
         <div class="icon">
