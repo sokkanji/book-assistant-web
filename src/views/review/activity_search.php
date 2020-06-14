@@ -22,7 +22,7 @@ $search_con = $_GET['search'];
   <include-html target="..\base\header.php" completed="headerCompleted"></include-html>
 
   <div id="activity">
-    <h1>‘<?php echo $search_con; ?>’  검색결과</h1>
+    <h1>‘<?php echo $search_con; ?>’&nbsp검색결과</h1>
     <hr>
     <p></p>
 
@@ -34,13 +34,12 @@ $search_con = $_GET['search'];
         <input type="text" name="search" size="40" required="required"><button>검색</button>
       </form>
 
-
     <table>
       <thead>
         <tr>
           <th class="table_row">번호</th>
           <th class="title">제목</th>
-          <tH class="table_row"h>글쓴이</tH>
+          <tH class="table_row">글쓴이</tH>
           <th class="table_row">작성일</th>
           <th class="table_row">조회수</th>
         </tr>

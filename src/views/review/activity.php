@@ -53,7 +53,6 @@ require_once("../base/dbconfig.php");
                     $page = 1;
                 }
     
-    
                 $sql = "SELECT * FROM activity";
                 $result = mysqli_query($con, $sql);
                 if (mysqli_connect_errno()){

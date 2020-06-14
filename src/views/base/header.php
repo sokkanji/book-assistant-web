@@ -1,7 +1,7 @@
 <html>
 <div id="header">
     <div class="menubar">
-        <a href="..\..\views\base\index.php"><img src="..\..\..\public\img\logo_icon.png" id="logo-img"
+        <a href="..\..\views\base\index.php"><img src="..\..\..\public\img\logo-img2.png" id="logo-img"
                 alt="책잡이로고"></img></a>
         <nav>
             <div class="gnb">
