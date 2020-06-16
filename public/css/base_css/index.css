@@ -80,9 +80,9 @@
 
 #contents .sentence{
         position: relative;
-        top: 100px;
-        left: 360px;
-        font-size: 30px;
+        top: 80px;
+        left: 380px;
+        font-size: 27px;
         color: black;
         z-index: 1;
         line-height: 1.9;
@@ -96,6 +96,7 @@
 
 #contents .sentence p>span{
         font-family: 'NotoSansKR-Bold';
+        font-size: 30px;
 }
 
 #contents .icon{

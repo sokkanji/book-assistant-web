@@ -23,6 +23,7 @@ require_once("../base/dbconfig.php");
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="..\..\js\includeHtml.js"></script>
 <script type="text/javascript" src="..\..\js\completed.js"></script>
+
 </head>
 
 <body>
@@ -72,6 +73,6 @@ require_once("../base/dbconfig.php");
     <include-html target="footer.html" completed="footerCompleted"></include-html>
 
     <script>includeHtml();</script>
+    <script id="embeddedChatbot" data-botId="B1lkr3" src="https://www.closer.ai/js/webchat.min.js"> </script>
 </body>
-
 </html>
