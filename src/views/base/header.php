@@ -7,17 +7,17 @@
             <div class="gnb">
                 <ul class="dropdown">
                     <li class="mb01">
-                        <a href="..\..\..\src\views\find\store_search.php" class="m1">검색</a>
+                        <a href="..\..\..\src\views\search\store_search.php" class="m1">검색</a>
                         <ul class="m2">
-                        <li><a href="..\..\..\src\views\find\store_search.php">독립서점 검색</a></li>
-                            <li><a href="..\..\..\src\views\find\book_search.php">독립출판물 검색</a></li>
+                        <li><a href="..\..\..\src\views\search\store_search.php">독립서점 검색</a></li>
+                            <li><a href="..\..\..\src\views\search\book_search.php">독립출판물 검색</a></li>
                         </ul>
                     </li>
                     <li class="mb02">
-                        <a href="..\..\..\src\views\find\book_test.html" class="m1">추천</a>
+                        <a href="..\..\..\src\views\recommend\book_test.html" class="m1">추천</a>
                         <ul class="m2">
-                            <li><a href="..\..\..\src\views\find\book_test.html">인생책 찾기 테스트</a></li>
-                            <li><a href="..\..\..\src\views\news\recommend.html">독립출판물 추천</a></li>
+                            <li><a href="..\..\..\src\views\recommend\book_test.html">인생책 찾기 테스트</a></li>
+                            <li><a href="..\..\..\src\views\recommend\recommend.html">독립출판물 추천</a></li>
                         </ul>
                     </li>
                     <li class="mb03">

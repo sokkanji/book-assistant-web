@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="..\..\..\public\css\base_css\reset.css">
     <link rel="stylesheet" href="..\..\..\public\css\base_css\header.css">
     <link rel="stylesheet" href="..\..\..\public\css\base_css\footer.css">
-    <link rel="stylesheet" href="..\..\..\public\css\find_css\book_search.css">
+    <link rel="stylesheet" href="..\..\..\public\css\serach_css\book_search.css">
     <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
