@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="..\..\..\public\css\base_css\reset.css">
     <link rel="stylesheet" href="..\..\..\public\css\base_css\header.css">
     <link rel="stylesheet" href="..\..\..\public\css\base_css\footer.css">
-    <link rel="stylesheet" href="..\..\..\public\css\find_css\book_test.css">
+    <link rel="stylesheet" href="..\..\..\public\css\recommend_css\book_test.css">
     <link rel="stylesheet" href="..\..\..\public\fonts\font.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -378,9 +378,14 @@
                     </div>
                 </div>
 
-                <div class="result" style="margin: 0 auto; display: none;">
-                    <img src="#" id="img" style="width:500px;">
-                    <p id="txt">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 오예.. 거의 완성했네요..</p>
+                <div class="result" style="display: none;">
+                    <div class="result-img"><img src="#" id="img"></div>
+                    <strong>
+                        <p id="hashtag"></p>
+                    </strong>
+                    <strong id="result-title"></strong>
+                    <span id="txt"></span>
+                    <p>이런 당신께 추천해요, </p>
                 </div>
 
             </div>
@@ -418,34 +423,55 @@
             }
 
             let max = Math.max(resultA, resultB, resultC, resultD);
-            console.log('max>>' + max + " resultA>>" + resultA + " resultB>>" + resultB + " resultC" + resultC + " resultD" + resultD);
+            console.log("max>>" + max + " resultA>>" + resultA + " resultB>>" + resultB + " resultC" + resultC + " resultD" + resultD);
 
             let txt = document.getElementById("txt");
             let img = document.getElementById("img");
 
 
             if (max == resultB) {
-                console.log('진정한 max >> resultB');
-                max = 'resultB';
-                img.src = "../../../public/img/test4.jpg";
-                txt.value() = "변경";
+                console.log("진정한 max >> resultB");
+                max = "resultB";
+                img.src = "../../../public/img/test2.jpg";
+                document.getElementById("hashtag").innerText =
+                    "#논리적인 #한곳만보는 #꼼꼼이 #노력제일";
+                document.getElementById("result-title").innerText =
+                    "당신은 두뇌회전이 빠르고 관찰력이 뛰어나 이해력이 높습니다.";
+                document.getElementById("txt").innerText =
+                    "처음 보는 문제도 척척 곧 잘 풀어냅니다. 이런 당신은 페이지수가 많고 주제가 어려운 책이라더도 한 문장씩 읽으면 이해할 수 있다는 것을 스스로 인지하고 있습니다. 무거운 주제의 책이더라고 끈기 있게 책을 읽어내는 타입이라고 할 수 있습니다. 반대로, 어떻게 접근해야할지 감을 잡지 못하면 좀 처럼 손이 안 가는 에세이와 같은 감성적인 책은 이해하기 힘들 수 있습니다.";
             }
             else if (max == resultA) {
-                console.log('진정한 max >> resultA');
-                max = 'resultA';
-                img.src = "../../../public/img/test2.jpg";
-                txt.value() = "변경";
+                console.log("진정한 max >> resultA");
+                max = "resultA";
+                img.src = "../../../public/img/test3.jpg";
+                document.getElementById("hashtag").innerText =
+                    "#정많은 #친화력좋은 #소확행 #감성적인";
+                document.getElementById("result-title").innerText =
+                    "당신은 평범한 사람들의 이야기를 좋아하는 타입입니다.";
+                document.getElementById("txt").innerText =
+                    "일상에서 볼 수 있는 사람들이 솔직하게 자신의 마음을 털어두고 이야기를 하는 것을 즐깁니다. 당신에게 어울리는 장르는 '에세이' 입니다. 반대로 더 멋진 삶을 위해 노력하라는 메세지가 담긴 자기계발서는 잘 맞지 않을 수 있습니다.";
 
             } else if (max == resultC) {
-                max = 'resultC';
-                img.src = "../../../public/img/test3.jpg";
-                txt.value() = "변경";
                 console.log('진정한 max >> resultC');
-            } else if (max == resultD) {
-                max = 'resultD';
+                max = "resultC";
                 img.src = "../../../public/img/test3.jpg";
-                txt.value() = "변경";
-                console.log('진정한 max >> resultD');
+                document.getElementById("hashtag").innerText =
+                    "#사람우선 #한곳만보는 #능글맞는 #집중력";
+                document.getElementById("result-title").innerText =
+                    "당신은 자신이 관심 있는 분야를 확고하게 정하고 파고드는 타입입니다.";
+                document.getElementById("txt").innerText =
+                    "책의 형식보다는 소재를 더 중요하게 여깁니다. 관심 분야라면, 소설부터 자기계발서까지 가리지 않습니다. 하지만 하나만 바라보는 당신은 예상 의외로 시야가 좁지 않은 편입니다. 자신이 좋아하는 분야에서 한 관점에 얽매이지 않는 편이라고 말할 수 있습니다. 다양한 시선은 같은 상황이더라도 더 나은 해결법을 생각할 수 있는 재능입니다.";
+
+            } else if (max == resultD) {
+                console.log("진정한 max >> resultD");
+                max = "resultD";
+                img.src = "../../../public/img/test3.jpg";
+                document.getElementById("hashtag").innerText =
+                    "#사람우선 #친화력좋은 #따뜻한 #공감";
+                document.getElementById("result-title").innerText =
+                    "마음씨가 따뜻해서 언제나 당신 근처에 사람들이 모여듭니다.";
+                document.getElementById("txt").innerText =
+                    "당신의 주변 사람들은 당신의 따뜻한 기운에 행복감을 느낍니다. 이런 당신은 자신과 닮은 따뜻한 글을 좋아합니다. 작가의 솔직한 문장에 감동을 받을 때도 있습니다. 당신은 자신이 받은 영감을 다른 사람들과 공유를 하고 싶어합니다. 인상깊은 구절을 메모해두었다가 힘든 친구에게 건네주거나 또는 친구가 건네준 구절에 큰 감동을 받기도 합니다.";
             }
         }
 

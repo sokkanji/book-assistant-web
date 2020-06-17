@@ -1,0 +1,140 @@
+#store_search{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 180px 0 110px 0;
+}
+
+#store_search h1{
+    font-family: "NotoSansKR-Regular";
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    text-align: center;
+    padding: 0 0 22px 0;
+}
+
+#store_search>hr{
+    width: 80px;
+    border: 1px solid #6B5AE4;
+    background-color: #6B5AE4;
+    margin-bottom: 40px;
+}
+
+#store_search #info{
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    right: 260px;
+    top: 300px;
+    background-color: gray;
+}
+
+#store_search div #menu_wrap .option div form input{
+    float: left;
+    width: 200px;
+    height: 35px ;
+    line-height: 40px;
+    padding: 0 5px;
+    font-size: 15px;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#store_search div #menu_wrap .option div form button{
+    position: relative;
+    top: 0px;
+    padding: 0 12px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border: 0;
+    background: #6B5AE4;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#store_search div #menu_wrap .option div .selectBtn{
+    display: block;
+    border: 1px solid #b6b6b6;
+    color: #757575;
+    background: #fff;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+#store_search .result_hr{
+    border: 0.5px solid #6B5AE4;
+    margin:10px 0 10px 0;
+}
+
+.map_wrap, .map_wrap * {
+    margin:0;
+    padding:0; 
+    font-size:15px;
+}
+
+.map_wrap a, .map_wrap a:hover, .map_wrap a:active{
+    color:#000;
+    text-decoration: none;
+}
+
+.map_wrap {
+    position:relative;
+    width:100%;
+    height:500px;
+    border-radius: 15px;
+}
+
+#menu_wrap {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    width:265px;
+    margin:10px 0 30px 10px;
+    padding: 7px;
+    overflow-y:auto;
+    z-index: 1;
+    font-size:12px;
+    border-radius: 15px;
+}
+
+#menu_wrap #placesList{
+    font-family: "NotoSansKR-Regular";
+}
+
+#menu_wrap>p{
+    font-size: 14px;
+    color: #757575;
+    margin: 15px 0 10px;
+}
+
+#menu_wrap select{
+    float: right;
+    border: 0;
+}
+
+.bg_white {
+    background:#fff;
+}
+
+#menu_wrap .option p {
+    margin:10px 0;
+}
+
+#placesList li {
+    list-style: none;
+}
+
+#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
+#placesList .item span {display: block;margin-top:4px;}
+#placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+#placesList .info .gray {color:#8a8a8a;}
+#placesList .info .tel {color:#009900;}
+#pagination {margin:10px auto;text-align: center;}
+#pagination a {display:inline-block;margin-right:10px;}
+#pagination .on {font-weight: bold; cursor: default;color:#777;}
