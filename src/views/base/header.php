@@ -21,7 +21,7 @@
                         </ul>
                     </li>
                     <li class="mb03">
-                        <a href="..\..\..\src\views\news\recommend.html" class="m1">소식</a>
+                        <a href="..\..\..\src\views\news\watching.html" class="m1">소식</a>
                         <ul class="m2">
                             <li><a href="..\..\..\src\views\news\watching.html">독립서점 구경하기</a></li>
                             <li><a href="..\..\..\src\views\news\news.php">뉴스레터</a></li>
