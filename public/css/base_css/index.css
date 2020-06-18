@@ -44,9 +44,9 @@
 
 #contents .point1{
         position: absolute;
-        top: -20px;
+        top: -25px;
         width: 150px;
-        left: 485px;
+        left: 435px;
         z-index: -1;
 }
 
@@ -54,7 +54,7 @@
         position: absolute;
         top: 45px;
         width: 125px;
-        left: 90px;
+        left: 80px;
         z-index: -1;
 }
 
