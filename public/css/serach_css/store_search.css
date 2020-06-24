@@ -1,7 +1,7 @@
 #store_search{
     max-width: 1000px;
     margin: 0 auto;
-    padding: 180px 0 110px 0;
+    padding: 160px 0 110px 0;
 }
 
 #store_search h1{
@@ -30,24 +30,24 @@
     background-color: gray;
 }
 
-#store_search div #menu_wrap .option div form input{
+#store_search div #menu_wrap .option input{
     float: left;
     width: 200px;
-    height: 35px ;
+    height: 35px;
     line-height: 40px;
     padding: 0 5px;
-    font-size: 15px;
+    font-size: 16px;
     color: #000;
-    border: 1px solid #ddd;
+    border: 1.5px solid #6B5AE4;
     border-radius: 5px;
 }
 
-#store_search div #menu_wrap .option div form button{
+#store_search div #menu_wrap .option button{
     position: relative;
     top: 0px;
     padding: 0 12px;
     height: 35px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: #fff;
     border: 0;
@@ -56,13 +56,13 @@
     margin-left: 10px;
 }
 
-#store_search div #menu_wrap .option div .selectBtn{
+#store_search div #menu_wrap .option .selectBtn{
     display: block;
     border: 1px solid #b6b6b6;
     color: #757575;
     background: #fff;
     font-size: 14px;
-    margin: 10px 0;
+    margin: 11px 0;
     padding: 5px;
 }
 
@@ -71,18 +71,33 @@
     margin:10px 0 10px 0;
 }
 
-.map_wrap, .map_wrap * {
-    margin:0;
-    padding:0; 
-    font-size:15px;
+#store_search .Blike{
+    float: right;
+    font-size: 13px;
+    font-family : "NotoSansKR-Light";
 }
 
-.map_wrap a, .map_wrap a:hover, .map_wrap a:active{
+#store_search .li2{
+    margin-bottom: 15px;
+}
+
+#store_search .Baddress{
+    font-size: 13px;
+    font-family: "NotoSansKR-Light";
+}
+
+#store_search .map_wrap, .map_wrap * {
+    margin:0;
+    padding:0; 
+    font-size:16px;
+}
+
+#store_search .map_wrap a, .map_wrap a:hover, .map_wrap a:active{
     color:#000;
     text-decoration: none;
 }
 
-.map_wrap {
+#store_search .map_wrap {
     position:relative;
     width:100%;
     height:500px;
@@ -90,32 +105,62 @@
 }
 
 #menu_wrap {
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    width:265px;
-    margin:10px 0 30px 10px;
-    padding: 7px;
-    overflow-y:auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 285px;
+    margin: 5px 5px 10px 10px;
+    padding: 12px;
+    overflow-y: auto;
     z-index: 1;
-    font-size:12px;
+    font-size: 14px;
     border-radius: 15px;
+    border: 1px solid #ccc;
+}
+
+#menu_wrap div img{
+    width: 280px;
+    margin-bottom: 20px;
+}
+
+#menu_wrap .b_title{
+    font-family: "NotoSansKR-Regular";
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+#menu_wrap .b_address, #menu_wrap .b_connect, #menu_wrap .intro{
+    margin-bottom: 5px;
+}
+
+#menu_wrap .sns{
+    width: 30px;
+    margin: 10px 5px;
+}
+
+#menu_wrap .backBtn{
+    margin: 10px 0;
 }
 
 #menu_wrap #placesList{
     font-family: "NotoSansKR-Regular";
 }
 
+#menu_wrap #placesList #title{
+    cursor: pointer;
+}
+
 #menu_wrap>p{
     font-size: 14px;
     color: #757575;
-    margin: 15px 0 10px;
+    margin: 10px 0;
 }
 
 #menu_wrap select{
     float: right;
     border: 0;
+    font-size: 14px;
 }
 
 .bg_white {
