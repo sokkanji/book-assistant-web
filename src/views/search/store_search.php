@@ -73,47 +73,6 @@ require_once("../base/dbconfig.php");
             // let lat, lng;
             // let idx = 0;
 
-
-            //독립서점 li 클릭하면~
-            $('#placesList').on('click', '#title', function () {
-                let _keyword = $(this).text();
-                // alert(_keyword);
-                $.ajax({
-                    type: "GET",
-                    url: "store_result.php",
-                    timeout: 10000,
-                    data: ({ keyword: _keyword }),
-                    cache: false,
-                    dataType: "json",
-                    success: function (data) {
-                        $('.option').remove();
-                        $('#menu_wrap>p').remove();
-                        $('.result_hr').remove();
-                        $('#placesList').remove();
-                        if (data.length != 0) {
-                            $.each(data, function (key, val) {
-                                $('#menu_wrap').append(
-                                    '<div><img src="../../../public/img/store_search.png"></div><div class="b_title">'+val.b_title
-                                    +'</div><div class="b_address">주소 '+val.b_address
-                                    +'</div><div class="b_connect">연락처 '+val.b_connect
-                                    +'</div><div class="intro">소개 '+val.intro
-                                    );
-                                $('#menu_wrap').append('</div><div><a href="'+val.b_site
-                                    +'" target="_blank"><img class="sns" src="../../../public/img/site_icon.png"></a><a href="'+val.b_insta
-                                    +'" target="_blank"><img class="sns" src="../../../public/img/insta_icon.png"></a><a href="'+val.b_face
-                                    +'" target="_blank"><img class="sns" src="../../../public/img/face_icon.png"></a><a href="'+val.b_face
-                                    +'"></a><img class="sns" src="../../../public/img/blog_icon.png"></div><button name="searchBtn" class="searchBtn">검색</button>');
-                            });
-                        }
-                    },
-                    error: function (xhr, textStatus, errorThrown) {
-                        alert("독립서점 데이터 불러오는데 실패했습니다.");
-                    }
-                });
-                return false;
-            });
-
-            
             $(".searchBtn").click(function () {
                 let _keyword = $("#keyword").val();
                 if (_keyword.length == 0) {
@@ -145,6 +104,56 @@ require_once("../base/dbconfig.php");
                         }
                     });
                 }
+                return false;
+            });
+
+            //독립서점 li 클릭하면~
+            $('#placesList').on('click', '#title', function () {
+                let _keyword = $(this).text();
+                // alert(_keyword);
+                $.ajax({
+                    type: "GET",
+                    url: "store_result.php",
+                    timeout: 10000,
+                    data: ({ keyword: _keyword }),
+                    cache: false,
+                    dataType: "json",
+                    success: function (data) {
+                        $('.option').remove();
+                        $('#menu_wrap>p').remove();
+                        $('.result_hr').remove();
+                        $('#placesList').remove();
+                        if (data.length != 0) {
+                            $.each(data, function (key, val) {
+                                $('#menu_wrap').append(
+                                    '<div><img src="../../../public/img/store_search.png"></div><div class="b_title">'+val.b_title
+                                    +'</div><div class="b_address">주소 '+val.b_address
+                                    +'</div><div class="b_connect">연락처 '+val.b_connect
+                                    +'</div><div class="intro">소개 '+val.intro
+                                    );
+                                if(val.b_site!=null){
+                                    $('#menu_wrap').append('<a href="'+val.b_site+'" target="_blank"><img class="sns" src="../../../public/img/site_icon.png"></a>');
+                                }
+
+                                if(val.b_insta!=null){
+                                    $('#menu_wrap').append('<a href="'+val.b_insta+'" target="_blank"><img class="sns" src="../../../public/img/insta_icon.png"></a>');
+                                }
+
+                                if(val.b_face!=null){
+                                    $('#menu_wrap').append('<a href="'+val.b_face+'" target="_blank"><img class="sns" src="../../../public/img/face_icon.png"></a>');
+                                }
+                                if(val.b_blog!=null){
+                                    $('#menu_wrap').append('<a href="'+val.b_blog+'" target="_blank"><img class="sns" src="../../../public/img/blog_icon.png"></a>');
+                                }
+
+                                $('#menu_wrap').append('<button class="backBtn">검색</button>');
+                            });
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("독립서점 데이터 불러오는데 실패했습니다.");
+                    }
+                });
                 return false;
             });
 
