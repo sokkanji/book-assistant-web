@@ -1,7 +1,6 @@
 <?php
 require_once("../base/dbconfig.php");
 ?>
-
 <html>
 
 <head>
@@ -33,66 +32,137 @@ require_once("../base/dbconfig.php");
 
             <div id="menu_wrap" class="bg_white">
                 <div class="option">
-                    <div>
-                        <form method="get" action="store_result.php">
-                            <input type="text" placeholder="독립서점 또는 독립출판물 이름" value="1984" id="keyword" name="keyword"
-                                size="15">
-                            <button>검색</button>
-                        </form>
-                        <button class="selectBtn">세부선택</button>
-                    </div>
-                </div>
-                <p></p>
-                <hr class="result_hr">
+                    <input type="text" placeholder="순정책방 (독립서점 이름)" id="keyword" name="keyword">
+                    <button name="searchBtn" class="searchBtn">검색</button>
+                    <button class="selectBtn">세부선택</button>
 
-                <ul id="placesList"></ul>
+                    <select name="catgo">
+                        <option value="a_title" selected>최신
+                        <option value="u_name">인기
+                    </select>
+                </div>
+                <p>
+                    <?php
+                        $sql = "SELECT * FROM bookstore";  
+                        $result = mysqli_query($con, $sql);
+                        if (mysqli_connect_errno()){
+                            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                        }
+                        $total = mysqli_num_rows($result);
+                        echo $total;
+                    ?>개의 독립서점
+                </p>
+                <hr class="result_hr">
+                <ul id="placesList">
+                    <?php                                
+                        while($board = mysqli_fetch_array($result)){
+                    ?>
+                    <li><span id="title"><?php echo $board['b_title']; ?></span>
+                        <a class="Blike">♥ <?php echo $board['b_like'];?></a></li>
+                    <li class="li2">
+                        <a class="Baddress"><?php echo $board['b_address'];?></a></li>
+                    <?php   
+                        }
+                    ?>
+                </ul>
                 <div id="pagination"></div>
             </div>
         </div>
 
         <script>
+            // let lat, lng;
+            // let idx = 0;
+
+
+            //독립서점 li 클릭하면~
+            $('#placesList').on('click', '#title', function () {
+                let _keyword = $(this).text();
+                // alert(_keyword);
+                $.ajax({
+                    type: "GET",
+                    url: "store_result.php",
+                    timeout: 10000,
+                    data: ({ keyword: _keyword }),
+                    cache: false,
+                    dataType: "json",
+                    success: function (data) {
+                        $('.option').remove();
+                        $('#menu_wrap>p').remove();
+                        $('.result_hr').remove();
+                        $('#placesList').remove();
+                        if (data.length != 0) {
+                            $.each(data, function (key, val) {
+                                $('#menu_wrap').append(
+                                    '<div><img src="../../../public/img/store_search.png"></div><div class="b_title">'+val.b_title
+                                    +'</div><div class="b_address">주소 '+val.b_address
+                                    +'</div><div class="b_connect">연락처 '+val.b_connect
+                                    +'</div><div class="intro">소개 '+val.intro
+                                    );
+                                $('#menu_wrap').append('</div><div><a href="'+val.b_site
+                                    +'" target="_blank"><img class="sns" src="../../../public/img/site_icon.png"></a><a href="'+val.b_insta
+                                    +'" target="_blank"><img class="sns" src="../../../public/img/insta_icon.png"></a><a href="'+val.b_face
+                                    +'" target="_blank"><img class="sns" src="../../../public/img/face_icon.png"></a><a href="'+val.b_face
+                                    +'"></a><img class="sns" src="../../../public/img/blog_icon.png"></div><button name="searchBtn" class="searchBtn">검색</button>');
+                            });
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        alert("독립서점 데이터 불러오는데 실패했습니다.");
+                    }
+                });
+                return false;
+            });
+
+            
+            $(".searchBtn").click(function () {
+                let _keyword = $("#keyword").val();
+                if (_keyword.length == 0) {
+                    alert("키워드를 입력해주세요.");
+                } else {
+                    $.ajax({
+                        type: "GET",
+                        url: "store_result.php",
+                        timeout: 10000,
+                        data: ({ keyword: _keyword }),
+                        cache: false,
+                        dataType: "json",
+                        success: function (data) {
+                            // console.log(data.length);
+                            $('#placesList li').remove();
+                            if (data.length != 0) {
+                                $.each(data, function (key, val) {
+                                    $('#placesList').append(
+                                        '<li><span id="title">' + val.b_title + '</span><a class="Blike">♥ ' + val.b_like + '</a></li><li class="li2"><a class="Baddress">' + val.b_address + '</a></li>');
+                                    $('#store_search p').html('<p>' + data.length + '개의 검색결과</p>');
+                                });
+                            } else if (data.length == 0) {
+                                alert('검색결과가 없습니다.');
+                                $('#store_search p').html('<p>0개의 검색결과</p>');
+                            }
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("검색 실패했습니다.");
+                        }
+                    });
+                }
+                return false;
+            });
+
+            
+            // $('.backBtn').on('click', '#title', function () {
+            // });
+
 
             var markers = [];
 
-            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            var mapContainer = document.getElementById('map'),
                 mapOption = {
-                    center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-                    level: 3 // 지도의 확대 레벨
+                    center: new kakao.maps.LatLng(37.566826, 126.9786567),
+                    level: 3
                 };
 
-            // 지도를 생성합니다    
             var map = new kakao.maps.Map(mapContainer, mapOption);
 
-            // 장소 검색 객체를 생성합니다
-            var ps = new kakao.maps.services.Places();
-
-            // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-            var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-
-
-            // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-            // function placesSearchCB(data, status, pagination) {
-            //     if (status === kakao.maps.services.Status.OK) {
-
-            //         // 정상적으로 검색이 완료됐으면
-            //         // 검색 목록과 마커를 표출합니다
-            //         displayPlaces(data);
-
-            //         // 페이지 번호를 표출합니다
-            //         displayPagination(pagination);
-
-            //     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-
-            //         alert('검색 결과가 존재하지 않습니다.');
-            //         return;
-
-            //     } else if (status === kakao.maps.services.Status.ERROR) {
-
-            //         alert('검색 결과 중 오류가 발생했습니다.');
-            //         return;
-
-            //     }
-            // }
 
             // 검색 결과 목록과 마커를 표출하는 함수입니다
             // function displayPlaces(places) {
@@ -152,29 +222,7 @@ require_once("../base/dbconfig.php");
             //     map.setBounds(bounds);
             // }
 
-            // 검색결과 항목을 Element로 반환하는 함수입니다
-            // function getListItem(index, places) {
 
-            //     var el = document.createElement('li'),
-            //     itemStr = '<span class="markerbg marker"></span>' +
-            //                 '<div class="info">' +
-            //                 '   <h5>' + places.place_name + '</h5>';
-
-            //     if (places.road_address_name) {
-            //         itemStr += '    <span>' + places.road_address_name + '</span>' +
-            //                     '   <span class="jibun gray">' +  places.address_name  + '</span>';
-            //     } else {
-            //         itemStr += '    <span>' +  places.address_name  + '</span>'; 
-            //     }
-
-            //     itemStr += '  <span class="tel">' + places.phone  + '</span>' +
-            //                 '</div>';           
-
-            //     el.innerHTML = itemStr;
-            //     el.className = 'item';
-
-            //     return el;
-            // }
 
             // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
             // function addMarker(position) {
@@ -189,61 +237,6 @@ require_once("../base/dbconfig.php");
             //     return marker;
             // }
 
-            // 지도 위에 표시되고 있는 마커를 모두 제거합니다
-            // function removeMarker() {
-            //     for ( var i = 0; i < markers.length; i++ ) {
-            //         markers[i].setMap(null);
-            //     }   
-            //     markers = [];
-            // }
-
-            // 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
-            // function displayPagination(pagination) {
-            //     var paginationEl = document.getElementById('pagination'),
-            //         fragment = document.createDocumentFragment(),
-            //         i; 
-
-            //     // 기존에 추가된 페이지번호를 삭제합니다
-            //     while (paginationEl.hasChildNodes()) {
-            //         paginationEl.removeChild (paginationEl.lastChild);
-            //     }
-
-            //     for (i=1; i<=pagination.last; i++) {
-            //         var el = document.createElement('a');
-            //         el.href = "#";
-            //         el.innerHTML = i;
-
-            //         if (i===pagination.current) {
-            //             el.className = 'on';
-            //         } else {
-            //             el.onclick = (function(i) {
-            //                 return function() {
-            //                     pagination.gotoPage(i);
-            //                 }
-            //             })(i);
-            //         }
-
-            //         fragment.appendChild(el);
-            //     }
-            //     paginationEl.appendChild(fragment);
-            // }
-
-            // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
-            // 인포윈도우에 장소명을 표시합니다
-            function displayInfowindow(marker, title) {
-                var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
-
-                infowindow.setContent(content);
-                infowindow.open(map, marker);
-            }
-
-            // 검색결과 목록의 자식 Element를 제거하는 함수입니다
-            function removeAllChildNods(el) {
-                while (el.hasChildNodes()) {
-                    el.removeChild(el.lastChild);
-                }
-            }
-
             // 마커 클러스터러를 생성합니다 
             var clusterer = new kakao.maps.MarkerClusterer({
                 map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
@@ -251,7 +244,7 @@ require_once("../base/dbconfig.php");
                 minLevel: 10 // 클러스터 할 최소 지도 레벨 
             });
 
-            // 데이터를 가져오기 위해 jQuery를 사용합니다
+
             // 데이터를 가져와 마커를 생성하고 클러스터러 객체에 넘겨줍니다
             $.get("./bookstore.json", function (data) {
                 // 데이터에서 좌표 값을 가지고 마커를 표시합니다

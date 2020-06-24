@@ -1,7 +1,8 @@
 #book_search{
     max-width: 1000px;
+    min-height: 650px;
     margin: 0 auto;
-    padding: 190px 0 0 0;
+    padding: 170px 0 100px 0;
 }
 
 #book_search h1{
@@ -20,20 +21,27 @@
     border: 1px solid #6B5AE4;
 }
 
-#book_search p{
+#book_search>p{
     font-size: 16px;
     text-align: center;
     line-height: 26px;
-    padding: 40px 0 110px;
+    padding: 40px 0;
 }
 
-#book_serch .find{
-
+#book_search .find{
+    margin: 0 auto;
+    width: 500px;
 }
 
 #book_search input{
-    width: 300px;
-    height: 40px;
+    width: 290px;
+    height: 35px;
+    line-height: 40px;
+    padding: 0 5px;
+    font-size: 16px;
+    color: #000;
+    border: 1.5px solid #6B5AE4;
+    border-radius: 5px;
 }
 
 #book_search button{
@@ -46,4 +54,42 @@
     background: #6B5AE4;
     border-radius: 5px;
     padding: 0 20px;
+}
+
+#book_search .answer{
+    width: 700px;
+    margin: 0 auto;    
+}
+
+#book_search ul li img{
+    width: 150px;
+    box-shadow: 2px 2px 10px 1px grey;
+}
+
+#book_search .result{
+    margin: 0 auto;
+}
+
+#book_search .answer div{
+    margin: 60px 0 30px 0;
+}
+
+#book_search .dl{
+    float: left;
+    margin: 0 25px;
+}
+
+#book_search .dl dd>p{
+    margin: 5px 0;
+}
+
+#book_search .result .title{
+    font-family: "NotoSansKR-Regular";
+    font-size: 17px;
+    letter-spacing: -1px;
+    color: #333;
+}
+
+#book_search dd{
+    margin: 0;
 }

@@ -66,7 +66,6 @@
                 echo '<div class="activity_list_btn2"><a href="activity_modify.php?a_no='. $activity["a_no"] . ' ">수정</a></div>';
             }
         ?>
-
         <div class="activity_list_btn"><a href="activity.php">목록</a></div>
             
     </div>
