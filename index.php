@@ -9,9 +9,8 @@ require_once("./dbconfig.php");
 
 <title>책잡이</title>
 
-<!-- <link rel="shortcut icon" href="http:// /favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="http:// /favicon.ico" type="image/x-icon" /> -->
-<!-- test http:// /favicon.ico -->
+    <link rel="shortcut icon" href="./public/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./public/img/favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="./public/css/base_css/reset.css">
     <link rel="stylesheet" href="./public/css/base_css/header.css">
