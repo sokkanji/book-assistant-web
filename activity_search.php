@@ -6,7 +6,11 @@ $search_con = $_GET['search'];
 
 <html>
 <head>
+  <link rel="shortcut icon" href="./public/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./public/img/favicon.ico" type="image/x-icon" />
+
     <title>책잡이</title>
+    
     <link rel="stylesheet" href="./public/css/base_css/reset.css">
     <link rel="stylesheet" href="./public/css/base_css/header.css">
     <link rel="stylesheet" href="./public/css/base_css/footer.css">
