@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>책잡이</title>
+
+    <link rel="stylesheet" href="./public/css/base_css/reset.css">
+    <link rel="stylesheet" href="./public/css/base_css/header.css">
+    <link rel="stylesheet" href="./public/css/base_css/footer.css">
+    <link rel="stylesheet" href="./public/css/login_css/login.css">
+    <link rel="stylesheet" href="./public/fonts/font.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./src/js/includeHtml.js"></script>
+    <script type="text/javascript" src="./src/js/completed.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+
+<body>
+    <include-html target="./header.php" completed="headerCompleted"></include-html>
+
+    <div id="login">
+        <h1>로그인</h1>
+        <form method="POST" action="./login_Ok.php">
+            <table>
+                <tr>
+                    <td class="name_row">이메일</td>
+                </tr>
+                <tr>
+                    <td class="table_row">
+                        <input type="email" class="email" name="email" autocomplete="off" maxlength="50"
+                            placeholder="user@email.com">
+                    </td>
+                    <td rowspan="3" class="table_row">
+                        <input type="submit" class="login_btn" value="로그인">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name_row">비밀번호</td>
+                </tr>
+                <tr>
+                    <td class="table_row"><input type="password" class="pw" name="pw" maxlength="16"
+                            placeholder=" 비밀번호">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_row"><a href="#" class="find_pw">비밀번호 찾기</a></td>
+                </tr>
+                <tr>
+                    <td class="table_row">
+                        <div><a href="./signup_html.php" class="signup_btn">회원가입 하기</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_row" onclick="loginWithKakao()">
+                        <img src="./public/img/kakao_login_btn_medium_wide.png" style="cursor:pointer" alt="카카오로 로그인하기">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <include-html target="./footer.html" completed="footerCompleted"></include-html>
+
+    <script>includeHtml();</script>
+    <script type="text/javascript">
+
+        Kakao.init('db91e28ca080cad6510bf171cd6394d2');
+
+        loginWithKakao = () => {
+            Kakao.Auth.loginForm({
+                success: function (authObj) {
+                    const accessToken = JSON.stringify(authObj);
+                    Kakao.API.request({
+                        url: '/v2/user/me',
+                        success: function (res) {
+                            console.log(res);
+                            const userId = res.id;
+                            const userEmail = res.kakao_account.email;
+                            const userNickName = res.properties.nickname;
+                            console.log(userId);
+                            console.log(userEmail);
+                            console.log(userNickName);
+
+                            location.href = "./kakaoLogin.php?userId="
+                                + userId + "&userNickName=" + userNickName
+                                + "&userEmail=" + userEmail;
+                        },
+                        fail: function (error) {
+                            alert(JSON.stringify(error));
+                        }
+                    });
+                }
+            })
+        }
+
+        kakaoLogin = (res, accessToken) => {
+            console.log(res.properties);
+            console.log(accessToken);
+            Kakao.Auth.login({
+                success: function (response) {
+                    console.log(response);
+                },
+                fail: function (error) {
+                    console.log(error);
+                },
+            });
+        }
+    </script>
+</body>
+
+</html>
