@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>책잡이</title>
+
+    <link rel="stylesheet" href="./public/css/base_css/reset.css">
+    <link rel="stylesheet" href="./public/css/base_css/header.css">
+    <link rel="stylesheet" href="./public/css/base_css/footer.css">
+    <link rel="stylesheet" href="./public/fonts/font.css">
+    <link rel="stylesheet" href="./public/css/login_css/change_pw.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./src/js/includeHtml.js"></script>
+    <script type="text/javascript" src="./src/js/completed.js"></script>
+</head>
+
+<body>
+    <include-html target="./header.php" completed="headerCompleted"></include-html>
+
+    <div id="change_pw">
+        <h1>새 비밀번호 변경</h1>
+        <hr>
+        <p>새 비밀번호를 입력해주세요.</p>
+
+        <form method="post" action="change_pw.php">
+            <table>
+                <tr>
+                    <td>새 비밀번호</td>
+                </tr>
+                <tr>
+                    <td class="table_row"><input type="password" class="pw1" name="pw1" required placeholder="비밀번호">
+                    </td>
+                </tr>
+                <tr>
+                    <td>새 비밀번호 확인</td>
+                </tr>
+                <tr>
+                    <td class="table_row">
+                        <input type="password" class="pw2" name="pw2" required placeholder="비밀번호 확인">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="result_div"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="change_pw_btn">변경하기</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <include-html target="./footer.html" completed="footerCompleted"></include-html>
+
+    <script>
+        includeHtml();
+        $('.pw2').blur(function () {
+            const pw1 = $(".pw1").val();
+            const pw2 = $(".pw2").val();
+            if (pw1 != pw2) {
+                $(".result_div").text("비밀번호가 일치하지 않습니다.");
+            } else {
+                $(".result_div").text("");
+            }
+        });
+    </script>
+</body>
+
+</html>

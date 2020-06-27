@@ -173,14 +173,17 @@
       opacity: 0;
     }
 }
-  
+#book_test .result-img{
+    width: 600px;
+    text-align: center;
+}
 #book_test .test-wrap .wrap .result{
     font-size: 16px;
 }
 
 #book_test .test-wrap .wrap .result img{
-    margin: 0 auto;
-    width: 600px;
+    width: 400px;
+    /* text-align: center; */
 }
 
 #book_test .test-wrap .wrap .result #hashtag{
