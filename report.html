@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+<meta charset="UTF-8">
+
 <head>
     <link rel="shortcut icon" href="./public/img/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./public/img/favicon.ico" type="image/x-icon" />

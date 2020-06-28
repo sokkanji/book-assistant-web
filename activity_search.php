@@ -3,14 +3,17 @@ require_once("./dbconfig.php");
 $catagory = $_GET['catgo'];
 $search_con = $_GET['search'];
 ?>
-
+<!DOCTYPE html>
 <html>
+
+<meta charset="UTF-8">
+
 <head>
   <link rel="shortcut icon" href="./public/img/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./public/img/favicon.ico" type="image/x-icon" />
 
     <title>책잡이</title>
-    
+
     <link rel="stylesheet" href="./public/css/base_css/reset.css">
     <link rel="stylesheet" href="./public/css/base_css/header.css">
     <link rel="stylesheet" href="./public/css/base_css/footer.css">
