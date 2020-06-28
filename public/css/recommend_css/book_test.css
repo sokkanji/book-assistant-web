@@ -181,13 +181,39 @@
     font-size: 16px;
 }
 
-#book_test .test-wrap .wrap .result img{
+#book_test .test-wrap .wrap .result #img{
     width: 400px;
-    /* text-align: center; */
+    margin: 0 auto;
+    display: block;
+}
+
+#book_test .test-wrap .wrap .result div>img{
+    width: 150px;
+    margin-top: 15px;
+    float: left;
 }
 
 #book_test .test-wrap .wrap .result #hashtag{
+    display: block;
     font-size: 18px;
     margin-bottom: 30px;
     text-align: center;
+    clear: both;
+}
+
+#book_test .test-wrap .wrap .result #txt{
+    display: block;
+    margin-bottom: 30px;
+}
+
+#book_test .recoomend{
+    overflow: hidden;
+}
+
+#book_test .recoomend>div{
+    padding: 20px 0 0 160px;
+}
+
+#book_test .recoomend #book-tit{
+    
 }
