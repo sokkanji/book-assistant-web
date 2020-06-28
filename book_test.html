@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+<meta charset="UTF-8">
+
 <head>
     <link rel="shortcut icon" href="./public/img/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./public/img/favicon.ico" type="image/x-icon" />
@@ -20,6 +22,7 @@
     <script>
         let cnt = -1;
         let temp = 0;
+        let sum = 0;
 
         let question = ['책을 훑어볼 때', '책 좀 읽어볼까?', '시험 망했네..', '갑자기 친구가 울면',
             '영화 뭐 볼까?', '그토록 기다리던 휴일날이네', '물건을 살 때, 중요한 게 생각하는 건?', '만화를 볼 때 중요한 건?', '비슷한 초코과자가 있네',
@@ -43,30 +46,26 @@
                 temp = cnt;
                 $(`.options${cnt}`).css('display', 'block');
 
-                console.log("첫 .options temp >>" + temp);
+                // console.log("첫 .options temp >>" + temp);
                 console.log("첫 .options cnt >>" + cnt);
 
                 $(".question").html(question[cnt]);
 
-
-                // //각 op 선택 될 때마다 페이지 전환
                 $(".option1").click(function () {
                     if (cnt < 19) {
                         cnt++;
-                        $(".bar").css('width', (5 * cnt) + '%');
-                        console.log('index:' + cnt);
+                        sum = (5 * cnt);
+                        $(".bar").css('width', sum + '%');
+                        console.log(')) cnt : ' + cnt + ", sum : " + sum + '%');
                         temp = cnt - 1;
                         $(`.options${temp}`).css('display', 'none');
-                        console.log(".options temp >>" + temp);
+                        // console.log(".options temp >>" + temp);
                         $(`.options${cnt}`).css('display', 'block');
                         console.log(".options cnt >>" + cnt);
 
                         $(".question").html(question[cnt]);
                     }
                     else if (cnt > 18) {
-                        alert('마지막 문항입니다.');
-                        console.log('마지막... index:' + cnt);
-
                         $(".test-img2").remove(".test-img2");
                         $(".editbtn").remove(".editbtn");
                         $(".startQuestion").remove(".startQuestion");
@@ -75,7 +74,6 @@
                         $(".option1").remove("option1");
                         $(".option2").remove("option2");
                         $(".options19").css('display', 'none');
-
                         $(".result").css('display', 'block');
                     }
                 })
@@ -84,20 +82,19 @@
                 $(".option2").click(function () {
                     if (cnt < 19) {
                         cnt++;
-                        $(".bar").css('width', (5 * cnt) + '%');
-                        console.log('index:' + cnt);
+                        sum = (5 * cnt);
+                        $(".bar").css('width', sum + '%');
+                        console.log(')) cnt : ' + cnt + ", sum : " + sum);
+
                         temp = cnt - 1;
                         $(`.options${temp}`).css('display', 'none');
-                        console.log(".options temp >>" + temp);
+                        // console.log(".options temp >>" + temp);
                         $(`.options${cnt}`).css('display', 'block');
                         console.log(".options cnt >>" + cnt);
 
                         $(".question").html(question[cnt]);
                     }
                     else if (cnt > 18) {
-                        alert('마지막 문항입니다.');
-                        console.log('마지막... index:' + cnt);
-
                         $(".test-img2").remove(".test-img2");
                         $(".editbtn").remove(".editbtn");
                         $(".startQuestion").remove(".startQuestion");
@@ -112,49 +109,55 @@
             })
 
             $('.arrow_right').on('click', function () {
-                $(".bar").css('width', (5 * cnt) + '%');
                 if (!($(`input:radio[name=op${cnt}]`).is(':checked'))) {
+
                     alert('문항을 선택해주세요.');
                     console.log('cnt >>' + $(`input:radio[name=op${cnt}]`).is(':checked'));
                     console.log(`input:radio[name=op${cnt}]`);
                 }
 
                 else if (cnt < 19) {
+
+                    sum += 5;
+                    $(".bar").css('width', sum + '%');
+                    console.log(')) cnt : ' + cnt + ", sum : " + sum + '%');
+
                     cnt++;
 
                     console.log('index:' + cnt);
+
                     temp = cnt - 1;
+
                     $(`.options${temp}`).css('display', 'none');
-                    console.log(".options temp >>" + temp);
+                    // console.log(".options temp >>" + temp);
+
                     $(`.options${cnt}`).css('display', 'block');
                     console.log(".options cnt >>" + cnt);
 
                     $(".question").html(question[cnt]);
                 }
-
-                else if (cnt > 18) {
-                    alert('마지막 문항입니다.');
-                    console.log('마지막... index:' + cnt);
-                }
-
             })
 
             $(".arrow_left").on('click', function () {
-                $(".bar").css('width', (cnt / 5) + '%');
+
                 if (cnt > 0) {
+                    sum -= 5;
+                    $(".bar").css('width', sum + '%');
+                    console.log('2)) cnt : ' + cnt + ", sum : " + sum);
+
                     cnt--;
                     console.log('index: ' + cnt);
                     temp = cnt + 1;
 
                     $(`.options${temp}`).css('display', 'none');
-                    console.log("back .options temp >>" + temp);
+                    // console.log("back .options temp >>" + temp);
 
                     $(`.options${cnt}`).css('display', 'block');
                     console.log("back .options cnt >>" + cnt);
                     $(".question").html(question[cnt]);
 
                 }
-                else if (cnt < 0) {
+                else if (cnt <= 0) {
                     $('.menubar').css('height', '200px').css('box-shadow', 'none');
                     alert('첫번째 전은 없습니다.');
                     console.log('마지막..index:' + cnt);
@@ -311,7 +314,7 @@
                         <label for="test27" class="option1">괜찮아? 안 다쳤어?</label>
                     </li>
                     <li><input type="radio" name="op13" id="test28" onclick="test('b')">
-                        <label for="test28" class="option2">뭐에 걸려서 넘어진거야?</label>
+                        <label for="test28" class="option2">갑자기 왜 넘어진거야?</label>
                     </li>
                 </ul>
 
@@ -380,22 +383,23 @@
                     </div>
                 </div>
 
-                <div class="result" style="display: none;">
-                    <div class="result-img"><img src="#" id="img"></div>
-                    <strong>
-                        <p id="hashtag"></p>
-                    </strong>
+                <div class="result" style="display:none;">
+                    <!-- <div class="result-img"> -->
+                    <img src="#" id="img">
+                    <!-- </div> -->
+                    <strong id="hashtag"></strong>
                     <strong id="result-title"></strong>
-                    <span id="txt"></span><br><br>
-                    <strong>당신에게 추천하는 독립출판물, </strong>
-                    <ul>
-                        <li><img src="#" id="result-book"></li>
-                        <li>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                        </li>
-                    </ul>
+                    <span id="txt"></span>
+                    <div><strong>당신에게 추천하는 독립출판물,</strong></div>
+                    <div class="recoomend">
+                        <img src="#" id="recommend-book">
+                        <div>
+                            <strong id="book-tit"></strong>
+                            <p><a href="#" id="go-bookstore"> 이 책을 판매하고 있는 서점 검색하러가기</a></p>
+                        </div>
+                    </div>
+                    <div id="book-story"></div>
+
                 </div>
 
             </div>
@@ -437,48 +441,50 @@
 
             let txt = document.getElementById("txt");
             let img = document.getElementById("img");
+            let img2 = document.getElementById("recommend-book");
 
             if (max == resultB) {
                 console.log("진정한 max >> resultB");
-                max = "resultB";
                 img.src = "./public/img/test2.jpg";
                 document.getElementById("hashtag").innerText =
                     "#논리적인 #한곳만보는 #꼼꼼이 #노력제일";
                 document.getElementById("result-title").innerText =
                     "당신은 두뇌회전이 빠르고 관찰력이 뛰어나 이해력이 높습니다.";
-
-
                 document.getElementById("txt").innerText =
                     "처음 보는 문제도 척척 곧 잘 풀어냅니다. 이런 당신은 페이지수가 많고 주제가 어려운 책이라더도 한 문장씩 읽으면 이해할 수 있다는 것을 스스로 인지하고 있습니다. 무거운 주제의 책이더라고 끈기 있게 책을 읽어내는 타입이라고 할 수 있습니다. 반대로, 어떻게 접근해야할지 감을 잡지 못하면 좀 처럼 손이 안 가는 에세이와 같은 감성적인 책은 이해하기 힘들 수 있습니다.";
-
-                // document.getElementById("result-book").attr("src", "../../../public/img/공동주택 28-16.png");
-
-                // let chgImg = document.getElementById("result-book");
-                // chgImg.src = "../../../public/img/공동주택 28-16.png";
+                img2.src = "./public/img/공동주택_28-16.png";
+                document.getElementById("book-tit").innerText = "공동주택 28-16.png";
+                document.getElementById("book-story").innerText = "공동주택 28-16.png";
             }
             else if (max == resultA) {
                 console.log("진정한 max >> resultA");
                 max = "resultA";
-                img.src = "./public/img/test3.jpg";
+                img.src = "./public/img/test5.png";
                 document.getElementById("hashtag").innerText =
-                    "#정많은 #친화력좋은 #소확행 #감성적인";
+                    "#정많은 #친화력좋은 #능글맞은 #감성적인";
                 document.getElementById("result-title").innerText =
                     "당신은 평범한 사람들의 이야기를 좋아하는 타입입니다.";
                 document.getElementById("txt").innerText =
                     "일상에서 볼 수 있는 사람들이 솔직하게 자신의 마음을 털어두고 이야기를 하는 것을 즐깁니다. 당신에게 어울리는 장르는 '에세이' 입니다. 반대로 더 멋진 삶을 위해 노력하라는 메세지가 담긴 자기계발서는 잘 맞지 않을 수 있습니다.";
-
-            } else if (max == resultC) {
+                img2.src = "./public/img/공동주택_28-16.png";
+                document.getElementById("book-tit").innerText = "공동주택 28-16.png";
+                document.getElementById("book-story").innerText = "공동주택 28-16.png";
+            }
+            else if (max == resultC) {
                 console.log('진정한 max >> resultC');
                 max = "resultC";
-                img.src = "./public/img/test3.jpg";
+                img.src = "./public/img/test4.jpg";
                 document.getElementById("hashtag").innerText =
-                    "#사람우선 #한곳만보는 #능글맞는 #집중력";
+                    "#조용한 #한곳만보는 #소확행 #집중력";
                 document.getElementById("result-title").innerText =
                     "당신은 자신이 관심 있는 분야를 확고하게 정하고 파고드는 타입입니다.";
                 document.getElementById("txt").innerText =
                     "책의 형식보다는 소재를 더 중요하게 여깁니다. 관심 분야라면, 소설부터 자기계발서까지 가리지 않습니다. 하지만 하나만 바라보는 당신은 예상 의외로 시야가 좁지 않은 편입니다. 자신이 좋아하는 분야에서 한 관점에 얽매이지 않는 편이라고 말할 수 있습니다. 다양한 시선은 같은 상황이더라도 더 나은 해결법을 생각할 수 있는 재능입니다.";
-
-            } else if (max == resultD) {
+                img2.src = "./public/img/공동주택_28-16.png";
+                document.getElementById("book-tit").innerText = "공동주택 28-16.png";
+                document.getElementById("book-story").innerText = "공동주택 28-16.png";
+            }
+            else if (max == resultD) {
                 console.log("진정한 max >> resultD");
                 max = "resultD";
                 img.src = "./public/img/test3.jpg";
@@ -488,7 +494,9 @@
                     "마음씨가 따뜻해서 언제나 당신 근처에 사람들이 모여듭니다.";
                 document.getElementById("txt").innerText =
                     "당신의 주변 사람들은 당신의 따뜻한 기운에 행복감을 느낍니다. 이런 당신은 자신과 닮은 따뜻한 글을 좋아합니다. 작가의 솔직한 문장에 감동을 받을 때도 있습니다. 당신은 자신이 받은 영감을 다른 사람들과 공유를 하고 싶어합니다. 인상깊은 구절을 메모해두었다가 힘든 친구에게 건네주거나 또는 친구가 건네준 구절에 큰 감동을 받기도 합니다.";
-
+                img2.src = "./public/img/공동주택_28-16.png";
+                document.getElementById("book-tit").innerText = "공동주택 28-16.png";
+                document.getElementById("book-story").innerText = "공동주택 28-16.png";
             }
         }
 
