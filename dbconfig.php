@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("localhost", "bookasst", "", "bookasst");
+    $con = mysqli_connect("localhost", "root", "mirim2", "book");
   
     mysqli_set_charset($con, 'utf8'); 
     
