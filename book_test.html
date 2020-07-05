@@ -48,9 +48,7 @@
 
                 // console.log("첫 .options temp >>" + temp);
                 console.log("첫 .options cnt >>" + cnt);
-
                 $(".question").html(question[cnt]);
-
                 $(".option1").click(function () {
                     if (cnt < 19) {
                         cnt++;
@@ -121,19 +119,14 @@
                     sum += 5;
                     $(".bar").css('width', sum + '%');
                     console.log(')) cnt : ' + cnt + ", sum : " + sum + '%');
-
                     cnt++;
-
                     console.log('index:' + cnt);
-
                     temp = cnt - 1;
 
                     $(`.options${temp}`).css('display', 'none');
                     // console.log(".options temp >>" + temp);
-
                     $(`.options${cnt}`).css('display', 'block');
                     console.log(".options cnt >>" + cnt);
-
                     $(".question").html(question[cnt]);
                 }
             })

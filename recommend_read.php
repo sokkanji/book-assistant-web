@@ -1,5 +1,12 @@
 <?php
     require_once("./dbconfig.php");
+    $sql = "SELECT * FROM book_search WHERE b_no= '".$_GET['b_no']."' ";
+    $result = mysqli_query($con, $sql);
+
+    if (mysqli_connect_errno()){
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+    $book = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +22,7 @@
     <link rel="stylesheet" href="./public/css/base_css/reset.css">
     <link rel="stylesheet" href="./public/css/base_css/header.css">
     <link rel="stylesheet" href="./public/css/base_css/footer.css">
-    <link rel="stylesheet" href="./public/css/recommend_css/recommend.css">
+    <link rel="stylesheet" href="./public/css/recommend_css/recommend_read.css">
     <link rel="stylesheet" href="./public/fonts/font.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -25,50 +32,90 @@
 
 <body>
     <include-html target="./header.php" completed="headerCompleted"></include-html>
-
-    <div id="recommend">
+    
+    <div id="recommend_read">
         <h1>독립출판물 추천</h1>
         <hr>
-        <p>독립서점 사장님들이 추천한 독립출판물들을 소개합니다.<br>책을 클릭하면, 독립서점 사장님들이 추천한 이유와 책 설명을 볼 수 있습니다.</p>
+        <div class="bookdetail_wr">
+            <div class="info_top">
+                <h3><?php echo $book['b_title']?></h3>
+                <p><a href="./recommend.html">목록</a></p>
+            </div>
 
-        <td class="title"><a href="./activity_read.php?a_no=<?php echo $board['a_no'];?>">
-            
-        <table>
-            <tr>
-                <td>
-                    <img src="./public/img/book1.jpg" class="web" alt="나는 너를 영원히 오해하기로 했다">
-                </td>
-                <td>
-                    <img src="./public/img/book2.jpg" class="web" alt="느려도 괜찮아 여기는">
-                </td>
-                <td>
-                    <img src="./public/img/book3.png" class="web" alt="도쿄규림일기">
-                </td>
-            </tr>
-            <tr>
-                <td class="line">나는 너를 영원히 오해하기로 했다<br>(손민지)</td>
-                <td class="line">느려도 괜찮아 여기는 코스타리카!<br>(어다은)</td>
-                <td class="line">도쿄규림일기<br>(김규림)</td>
-            </tr>
+            <div style="position: relative;">
+                <div class="detail_left">
+                    <div class="dt_box01">
+                        <p><img src="./public/img/<?php echo $book['img'];?>"></p>
+                        <ul>
+                            <li><span>저자</span><strong><?php echo $book['writer'];?></strong></li>
+                            <li><span>출판사</span><strong><?php 
+                               if(!isset($book['publisher'])) { 
+                                echo "<strong>--</strong></li>";
+                                }
+                                else{
+                                    echo $book['publisher'];
+                                }?></strong></li>
+                            <li><span>ISBN</span><strong><?php 
+                             if(!isset($book['ISBN'])) { 
+                                echo "<strong>--</strong></li>";
+                                }
+                                else{
+                                    echo $book['ISBN'];
+                                }?></strong></li>
+                            <li><span>페이지</span><strong>P<?php echo $book['page'];?></strong></li>
+                            <li><span>판매가</span><strong><?php echo number_format($book['price']);?></strong></li>
+                            <li><span>판매서점</span><strong><a href="<?php echo $book['url'];?>" style="color:#6B5AE4;">
+                            <?php echo $book['bookstore'];?></a></strong></li>
+                        </ul>
+                    </div>
+                    <div class="dt_box02">
+                        <h3>책소개</h3>
+                        <p><?php echo $book['intro'];?></p>
+                    </div>
+                </div>
 
-            <tr>
-                <td>
-                    <img src="./public/img/book5.png" class="web" alt="모든 시도는 따뜻할 수밖에">
-                </td>
-                <td>
-                    <img src="./public/img/book4.jpg" class="web" alt="이슬아수필집">
-                </td>
-                <td>
-                    <img src="./public/img/book6.jpg" class=" web" alt="저 청소일 하는데요.">
-                </td>
-            </tr>
-            <tr>
-                <td class="line">모든 시도는 따뜻할 수밖에<br>(이내)</td>
-                <td class="line">일간 이슬아 수필집<br>(이슬아)</td>
-                <td class="line">저 청소일 하는데요.<br>(코피루왁)</td>
-            </tr>
-        </table>
+                <div class="detail_right">
+                    <div class="smae_box">
+                        <h3>다른 독립출판물</h3>
+                        <ul>
+                            
+                            <?php 
+                                $sql = "SELECT * FROM book_search WHERE NOT(b_no = '".$_GET['b_no']."' OR b_no in (1, 4))";
+                                
+                                $result = mysqli_query($con, $sql);
+                                
+                                if (mysqli_connect_errno()){
+                                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                                }
+                                $i=0;
+                                while($i<4){
+                                    $board = mysqli_fetch_array($result);
+                                    
+                                    $title=$board['b_title']; 
+                                    if(strlen($title)>10)
+                                    { 
+                                        $title=str_replace($board["b_title"], iconv_substr($board["b_title"], 0, 10, "utf-8") . "...", $board["b_title"]);
+                                    }     
+                                $i++;
+                            ?>
+                            <li>
+                            <p><a href="./recommend_read.php?b_no=<?php echo $board['b_no'];?>"><img src="./public/img/<?php echo $board['img'];?>"></a></p>
+                            <dl>
+                                <dt><?php echo $title;?></dd>
+                                <dd><?php echo $board['writer'];?></dd>
+                                <dd><?php echo $board['publisher'];?></dd>
+                                <dd><?php echo $board['ISBN'];?></dd>
+                            </dl>
+                            </li>
+                            <?php } ?>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <include-html target="./footer.html" completed="footerCompleted"></include-html>
 
