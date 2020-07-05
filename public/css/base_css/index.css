@@ -1,10 +1,10 @@
 #contents{
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        display: block;
 }
-
+    
 #contents .wrap{
         display: block;
         width: 1100px;
@@ -13,7 +13,7 @@
         margin: 0 auto;
         padding-top: 150px;
 }
-
+    
 #contents .content-top{
         position: relative;
         font-size: 27px;
@@ -21,40 +21,40 @@
         z-index: 1;
         line-height: 1.9;
 }
-
+    
 #contents .content-top .testBtn a{
         font-family: 'NotoSansKR-Bold';
         color: #6B5AE4;
         text-align: center;
         z-index: 1;
 }
-
+    
 #contents .content-top p>span{
         font-family: 'NotoSansKR-Bold';
         font-size: 30px;
         z-index: 1;
 }
-
+    
 #contents .point1{
         position: absolute;
         top: 40px;
-        left: 240px;
+        left: 210px;
         width: 130px;
         z-index: -1;
 }
-
-#contents .point2{
+    
+ #contents .point2{
         position: absolute;
         top: -18px;
-        right: 350px;
+        right: 380px;
         width: 150px;
         z-index: -1;
 }    
-
+    
 #contents .mungu{
-        padding-left: 160px;
+        padding-left: 135px;
 }
-
+    
 #contents .testBtn{
         position: absolute;
         background-color: white;
@@ -68,22 +68,22 @@
         margin-top: 30px;
         z-index: 1;
 }
-
+    
 #contents .content-bottom{
         position: relative;
 }
-
+    
 #contents .main-img{
         position: absolute;
         width: 850px;
-        right: 0;
+        right: 20px;
         z-index: -1;
 }
-
+    
 #contents .girlsboy{
         position: absolute;
         width: 760px;
         top: 310px;
-        right: 55px;
+        right: 75px;
         z-index: 1;
 }

@@ -63,24 +63,26 @@
 
 #book_search ul li img{
     width: 150px;
-    box-shadow: 2px 2px 10px 1px grey;
-}
-
-#book_search .result{
-    margin: 0 auto;
+    box-shadow: 1px 1px 5px 1px grey;
 }
 
 #book_search .answer div{
+    font-family: "NotoSansKR-Regular";
+    font-size: 15px;
     margin: 60px 0 30px 0;
 }
 
-#book_search .dl{
-    float: left;
-    margin: 0 25px;
+#book_search .result{
+    width: 900px;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
-#book_search .dl dd>p{
-    margin: 5px 0;
+#book_search .result li{
+    width: 230px;
+    float: left;
+    text-align: center;
+    padding: 15px;
 }
 
 #book_search .result .title{
@@ -90,6 +92,7 @@
     color: #333;
 }
 
-#book_search dd{
+#book_search .result dd{
     margin: 0;
+    padding-top: 15px;
 }
