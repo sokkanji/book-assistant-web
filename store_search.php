@@ -71,7 +71,6 @@ require_once("./dbconfig.php");
                         }
                     ?>
                 </ul>
-                <div id="pagination"></div>
             </div>
         </div>
 
@@ -83,19 +82,9 @@ require_once("./dbconfig.php");
                 averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
                 minLevel: 10 // 클러스터 할 최소 지도 레벨 
             });
-
-            
-
-            // $.get("./bookstore.json", function (data) {
-            //     // 데이터에서 좌표 값을 가지고 마커를 표시합니다
-            //     // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
-            //     var markers = $(data.positions).map(function (i, position) {
-            //         return new kakao.maps.Marker({
-            //             position: new kakao.maps.LatLng(position.lat, position.lng)
-            //         });
-            //     });
             
             $("body").load(function () {
+        
                 $.ajax({
                     type: "GET",
                     url: "./store_result.php",
@@ -104,7 +93,6 @@ require_once("./dbconfig.php");
                     cache: false,
                     dataType: "json",
                     success: function (data) {
-                        $('#placesList li').remove();
                         if (data.length != 0) {
                             $.get(data, ()=>{
                             // 데이터에서 좌표 값을 가지고 마커를 표시합니다
@@ -118,33 +106,14 @@ require_once("./dbconfig.php");
                         } else if (data.length == 0) {
                             alert('검색결과가 없습니다.');
                                 $('#store_search p').html('<p>0개의 검색결과</p>');
-                            }
-                        },
+                        }
+                    },
                     error: function (xhr, textStatus, errorThrown) {
                         alert("검색 실패했습니다.");
                     }
                 });
              });
 
-
-                // // 마커가 지도 위에 표시되도록 설정합니다
-                // markers.setMap(map);
-
-                // var iwContent = '<div style="padding:5px;">Hello World! <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-                //     iwPosition = new kakao.maps.LatLng(position.lat, position.lng); //인포윈도우 표시 위치입니다
-
-                // // 인포윈도우를 생성합니다
-                // var infowindow = new kakao.maps.InfoWindow({
-                //     position : iwPosition, 
-                //     content : iwContent 
-                // });
-                
-                // // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-                // infowindow.open(map, markers); 
-
-                // 클러스터러에 마커들을 추가합니다
-            //     clusterer.addMarkers(markers);
-            // });
 
             // 지도 위에 표시되고 있는 마커를 모두 제거합니다
             function removeMarker() {
@@ -167,7 +136,7 @@ require_once("./dbconfig.php");
                 // 마커에 클릭이벤트를 등록합니다
                 kakao.maps.event.addListener(marker, 'click', function() {
                     // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-                    infowindow.setContent('<div style="padding:5px;font-size:12px;">' + data.b_title + '<br>'+data.b_address+'<br><button id="detail-btn">자세히</button></div>');
+                    infowindow.setContent('<div style="padding:5px;font-size:12px;">' + data.b_title + '<br>'+data.b_address+'<br></div>');
                     infowindow.open(map, marker);
                 });
             }
@@ -218,6 +187,12 @@ require_once("./dbconfig.php");
                 return false;
             });
 
+            $(document).on("click",".backBtn",function(){
+              $("#menu_wrap>div, #menu_wrap a").remove();
+              $("")
+            });
+            
+
             //독립서점 li 클릭하면~
             $('#placesList').on('click', '#title', function () {
                 let _keyword = $(this).text();
@@ -234,8 +209,6 @@ require_once("./dbconfig.php");
                         $('#menu_wrap>p').remove();
                         $('.result_hr').remove();
                         $('#placesList').remove();
-
-                        // console.log(data);
                         
                         if (data.length != 0) {
                             $.each(data, function (key, val) {
@@ -272,7 +245,6 @@ require_once("./dbconfig.php");
                 return false;
             });
 
-
             var markers = [];
 
             var mapContainer = document.getElementById('map'),
@@ -283,16 +255,15 @@ require_once("./dbconfig.php");
 
             var map = new kakao.maps.Map(mapContainer, mapOption);
 
-            
-            // addMarker=()=>{
-            //     var bounds = new kakao.maps.LatLngBounds();
+            addMarker=()=>{
+                var bounds = new kakao.maps.LatLngBounds();
 
-            //     for (var i=0; i<data.length; i++) {
-            //         displayMarker(data[i]);    
-            //         bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-            //     }       
-            //     console.log('data[i]>>'+data[i]);
-            // }
+                for (var i=0; i<data.length; i++) {
+                    displayMarker(data[i]);    
+                    bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+                }       
+                console.log('data[i]>>'+data[i]);
+            }
 
 
 
@@ -300,8 +271,9 @@ require_once("./dbconfig.php");
     </div>
     <include-html target="./footer.html" completed="footerCompleted"></include-html>
 
-
-    <script>includeHtml();</script>
+    <script>includeHtml();
+        console.log("%c안녕하세요:) 혹시 오류를 발견하거나 피드백을 주고 싶으시다면, sskkanji@gmail.com로 메일을 주시면 정말 감사합니다! 많이 미숙하지만, 저의 Github는 https://github.com/sokkanji 입니다@.@", "font-size: 15px; font-weight: 700; font-family: 'NotoSansKR-Bold'; color: #6B5AE4;");
+    </script>
 </body>
 
 </html>

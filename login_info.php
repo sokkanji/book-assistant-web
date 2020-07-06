@@ -59,7 +59,9 @@
 
     <include-html target="./footer.html" completed="footerCompleted"></include-html>
 
-    <script>includeHtml();</script>
+    <script>includeHtml();
+        console.log("%c안녕하세요:) 혹시 오류를 발견하거나 피드백을 주고 싶으시다면, sskkanji@gmail.com로 메일을 주시면 정말 감사합니다! 많이 미숙하지만, 저의 Github는 https://github.com/sokkanji 입니다@.@", "font-size: 15px; font-weight: 700; font-family: 'NotoSansKR-Bold'; color: #6B5AE4;");
+    </script>
 
     <script type="text/javascript">
         Kakao.init('db91e28ca080cad6510bf171cd6394d2');

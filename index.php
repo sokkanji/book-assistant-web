@@ -1,5 +1,5 @@
-<html>
 
+<html>
 <meta charset="UTF-8">
 <meta name="author" content="MinjiSo">
 <meta name="generator" content="vscode">
@@ -37,19 +37,13 @@
                 </div>
                 <img src="./public/img/메인표지.png" class="main-img">
                 <img src="./public/img/girlsboy.png" class="girlsboy" id="swing-in-top-bck">
-            </>
-
-            <div class="content-bottom">
-                
-                <!-- <img src="./public/img/girls_one.png" class="girls_one" id="swing-in-right-bck">
-                <img src="./public/img/girls_two.png" class="girls_two" id="swing-in-left-fwd">
-                <img src="./public/img/boy.png" class="boy" id="swing-in-top-bck"> -->
-            </div>
         </div>
         
     </div>
 
-    <script>includeHtml();</script>
+    <script>includeHtml(); 
+        console.log("%c안녕하세요:) 혹시 오류를 발견하거나 피드백을 주고 싶으시다면, sskkanji@gmail.com로 메일을 주시면 정말 감사합니다! 많이 미숙하지만, 저의 Github는 https://github.com/sokkanji 입니다@.@", "font-size: 15px; font-weight: 700; font-family: 'NotoSansKR-Bold'; color: #6B5AE4;");
+    </script>
     <script id="embeddedChatbot" data-botId="B1lkr3" src="https://www.closer.ai/js/webchat.min.js"> </script>
 </body>
 </html>
