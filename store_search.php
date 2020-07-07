@@ -38,9 +38,9 @@ require_once("./dbconfig.php");
 
             <div id="menu_wrap" class="bg_white">
                 <div class="option">
-                    <input type="text" placeholder="순정책방 (독립서점 이름)" id="keyword" name="keyword">
+                    <input type="text" placeholder="순정책방(독립서점 이름)" id="keyword" name="keyword">
                     <button name="searchBtn" class="searchBtn">검색</button>
-                    <button class="selectBtn">세부선택</button>
+                    <!-- <button class="selectBtn">세부선택</button> -->
 
                     <select name="catgo">
                         <option value="a_title" selected>최신
@@ -75,14 +75,47 @@ require_once("./dbconfig.php");
         </div>
 
         <script>
+        var markers = [];           
+
+        var mapContainer = document.getElementById('map'),
+            mapOption = {
+                center: new kakao.maps.LatLng(37.549731, 127.069849),
+                level: 9
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        addMarker=()=>{
+            var bounds = new kakao.maps.LatLngBounds();
+
+            for (var i=0; i<data.length; i++) {
+                displayMarker(data[i]);    
+                bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+            }       
+            console.log('data[i]>>'+data[i]);
+        }
+
+        // 데이터를 가져오기 위해 jQuery를 사용합니다
+        // 데이터를 가져와 마커를 생성하고 클러스터러 객체에 넘겨줍니다
+        $.get("./bookstore.json", function(data) {
+            // 데이터에서 좌표 값을 가지고 마커를 표시합니다
+            // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
+            var markers = $(data.positions).map(function(i, position) {
+                return new kakao.maps.Marker({
+                    position : new kakao.maps.LatLng(position.lat, position.lng)
+                });
+            });
+            // 클러스터러에 마커들을 추가합니다
+            clusterer.addMarkers(markers);
+        });
 
             // 마커 클러스터러를 생성합니다 
-            var clusterer = new kakao.maps.MarkerClusterer({
+                var clusterer = new kakao.maps.MarkerClusterer({
                 map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
                 averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
-                minLevel: 10 // 클러스터 할 최소 지도 레벨 
+                minLevel: 5 // 클러스터 할 최소 지도 레벨 
             });
-            
+
             $("body").load(function () {
         
                 $.ajax({
@@ -141,7 +174,6 @@ require_once("./dbconfig.php");
                 });
             }
 
-
             $(".searchBtn").click(function () {
                 let _keyword = $("#keyword").val();
                 if (_keyword.length == 0) {
@@ -188,11 +220,13 @@ require_once("./dbconfig.php");
             });
 
             $(document).on("click",".backBtn",function(){
-              $("#menu_wrap>div, #menu_wrap a").remove();
-              $("")
+                $("#menu_wrap>div, #menu_wrap>a").css('display', 'none');
+                $('.option').css('display', 'block');
+                $('#menu_wrap>p').css('display', 'block');
+                $('.result_hr').css('display', 'block');
+                $('#placesList').css('display', 'block');
             });
             
-
             //독립서점 li 클릭하면~
             $('#placesList').on('click', '#title', function () {
                 let _keyword = $(this).text();
@@ -205,26 +239,26 @@ require_once("./dbconfig.php");
                     cache: false,
                     dataType: "json",
                     success: function (data) {
-                        $('.option').remove();
-                        $('#menu_wrap>p').remove();
-                        $('.result_hr').remove();
-                        $('#placesList').remove();
+                        $('.option').css('display', 'none');
+                        $('#menu_wrap>p').css('display', 'none');
+                        $('.result_hr').css('display', 'none');
+                        $('#placesList').css('display', 'none');
                         
                         if (data.length != 0) {
                             $.each(data, function (key, val) {
                                 
                                 $('#menu_wrap').append(
                                     '<div><img src="./public/img/store_search.png"></div><div class="b_title">'+val.b_title
-                                    +'</div><div class="b_address">주소 '+val.b_address
-                                    +'</div><div class="b_connect">연락처 '+val.b_connect
-                                    +'</div><div class="intro">소개 '+val.intro
+                                    +'</div><div class="b_address"><strong>주소</strong>'+val.b_address
+                                    +'</div><div class="b_connect"><strong>연락처</strong>'+val.b_connect+'</div>'
+                                    // +'</div><div class="intro"><strong>소개</strong> '+val.intro
                                 );
                                 if(val.b_site!=null){
                                     $('#menu_wrap').append('<a href="'+val.b_site+'" target="_blank"><img class="sns" src="./public/img/site_icon.png"></a>');
                                 }
 
                                 if(val.b_insta!=null){
-                                    $('#menu_wrap').append('<a href="'+val.b_insta+'" target="_blank"><img class="sns" src=".public/img/insta_icon.png"></a>');
+                                    $('#menu_wrap').append('<a href="'+val.b_insta+'" target="_blank"><img class="sns" src="./public/img/insta_icon.png"></a>');
                                 }
 
                                 if(val.b_face!=null){
@@ -245,25 +279,7 @@ require_once("./dbconfig.php");
                 return false;
             });
 
-            var markers = [];
-
-            var mapContainer = document.getElementById('map'),
-                mapOption = {
-                    center: new kakao.maps.LatLng(37.566826, 126.9786567),
-                    level: 3
-                };
-
-            var map = new kakao.maps.Map(mapContainer, mapOption);
-
-            addMarker=()=>{
-                var bounds = new kakao.maps.LatLngBounds();
-
-                for (var i=0; i<data.length; i++) {
-                    displayMarker(data[i]);    
-                    bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-                }       
-                console.log('data[i]>>'+data[i]);
-            }
+           
 
 
 

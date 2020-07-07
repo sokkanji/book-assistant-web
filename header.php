@@ -1,4 +1,7 @@
-<html>
+<?php
+session_start();
+?>
+
 <div id="header">
     <div class="menubar">
         <a href="./index.php" id="logo-img"><img src="./public/img/logo-img2.png" alt="책잡이로고"></a>
@@ -47,5 +50,3 @@
         ?>
     </div>
 </div>
-
-</html>

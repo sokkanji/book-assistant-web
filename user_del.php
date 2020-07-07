@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("./dbconfig.php");
 require_once("./password.php");
 

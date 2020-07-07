@@ -76,10 +76,10 @@
             Kakao.Auth.loginForm({
                 success: function (authObj) {
                     const accessToken = JSON.stringify(authObj);
+                    console.log(accessToken);
                     Kakao.API.request({
                         url: '/v2/user/me',
                         success: function (res) {
-                            console.log(res);
                             const userId = res.id;
                             const userEmail = res.kakao_account.email;
                             const userNickName = res.properties.nickname;
