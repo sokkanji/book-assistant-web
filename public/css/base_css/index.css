@@ -11,7 +11,7 @@
         max-height: 600px;
         z-index: 1;
         margin: 0 auto;
-        padding-top: 150px;
+        padding-top: 180px;
 }
     
 #contents .content-top{
@@ -86,4 +86,17 @@
         top: 310px;
         right: 75px;
         z-index: 1;
+}
+
+@media screen and (max-width: 1520px) { 
+        #contents .wrap {
+                padding-top: 160px;
+        } 
+}
+
+
+@media screen and (max-width: 1920px) { 
+        #contents .wrap {
+                padding-top: 200px;
+        } 
 }

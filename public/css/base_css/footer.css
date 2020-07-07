@@ -3,9 +3,11 @@
     height: 160px;
     background-color: #f5f5f5;
 }
-
-#footer .wrap-footer ul{
-    padding: 42px 0 0 260px;
+#footer .wrap-footer{
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
 }
 
 #footer .wrap-footer ul li{
@@ -15,5 +17,4 @@
 #footer .wrap-footer #logo2-img{
     height: 80px;
     float: right;
-    padding: 47px 250px 0 0;
 }

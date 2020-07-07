@@ -45,7 +45,7 @@
 #store_search div #menu_wrap .option button{
     position: relative;
     top: 0px;
-    padding: 0 12px;
+    padding: 0 18px;
     height: 35px;
     font-size: 16px;
     font-weight: 500;
@@ -53,7 +53,7 @@
     border: 0;
     background: #6B5AE4;
     border-radius: 5px;
-    margin-left: 10px;
+    margin-left: 1px;
 }
 
 #store_search div #menu_wrap .option .selectBtn{
@@ -141,6 +141,12 @@
 
 #menu_wrap .backBtn{
     margin: 10px 0;
+    display: block;
+    border: 1px solid #b6b6b6;
+    color: #757575;
+    background: #fff;
+    font-size: 14px;
+    padding: 5px;
 }
 
 #menu_wrap #placesList{
@@ -154,13 +160,14 @@
 #menu_wrap>p{
     font-size: 14px;
     color: #757575;
-    margin: 10px 0;
+    margin: 20px 0 0;
 }
 
 #menu_wrap select{
     float: right;
     border: 0;
     font-size: 14px;
+    margin-top: 15px;
 }
 
 .bg_white {
@@ -174,6 +181,7 @@
 #placesList li {
     list-style: none;
 }
+
 
 #placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
 #placesList .item span {display: block;margin-top:4px;}
