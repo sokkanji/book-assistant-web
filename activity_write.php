@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("./dbconfig.php");
 
 $a_title=$_POST['a_title'];

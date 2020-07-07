@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+?>
 <html>
 
 <meta charset="UTF-8">
@@ -48,13 +50,11 @@
             }
             else{
                 echo '<div><a href="./logout.php" class="btn2">로그아웃 하기</a></div>';
+                echo '<div><a href="./change_chk_pw.html" class="btn2">비밀번호 변경</a></div><div><a href="./user_del.html" class="btn2">회원탈퇴 하기</a></div>';
             }
-        ?>
-         
-            <div><a href="./change_chk_pw.html" class="btn2">비밀번호 변경</a></div>
-            <div><a href="./user_del.html" class="btn2">회원탈퇴 하기</a></div>
-        </div>
 
+        ?>
+        </div>
     </div>
 
     <include-html target="./footer.html" completed="footerCompleted"></include-html>

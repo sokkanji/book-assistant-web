@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once("./dbconfig.php");
     if(!isset($_SESSION['email'])) { 
         echo "<script> alert('로그인 해주세요.'); 

@@ -6,7 +6,6 @@ require_once("./password.php");
 $email=$_POST['email'];
 $pw=$_POST['pw'];
 
-
 $sql = "SELECT pw, u_name FROM user WHERE email = ?";
 
 $stmt = mysqli_prepare($con, $sql);

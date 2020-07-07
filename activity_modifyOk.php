@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("./dbconfig.php");
 
 $a_no = $_GET['a_no'];

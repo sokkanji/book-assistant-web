@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 <html>
 <meta charset="UTF-8">
@@ -24,6 +27,7 @@
 </head>
 
 <body>
+
     <include-html target="./header.php" completed="headerCompleted"></include-html>
     <div id="contents">
         <div class="wrap">

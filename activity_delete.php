@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("./dbconfig.php");
 
 $sql = "DELETE FROM activity WHERE a_no='".$_GET['a_no']."'";

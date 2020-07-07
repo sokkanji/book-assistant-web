@@ -1,7 +1,9 @@
-<?php 
-require_once("./dbconfig.php");
-$catagory = $_GET['catgo'];
-$search_con = $_GET['search'];
+
+<?php
+  session_start();
+  require_once("./dbconfig.php");
+  $catagory = $_GET['catgo'];
+  $search_con = $_GET['search'];
 ?>
 <!DOCTYPE html>
 <html>
