@@ -55,3 +55,8 @@
     padding-top: 70px;
 }
 
+@media screen and (max-width: 1920px) { 
+    #login_info {
+           padding: 230px 0 280px 0;
+    } 
+}
