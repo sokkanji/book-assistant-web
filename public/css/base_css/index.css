@@ -93,10 +93,25 @@
                 padding-top: 160px;
         } 
 }
-
-
 @media screen and (max-width: 1920px) { 
         #contents .wrap {
                 padding-top: 200px;
-        } 
+        }
+
+        #contents .main-img{
+                position: absolute;
+                width: 920px;
+                top: 170px;
+                right: 20px;
+                z-index: -1;
+        }
+
+        #contents .girlsboy{
+                position: absolute;
+                width: 860px;
+                top: 380px;
+                right: 75px;
+                z-index: 1;
+        }
+        
 }
