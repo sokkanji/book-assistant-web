@@ -1,10 +1,10 @@
-#recommend{
+#recommend {
     max-width: 1000px;
     margin: 0 auto;
     padding: 180px 0 110px 0;
 }
 
-#recommend h1{
+#recommend h1 {
     font-family: "NotoSansKR-Regular";
     font-size: 33px;
     font-weight: 700;
@@ -14,29 +14,29 @@
     padding: 0 0 22px 0;
 }
 
-#recommend hr{
+#recommend hr {
     width: 80px;
-    background-color : #6B5AE4;
+    background-color: #6B5AE4;
     border: 1px solid #6B5AE4;
 }
 
-#recommend p{
+#recommend p {
     font-size: 16px;
     text-align: center;
     line-height: 26px;
     padding: 40px 0 110px;
 }
 
-#recommend table{
-    margin : 0 auto;
+#recommend table {
+    margin: 0 auto;
     border-collapse: separate;
 }
 
-#recommend table .line{
+#recommend table .line {
     padding-bottom: 100px;
 }
 
-#recommend table tr td{
+#recommend table tr td {
     width: 600px;
     font-family: "NotoSansKR-Regular";
     font-size: 17px;
@@ -46,22 +46,22 @@
     padding: 0 10px 40px 10px;
 }
 
-#recommend table tr td img{
+#recommend table tr td img {
     width: 150px;
     height: 207px;
-    box-shadow: 1px 1px 5px 1px  grey;
+    box-shadow: 1px 1px 5px 1px grey;
     margin: 0 auto;
 }
 
-#recommend table tr td .web{
+#recommend table tr td .web {
     width: 150px;
 }
 
-#recommend table tr img:hover{
+#recommend table tr img:hover {
     opacity: 0.6;
 }
 
-#recommend span{
+#recommend span {
     float: right;
     font-size: 11px;
     color: #BDBDBD;

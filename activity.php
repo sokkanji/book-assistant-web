@@ -1,8 +1,7 @@
 <?php
-session_start();
-require_once("./dbconfig.php");
+    session_start();
+    require_once("./dbconfig.php");
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -21,13 +20,13 @@ require_once("./dbconfig.php");
     <link rel="stylesheet" href="./public/fonts/font.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./src/js/includeHtml.js"></script>
-    <script type="text/javascript" src="./src/js/completed.js"></script>
+    <script type="text/javascript" src="./public/js/completed.js"></script>
 </head>
 
 <body>
-    <include-html target="./header.php" completed="headerCompleted"></include-html>
-
+    <?php 
+        require "./header.php"; 
+    ?>
     <div id="activity">
         <h1>활동 기록하기</h1>
         <hr>
@@ -42,20 +41,20 @@ require_once("./dbconfig.php");
             <button>검색</button>
         </form>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th class="table_row">번호</th>
-                        <th class="title">제목</th>
-                        <th class="table_row">작성자</th>
-                        <th class="table_row">작성일</th>
-                        <th class="table_row">조회수</th>
-                    </tr>
-                </thead>
+        <table>
+            <thead>
+                <tr>
+                    <th class="table_row">번호</th>
+                    <th class="title">제목</th>
+                    <th class="table_row">작성자</th>
+                    <th class="table_row">작성일</th>
+                    <th class="table_row">조회수</th>
+                </tr>
+            </thead>
 
-                <?php
-                if(isset($_GET['page'])){
-                    $page = $_GET['page'];
+            <?php
+                if(isset($_GET["page"])){
+                    $page = $_GET["page"];
                 }else{
                     $page = 1;
                 }
@@ -87,28 +86,24 @@ require_once("./dbconfig.php");
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
                 while($board = mysqli_fetch_array($result)){
-                    $title=$board['a_title']; 
-                    if(strlen($title)>25)
-                    { 
+                    $title=$board["a_title"]; 
+                    if(strlen($title)>25){ 
                         $title=str_replace($board["a_title"], iconv_substr($board["a_title"], 0, 25, "utf-8") . "...", $board["a_title"]);
                     }
             ?>
-
-                <tbody>
-                    <tr>
-                        <td class="num"><?php 
+            <tbody>
+                <tr>
+                    <td class="num"><?php 
                      echo $num_row-$start_num-(++$cnt); ?></td>
-                        <td class="title"><a href="./activity_read.php?a_no=<?php echo $board['a_no'];?>">
-                                <?php echo $title?></a></td>
-                        <td><?php echo $board['u_name']?></td>
-                        <td><?php echo $board['a_date']?></td>
-                        <td><?php echo $board['a_hit']?></td>
-                    </tr>
-                </tbody>
-
-                <?php } ?>
-
-            </table>
+                    <td class="title"><a href="./activity_read.php?a_no=<?php echo $board["a_no"];?>">
+                            <?php echo $title?></a></td>
+                    <td><?php echo $board["u_name"]?></td>
+                    <td><?php echo $board["a_date"]?></td>
+                    <td><?php echo $board["a_hit"]?></td>
+                </tr>
+            </tbody>
+            <?php } ?>
+        </table>
 
         <div class="activity_btn"><a href="./activity_write_html.php">글쓰기</a></div>
 
@@ -126,10 +121,12 @@ require_once("./dbconfig.php");
             </ul>
         </div>
     </div>
-    <include-html target="./footer.html" completed="footerCompleted"></include-html>
+    <?php 
+        require "./footer.php"; 
+    ?>
 
-    <script>includeHtml();
-        console.log("%c안녕하세요:) 혹시 오류를 발견하거나 피드백을 주고 싶으시다면, sskkanji@gmail.com로 메일을 주시면 정말 감사합니다! 많이 미숙하지만, 저의 Github는 https://github.com/sokkanji 입니다@.@", "font-size: 15px; font-weight: 700; font-family: 'NotoSansKR-Bold'; color: #6B5AE4;");
+    <script>
+        headerCompleted();
     </script>
 </body>
 

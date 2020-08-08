@@ -1,10 +1,10 @@
-#login_info{
+#login_info {
     max-width: 445px;
     margin: 0 auto;
     padding: 230px 0 110px 0;
 }
 
-#login_info h1{
+#login_info h1 {
     font-family: "NotoSansKR-Regular";
     font-size: 32px;
     font-weight: 700;
@@ -14,27 +14,27 @@
     padding-bottom: 70px;
 }
 
-#login_info .user-img{
+#login_info .user-img {
     width: 120px;
     padding-right: 50px;
 }
 
-#login_info table tr td{
+#login_info table tr td {
     font-family: "NotoSansKR-Regular";
     font-size: 17px;
     color: #333;
     letter-spacing: -1px;
 }
 
-#login_info table tr .t1{
+#login_info table tr .t1 {
     width: 60px;
 }
 
-#login_info table tr .t2{
+#login_info table tr .t2 {
     width: 220px;
 }
 
-#login_info .btn2{
+#login_info .btn2 {
     font-family: "NotoSansKR-Regular";
     font-size: 16px;
     font-weight: 500;
@@ -47,16 +47,16 @@
     margin: 28px 0 0 12px;
 }
 
-#login_info .btns div{
+#login_info .btns div {
     margin-bottom: 25px;
 }
 
-#login_info .btns{
+#login_info .btns {
     padding-top: 70px;
 }
 
-@media screen and (max-width: 1920px) { 
+@media screen and (max-width: 1920px) {
     #login_info {
-           padding: 230px 0 280px 0;
-    } 
+        padding: 230px 0 280px 0;
+    }
 }

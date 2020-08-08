@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
 <meta charset="UTF-8">
 
@@ -14,14 +17,15 @@
     <link rel="stylesheet" href="./public/fonts/font.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./src/js/includeHtml.js"></script>
-    <script type="text/javascript" src="./src/js/completed.js"></script>
+    <script type="text/javascript" src="./public/js/completed.js"></script>
+    <script type="text/javascript" src="./public/js/kakaoLogin.js"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 
 <body>
-    <include-html target="./header.php" completed="headerCompleted"></include-html>
-
+    <?php 
+        require "./header.php"; 
+    ?>
     <div id="login">
         <h1>로그인</h1>
         <form method="POST" action="./login_Ok.php">
@@ -62,55 +66,13 @@
             </table>
         </form>
     </div>
+    <?php 
+        require "./footer.php"; 
+    ?>
 
-    <include-html target="./footer.html" completed="footerCompleted"></include-html>
-
-    <script>includeHtml();
-        console.log("%c안녕하세요:) 혹시 오류를 발견하거나 피드백을 주고 싶으시다면, sskkanji@gmail.com로 메일을 주시면 정말 감사합니다! 많이 미숙하지만, 저의 Github는 https://github.com/sokkanji 입니다@.@", "font-size: 15px; font-weight: 700; font-family: 'NotoSansKR-Bold'; color: #6B5AE4;");
-    </script>
-    <script type="text/javascript">
-
-        Kakao.init('db91e28ca080cad6510bf171cd6394d2');
-
-        loginWithKakao = () => {
-            Kakao.Auth.loginForm({
-                success: function (authObj) {
-                    const accessToken = JSON.stringify(authObj);
-                    console.log(accessToken);
-                    Kakao.API.request({
-                        url: '/v2/user/me',
-                        success: function (res) {
-                            const userId = res.id;
-                            const userEmail = res.kakao_account.email;
-                            const userNickName = res.properties.nickname;
-                            console.log(userId);
-                            console.log(userEmail);
-                            console.log(userNickName);
-
-                            location.href = "./kakaoLogin.php?userId="
-                                + userId + "&userNickName=" + userNickName
-                                + "&userEmail=" + userEmail;
-                        },
-                        fail: function (error) {
-                            alert(JSON.stringify(error));
-                        }
-                    });
-                }
-            })
-        }
-
-        kakaoLogin = (res, accessToken) => {
-            console.log(res.properties);
-            console.log(accessToken);
-            Kakao.Auth.login({
-                success: function (response) {
-                    console.log(response);
-                },
-                fail: function (error) {
-                    console.log(error);
-                },
-            });
-        }
+    <script>
+        headerCompleted();
+        Kakao.init("");
     </script>
 </body>
 

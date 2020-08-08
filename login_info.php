@@ -2,7 +2,6 @@
     session_start();
 ?>
 <html>
-
 <meta charset="UTF-8">
 
 <head>
@@ -18,14 +17,15 @@
     <link rel="stylesheet" href="./public/fonts/font.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./src/js/includeHtml.js"></script>
-    <script type="text/javascript" src="./src/js/completed.js"></script>
+    <script type="text/javascript" src="./public/js/completed.js"></script>
+    <script type="text/javascript" src="./public/js/kakaoLogin.js"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 
 <body>
-    <include-html target="./header.php" completed="headerCompleted"></include-html>
-
+    <?php 
+        require "./header.php"; 
+    ?>
     <div id="login_info">
         <h1>회원 정보</h1>
         <table>
@@ -34,53 +34,33 @@
             </tr>
             <tr>
                 <td class="t1">이름</td>
-                <td class="t2"><?php echo $_SESSION['u_name']?></td>
+                <td class="t2"><?php echo $_SESSION["u_name"]?></td>
             </tr>
             <tr>
                 <td class="t1">이메일</td>
-                <td class="t2"><?php echo $_SESSION['email']?></td>
+                <td class="t2"><?php echo $_SESSION["email"]?></td>
             </tr>
         </table>
-
         <div class="btns">
-
-        <?php 
-            if(isset($_SESSION['userId'])){
+            <?php 
+            if(isset($_SESSION["userId"])){
                 echo "<div onclick='kakaoLogout()'><a class='btn2' style='cursor:pointer'>로그아웃 하기</a></div>";
             }
             else{
-                echo '<div><a href="./logout.php" class="btn2">로그아웃 하기</a></div>';
-                echo '<div><a href="./change_chk_pw.html" class="btn2">비밀번호 변경</a></div><div><a href="./user_del.html" class="btn2">회원탈퇴 하기</a></div>';
+                echo "<div><a href='./logout.php' class='btn2'>로그아웃 하기</a></div>";
+                echo "<div><a href='./change_chk_pw_html.php' class='btn2'>비밀번호 변경</a></div><div><a href='./user_del_html.php' class='btn2'>회원탈퇴 하기</a></div>";
             }
-
         ?>
         </div>
     </div>
+    <?php 
+        require "./footer.php"; 
+    ?>
 
-    <include-html target="./footer.html" completed="footerCompleted"></include-html>
-
-    <script>includeHtml();
-        console.log("%c안녕하세요:) 혹시 오류를 발견하거나 피드백을 주고 싶으시다면, sskkanji@gmail.com로 메일을 주시면 정말 감사합니다! 많이 미숙하지만, 저의 Github는 https://github.com/sokkanji 입니다@.@", "font-size: 15px; font-weight: 700; font-family: 'NotoSansKR-Bold'; color: #6B5AE4;");
+    <script>
+        headerCompleted();
+        Kakao.init("");
     </script>
-
-    <script type="text/javascript">
-        Kakao.init('db91e28ca080cad6510bf171cd6394d2');
-
-        kakaoLogout = () => {
-            Kakao.API.request({
-                url: '/v1/user/unlink',
-                success: function (res) {
-                    console.log(res);
-                    location.href = "./logout.php";
-                },
-                fail: function (error) {
-                    console.log(error);
-                },
-            });
-        }
-            
-    </script>
-
 </body>
 
 </html>

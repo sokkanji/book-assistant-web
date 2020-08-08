@@ -1,10 +1,10 @@
-#activity_write{
+#activity_write {
     max-width: 1000px;
     margin: 0 auto;
     padding: 180px 0 110px 0;
 }
 
-#activity_write h1{
+#activity_write h1 {
     font-family: "NotoSansKR-Regular";
     font-size: 33px;
     font-weight: 700;
@@ -14,32 +14,32 @@
     padding: 0 0 22px 0;
 }
 
-#activity_write hr{
+#activity_write hr {
     width: 80px;
-    background-color : #6B5AE4;
+    background-color: #6B5AE4;
     border: 1px solid #6B5AE4;
 }
 
-#activity_write p{
+#activity_write p {
     font-size: 16px;
     text-align: center;
     padding: 40px 0 70px;
 }
 
-#activity_write form table{
+#activity_write form table {
     text-align: center;
-    padding-top: 50px; 
+    padding-top: 50px;
     margin: 0 auto;
     font-size: 17px;
     color: #333;
     line-height: 26px;
 }
 
-#activity_write form table tr td{
+#activity_write form table tr td {
     padding-bottom: 25px;
 }
 
-#activity_write form table tr td div{
+#activity_write form table tr td div {
     float: left;
     font-family: "NotoSansKR-Regular";
     font-size: 18px;
@@ -48,7 +48,7 @@
     margin-bottom: 5px;
 }
 
-#activity_write form table tr td input{
+#activity_write form table tr td input {
     width: 100%;
     border: 1px solid #a6a6a6;
     outline: none;
@@ -56,11 +56,11 @@
     margin-bottom: 16px;
 }
 
-#activity_write form table tr td input::placeholder{
+#activity_write form table tr td input::placeholder {
     font-size: 16px;
 }
 
-#activity_write form table tr td textarea{
+#activity_write form table tr td textarea {
     width: 100%;
     font-family: "NotoSansCJKKr Regular";
     font-size: 16px;
@@ -70,7 +70,7 @@
     padding-top: 8px;
 }
 
-#activity_write form table tr td .image_input{
+#activity_write form table tr td .image_input {
     border: none;
     border-bottom: none;
     outline: none;
@@ -78,12 +78,12 @@
     margin: 15px 0;
 }
 
-#activity_write form table tr td .photo_btn{
+#activity_write form table tr td .photo_btn {
     float: left;
     padding: 1px 2.8px;
 }
 
-#activity_write form table tr td .activity_write_btn{
+#activity_write form table tr td .activity_write_btn {
     height: 42px;
     line-height: 42px;
     float: right;

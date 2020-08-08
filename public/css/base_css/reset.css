@@ -1,40 +1,69 @@
-body{
+body {
     width: 100%;
 }
 
-body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, tr, th, td, textarea, button, form{
+body,
+div,
+ul,
+li,
+dl,
+dt,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+fieldset,
+legend,
+p,
+select,
+table,
+tr,
+th,
+td,
+textarea,
+button,
+form {
     margin: 0;
     padding: 0;
 }
 
-a{
+a {
     color: #000000;
     text-decoration: none;
 }
 
-a:link{
+a:link {
     color: #000000;
 }
 
-a:visited{
+a:visited {
     color: #000000;
 }
 
-a:hover{
+a:hover {
     color: #6B5AE4;
 }
 
-a:active{
+a:active {
     color: #000000;
 }
 
-body, input, textarea, select, button, table {
+body,
+input,
+textarea,
+select,
+button,
+table {
     font-family: "NotoSansKR-Light";
     color: #000000;
     font-size: 14px;
 }
 
-.ir_pm{
+.ir_pm {
     display: block;
     overflow: hidden;
     font-size: 0;
@@ -42,7 +71,7 @@ body, input, textarea, select, button, table {
     text-indent: -99999;
 }
 
-.ir_wa{
+.ir_wa {
     display: block;
     overflow: hidden;
     position: relative;
@@ -50,10 +79,15 @@ body, input, textarea, select, button, table {
     height: 100%;
 }
 
-ul, li, ol, dl, menu{
+ul,
+li,
+ol,
+dl,
+menu {
     list-style: none;
 }
 
-img, fieldset{
+img,
+fieldset {
     border: 0;
 }

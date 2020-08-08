@@ -1,28 +1,28 @@
-@font-face{
+@font-face {
     font-family: "NotoSansKR-Medium";
     font-weight: normal;
     src: url("./NotoSansKR-Medium.otf") format("opentype");
 }
 
-@font-face{
+@font-face {
     font-family: "NotoSansKR-Regular";
     font-weight: normal;
     src: url("./NotoSansKR-Regular.otf") format("opentype");
 }
 
-@font-face{
+@font-face {
     font-family: "NotoSansKR-Light";
     font-weight: normal;
     src: url("./NotoSansKR-Light.otf") format("opentype");
 }
 
-@font-face{
+@font-face {
     font-family: "NotoSansKR-Bold";
     font-weight: normal;
     src: url("./NotoSansKR-Bold.otf") format("opentype");
 }
 
-@font-face{
+@font-face {
     font-family: "NotoSansCJKKr-Black";
     font-weight: normal;
     src: url("./NotoSansKR-Black.otf") format("opentype");

@@ -1,5 +1,6 @@
 <?php
-require_once("./dbconfig.php");
+    session_start();
+    require_once("./dbconfig.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,18 +21,20 @@ require_once("./dbconfig.php");
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./src/js/includeHtml.js"></script>
-    <script type="text/javascript" src="./src/js/completed.js"></script>
+    <script type="text/javascript" src="./public/js/completed.js"></script>
+    <script type="text/javascript" src="./public/js/store_search.js"></script>
 </head>
 
 <body>
-    <include-html target="./header.php" completed="headerCompleted"></include-html>
-
+    <?php 
+        require "./header.php"; 
+    ?>
     <div id="store_search">
         <h1>독립서점 검색</h1>
         <hr>
         <script type="text/javascript"
-            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8db120071616bb6456be718062f2b41e&libraries=services,clusterer"></script>
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8db120071616bb6456be718062f2b41e&libraries=services,clusterer">
+        </script>
 
         <div class="map_wrap">
             <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
@@ -63,232 +66,24 @@ require_once("./dbconfig.php");
                     <?php                                
                         while($board = mysqli_fetch_array($result)){
                     ?>
-                    <li><span id="title"><?php echo $board['b_title']; ?></span>
-                        <a class="Blike">♥ <?php echo $board['b_like'];?></a></li>
+                    <li><span id="title"><?php echo $board["b_title"]; ?></span>
+                        <a class="Blike">♥ <?php echo $board["b_like"];?></a></li>
                     <li class="li2">
-                        <a class="Baddress"><?php echo $board['b_address'];?></a></li>
+                        <a class="Baddress"><?php echo $board["b_address"];?></a></li>
                     <?php   
                         }
                     ?>
                 </ul>
             </div>
         </div>
-
-        <script>
-        var markers = [];           
-
-        var mapContainer = document.getElementById('map'),
-            mapOption = {
-                center: new kakao.maps.LatLng(37.549731, 127.069849),
-                level: 9
-            };
-
-        var map = new kakao.maps.Map(mapContainer, mapOption);
-
-        addMarker=()=>{
-            var bounds = new kakao.maps.LatLngBounds();
-
-            for (var i=0; i<data.length; i++) {
-                displayMarker(data[i]);    
-                bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-            }       
-            console.log('data[i]>>'+data[i]);
-        }
-
-        // 데이터를 가져오기 위해 jQuery를 사용합니다
-        // 데이터를 가져와 마커를 생성하고 클러스터러 객체에 넘겨줍니다
-        $.get("./bookstore.json", function(data) {
-            // 데이터에서 좌표 값을 가지고 마커를 표시합니다
-            // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
-            var markers = $(data.positions).map(function(i, position) {
-                return new kakao.maps.Marker({
-                    position : new kakao.maps.LatLng(position.lat, position.lng)
-                });
-            });
-            // 클러스터러에 마커들을 추가합니다
-            clusterer.addMarkers(markers);
-        });
-
-            // 마커 클러스터러를 생성합니다 
-                var clusterer = new kakao.maps.MarkerClusterer({
-                map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
-                averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
-                minLevel: 5 // 클러스터 할 최소 지도 레벨 
-            });
-
-            $("body").load(function () {
-        
-                $.ajax({
-                    type: "GET",
-                    url: "./store_result.php",
-                    timeout: 10000,
-                    data: ({ keyword: _keyword }),
-                    cache: false,
-                    dataType: "json",
-                    success: function (data) {
-                        if (data.length != 0) {
-                            $.get(data, ()=>{
-                            // 데이터에서 좌표 값을 가지고 마커를 표시합니다
-                            // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
-                                var markers = $(data).map(function (i, position) {
-                                    return new kakao.maps.Marker({
-                                    position: new kakao.maps.LatLng(data.lat, data.lng)
-                                    });
-                                });
-                            })
-                        } else if (data.length == 0) {
-                            alert('검색결과가 없습니다.');
-                                $('#store_search p').html('<p>0개의 검색결과</p>');
-                        }
-                    },
-                    error: function (xhr, textStatus, errorThrown) {
-                        alert("검색 실패했습니다.");
-                    }
-                });
-             });
-
-
-            // 지도 위에 표시되고 있는 마커를 모두 제거합니다
-            function removeMarker() {
-                for ( var i = 0; i < markers.length; i++ ) {
-                    markers[i].setMap(null);
-                }   
-                markers = [];
-            }
-
-            var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-
-            function displayMarker(data) {
-    
-                // 마커를 생성하고 지도에 표시합니다
-                var marker = new kakao.maps.Marker({
-                    map: map,
-                    position: new kakao.maps.LatLng(data.lat, data.lng) 
-                });
-                
-                // 마커에 클릭이벤트를 등록합니다
-                kakao.maps.event.addListener(marker, 'click', function() {
-                    // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-                    infowindow.setContent('<div style="padding:5px;font-size:12px;">' + data.b_title + '<br>'+data.b_address+'<br></div>');
-                    infowindow.open(map, marker);
-                });
-            }
-
-            $(".searchBtn").click(function () {
-                let _keyword = $("#keyword").val();
-                if (_keyword.length == 0) {
-                    alert("키워드를 입력해주세요.");
-                } else {
-                    $.ajax({
-                        type: "GET",
-                        url: "./store_result.php",
-                        timeout: 10000,
-                        data: ({ keyword: _keyword }),
-                        cache: false,
-                        dataType: "json",
-                        success: function (data) {
-                            $('#placesList li').remove();
-                            if (data.length != 0) {
-                                removeMarker();
-                                var bounds = new kakao.maps.LatLngBounds();
-
-                                for (var i=0; i<data.length; i++) {
-                                    displayMarker(data[i]);    
-                                    bounds.extend(new kakao.maps.LatLng(data[i].lat, data[i].lng));
-                                }       
-                                map.setBounds(bounds);
-
-                                console.log(data[0].lat);
-
-                                $.each(data, function (key, val) {
-                                    $('#placesList').append(
-                                        '<li><span id="title">' + val.b_title + '</span><a class="Blike">♥ ' + val.b_like + '</a></li><li class="li2"><a class="Baddress">' + val.b_address + '</a></li>');
-                                    $('#store_search p').html('<p>' + data.length + '개의 검색결과</p>');
-                                    
-                                });
-                            } else if (data.length == 0) {
-                                alert('검색결과가 없습니다.');
-                                $('#store_search p').html('<p>0개의 검색결과</p>');
-                            }
-                        },
-                        error: function (xhr, textStatus, errorThrown) {
-                            alert("검색 실패했습니다.");
-                        }
-                    });
-                }
-                return false;
-            });
-
-            $(document).on("click",".backBtn",function(){
-                $("#menu_wrap>div, #menu_wrap>a").css('display', 'none');
-                $('.option').css('display', 'block');
-                $('#menu_wrap>p').css('display', 'block');
-                $('.result_hr').css('display', 'block');
-                $('#placesList').css('display', 'block');
-            });
-            
-            //독립서점 li 클릭하면~
-            $('#placesList').on('click', '#title', function () {
-                let _keyword = $(this).text();
-                // alert(_keyword);
-                $.ajax({
-                    type: "GET",
-                    url: "./store_result.php",
-                    timeout: 10000,
-                    data: ({ keyword: _keyword }),
-                    cache: false,
-                    dataType: "json",
-                    success: function (data) {
-                        $('.option').css('display', 'none');
-                        $('#menu_wrap>p').css('display', 'none');
-                        $('.result_hr').css('display', 'none');
-                        $('#placesList').css('display', 'none');
-                        
-                        if (data.length != 0) {
-                            $.each(data, function (key, val) {
-                                
-                                $('#menu_wrap').append(
-                                    '<div><img src="./public/img/store_search.png"></div><div class="b_title">'+val.b_title
-                                    +'</div><div class="b_address"><strong>주소</strong>'+val.b_address
-                                    +'</div><div class="b_connect"><strong>연락처</strong>'+val.b_connect+'</div>'
-                                    // +'</div><div class="intro"><strong>소개</strong> '+val.intro
-                                );
-                                if(val.b_site!=null){
-                                    $('#menu_wrap').append('<a href="'+val.b_site+'" target="_blank"><img class="sns" src="./public/img/site_icon.png"></a>');
-                                }
-
-                                if(val.b_insta!=null){
-                                    $('#menu_wrap').append('<a href="'+val.b_insta+'" target="_blank"><img class="sns" src="./public/img/insta_icon.png"></a>');
-                                }
-
-                                if(val.b_face!=null){
-                                    $('#menu_wrap').append('<a href="'+val.b_face+'" target="_blank"><img class="sns" src="./public/img/face_icon.png"></a>');
-                                }
-                                if(val.b_blog!=null){
-                                    $('#menu_wrap').append('<a href="'+val.b_blog+'" target="_blank"><img class="sns" src="./public/img/blog_icon.png"></a>');
-                                }
-
-                                $('#menu_wrap').append('<div><button class="backBtn">뒤로가기</button></div>');
-                            });
-                        }
-                    },
-                    error: function (xhr, textStatus, errorThrown) {
-                        alert("데이터 불러오는데 실패했습니다.");
-                    }
-                });
-                return false;
-            });
-
-           
-
-
-
-        </script>
     </div>
-    <include-html target="./footer.html" completed="footerCompleted"></include-html>
+    <?php 
+        require "./footer.php"; 
+    ?>
 
-    <script>includeHtml();
-        console.log("%c안녕하세요:) 혹시 오류를 발견하거나 피드백을 주고 싶으시다면, sskkanji@gmail.com로 메일을 주시면 정말 감사합니다! 많이 미숙하지만, 저의 Github는 https://github.com/sokkanji 입니다@.@", "font-size: 15px; font-weight: 700; font-family: 'NotoSansKR-Bold'; color: #6B5AE4;");
+    <script>
+        headerCompleted();
+        store_search();
     </script>
 </body>
 

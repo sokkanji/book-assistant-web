@@ -1,10 +1,10 @@
-#report{
+#report {
     max-width: 900px;
     margin: 0 auto;
     padding: 180px 0 130px 0;
 }
 
-#report h1{
+#report h1 {
     font-family: "NotoSansKR-Regular";
     font-size: 33px;
     font-weight: 700;
@@ -14,27 +14,27 @@
     padding: 0 0 22px 0;
 }
 
-#report hr{
+#report hr {
     width: 80px;
-    background-color : #6B5AE4;
+    background-color: #6B5AE4;
     border: 1px solid #6B5AE4;
 }
 
-#report p{
+#report p {
     font-size: 16px;
     text-align: center;
     padding: 40px 0 70px;
 }
 
-#report form table{
+#report form table {
     margin: 0 auto;
 }
 
-#report form table td{
+#report form table td {
     padding-bottom: 55px;
 }
 
-#report form table tr td div{
+#report form table tr td div {
     font-family: "NotoSansKR-Regular";
     font-size: 18px;
     color: #333;
@@ -42,7 +42,7 @@
     margin-bottom: 5px;
 }
 
-#report form table tr td input{
+#report form table tr td input {
     width: 100%;
     border: none;
     border-bottom: 1px solid #a6a6a6;
@@ -56,7 +56,7 @@
     font-size: 17px;
 } */
 
-#report form table tr td textarea{
+#report form table tr td textarea {
     width: 100%;
     height: 150px;
     border: none;
@@ -69,7 +69,7 @@
     padding-top: 8px;
 }
 
-#report form table tr td .image_input{
+#report form table tr td .image_input {
     border: none;
     border-bottom: none;
     outline: none;
@@ -77,11 +77,11 @@
     margin: 15px 0;
 }
 
-#report form table tr td .photo_btn{
+#report form table tr td .photo_btn {
     padding: 1px 2.8px;
 }
 
-#report form table tr td .report_btn{
+#report form table tr td .report_btn {
     float: right;
     height: 42px !important;
     line-height: 42px !important;

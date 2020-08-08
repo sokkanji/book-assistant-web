@@ -1,7 +1,8 @@
 <?php
+    session_start();
     require_once("./dbconfig.php");
-    $sql = "SELECT * FROM book_search WHERE b_no= '".$_GET['b_no']."' ";
-    $result = mysqli_query($con, $sql);
+        $sql = "SELECT * FROM book_search WHERE b_no= '".$_GET['b_no']."' ";
+        $result = mysqli_query($con, $sql);
 
     if (mysqli_connect_errno()){
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -26,51 +27,87 @@
     <link rel="stylesheet" href="./public/fonts/font.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./src/js/includeHtml.js"></script>
-    <script type="text/javascript" src="./src/js/completed.js"></script>
+    <script type="text/javascript" src="./public/js/completed.js"></script>
 </head>
 
 <body>
-    <include-html target="./header.php" completed="headerCompleted"></include-html>
-    
+    <?php 
+        require "./header.php"; 
+    ?>
     <div id="recommend_read">
         <h1>독립출판물 추천</h1>
         <hr>
         <div class="bookdetail_wr">
             <div class="info_top">
-                <h3><?php echo $book['b_title']?></h3>
-                <p><a href="./recommend.html">목록</a></p>
+                <h3><?php echo $book["b_title"]?></h3>
+                <p><a href="./recommend.php">목록</a></p>
             </div>
 
             <div style="position: relative;">
                 <div class="detail_left">
                     <div class="dt_box01">
-                        <p><img src="./public/img/<?php echo $book['img'];?>"></p>
+                        <p>
+                            <img src="./public/img/<?php echo $book["img"];?>">
+                        </p>
                         <ul>
-                            <li><span>저자</span><strong><?php echo $book['writer'];?></strong></li>
-                            <li><span>출판사</span><strong><?php 
-                               if(!isset($book['publisher'])) { 
-                                echo "<strong>--</strong></li>";
-                                }
-                                else{
-                                    echo $book['publisher'];
-                                }?></strong></li>
-                            <li><span>ISBN</span><strong><?php 
-                             if(!isset($book['ISBN'])) { 
-                                echo "<strong>--</strong></li>";
-                                }
-                                else{
-                                    echo $book['ISBN'];
-                                }?></strong></li>
-                            <li><span>페이지</span><strong>P<?php echo $book['page'];?></strong></li>
-                            <li><span>판매가</span><strong><?php echo number_format($book['price']);?></strong></li>
-                            <li><span>판매서점</span><strong><a href="<?php echo $book['url'];?>" style="color:#6B5AE4;">
-                            <?php echo $book['bookstore'];?></a></strong></li>
+                            <li>
+                                <span>저자</span>
+                                <strong>
+                                    <?php 
+                                        echo $book["writer"];
+                                    ?>
+                                </strong>
+                            </li>
+                            <li>
+                                <span>출판사</span>
+                                <strong>
+                                    <?php 
+                                        if(!isset($book["publisher"])) { 
+                                            echo "<strong>--</strong></li>";
+                                        }
+                                        else{
+                                            echo $book["publisher"];
+                                        }
+                                    ?>
+                                </strong>
+                            </li>
+                            <li>
+                                <span>ISBN</span>
+                                <strong>
+                                    <?php 
+                                    if(!isset($book["ISBN"])) { 
+                                        echo "<strong>--</strong></li>";
+                                    }
+                                    else{
+                                        echo $book["ISBN"];
+                                    }
+                                    ?>
+                                </strong>
+                            </li>
+                            <li>
+                                <span>페이지</span>
+                                <strong>
+                                    P<?php echo $book["page"];?>
+                                </strong>
+                            </li>
+                            <li>
+                                <span>판매가</span>
+                                <strong>
+                                    <?php echo number_format($book["price"]);?>
+                                </strong>
+                            </li>
+                            <li>
+                                <span>판매서점</span>
+                                <strong>
+                                    <a href="<?php echo $book["url"];?>"
+                                        style="color:#6B5AE4;"><?php echo $book["bookstore"];?></a>
+                                </strong>
+                            </li>
                         </ul>
                     </div>
                     <div class="dt_box02">
                         <h3>책소개</h3>
-                        <p><?php echo $book['intro'];?></p>
+                        <p><?php echo $book["intro"];?></p>
                     </div>
                 </div>
 
@@ -78,7 +115,6 @@
                     <div class="smae_box">
                         <h3>다른 독립출판물</h3>
                         <ul>
-                            
                             <?php 
                                 $sql = "SELECT * FROM book_search WHERE NOT(b_no = '".$_GET['b_no']."' OR b_no in (1, 4))";
                                 
@@ -91,7 +127,7 @@
                                 while($i<4){
                                     $board = mysqli_fetch_array($result);
                                     
-                                    $title=$board['b_title']; 
+                                    $title=$board["b_title"]; 
                                     if(strlen($title)>10)
                                     { 
                                         $title=str_replace($board["b_title"], iconv_substr($board["b_title"], 0, 10, "utf-8") . "...", $board["b_title"]);
@@ -99,30 +135,29 @@
                                 $i++;
                             ?>
                             <li>
-                            <p><a href="./recommend_read.php?b_no=<?php echo $board['b_no'];?>"><img src="./public/img/<?php echo $board['img'];?>"></a></p>
-                            <dl>
-                                <dt><?php echo $title;?></dd>
-                                <dd><?php echo $board['writer'];?></dd>
-                                <dd><?php echo $board['publisher'];?></dd>
-                                <dd><?php echo $board['ISBN'];?></dd>
-                            </dl>
+                                <p><a href="./recommend_read.php?b_no=<?php echo $board["b_no"];?>"><img
+                                            src="./public/img/<?php echo $board['img'];?>"></a></p>
+                                <dl>
+                                    <dt><?php echo $title;?></dd>
+                                    <dd><?php echo $board["writer"];?></dd>
+                                    <dd><?php echo $board["publisher"];?></dd>
+                                    <dd><?php echo $board["ISBN"];?></dd>
+                                </dl>
                             </li>
                             <?php } ?>
-                           
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php 
+        require "./footer.php"; 
+    ?>
 
-
-    <include-html target="./footer.html" completed="footerCompleted"></include-html>
-
-    <script>includeHtml();
-        console.log("%c안녕하세요:) 혹시 오류를 발견하거나 피드백을 주고 싶으시다면, sskkanji@gmail.com로 메일을 주시면 정말 감사합니다! 많이 미숙하지만, 저의 Github는 https://github.com/sokkanji 입니다@.@", "font-size: 15px; font-weight: 700; font-family: 'NotoSansKR-Bold'; color: #6B5AE4;");
+    <script>
+        headerCompleted();
     </script>
-
 </body>
 
 </html>
