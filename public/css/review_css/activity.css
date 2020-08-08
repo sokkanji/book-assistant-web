@@ -1,11 +1,11 @@
-#activity{
+#activity {
     max-width: 1000px;
     min-height: 600px;
     margin: 0 auto;
     padding: 180px 0 110px 0;
 }
 
-#activity h1{
+#activity h1 {
     font-family: "NotoSansKR-Regular";
     font-size: 33px;
     font-weight: 700;
@@ -15,25 +15,25 @@
     padding: 0 0 22px 0;
 }
 
-#activity hr{
+#activity hr {
     width: 80px;
-    background-color : #6B5AE4;
+    background-color: #6B5AE4;
     border: 1px solid #6B5AE4;
     margin-bottom: 20px;
 }
 
-#activity p{
+#activity p {
     text-align: center;
     font-size: 16px;
     padding-bottom: 60px;
 }
 
-#activity form{
+#activity form {
     float: right;
     padding-bottom: 20px;
 }
 
-#activity form select{
+#activity form select {
     float: left;
     height: 35px;
     line-height: 42px;
@@ -46,10 +46,10 @@
     border: 1px solid #ddd;
 }
 
-#activity form input{
+#activity form input {
     float: left;
     width: 200px;
-    height: 35px ;
+    height: 35px;
     line-height: 40px;
     margin: 0 5px 0 0;
     padding: 0 5px;
@@ -59,7 +59,7 @@
     border-radius: 5px;
 }
 
-#activity form button{
+#activity form button {
     position: relative;
     top: 0px;
     padding: 0 12px;
@@ -72,7 +72,7 @@
     border-radius: 5px;
 }
 
-#activity table{
+#activity table {
     width: 100%;
     margin: 0 auto;
     font-size: 16px;
@@ -81,20 +81,20 @@
     border-bottom: 2px solid #ddd;
 }
 
-#activity table thead tr th{
-    box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.08);
+#activity table thead tr th {
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.08);
     padding: 10px;
 }
 
-#activity table thead tr{
+#activity table thead tr {
     border-bottom: 2px solid #BDBDBD;
 }
 
-#activity table tr{
+#activity table tr {
     border-bottom: 1px solid #ddd;
 }
 
-#activity table tbody tr td{
+#activity table tbody tr td {
     width: 150px;
     height: 50px;
     font-family: "NotoSansKR-Light";
@@ -102,20 +102,20 @@
     text-align: center;
 }
 
-#activity table thead tr .title{
+#activity table thead tr .title {
     width: 600px;
 }
 
-#activity table thead tr .table_row{
+#activity table thead tr .table_row {
     width: 90px;
 }
 
-#activity .activity_btn{
+#activity .activity_btn {
     float: right;
     padding-top: 40px;
 }
 
-#activity .activity_btn a{
+#activity .activity_btn a {
     height: 42px !important;
     line-height: 42px !important;
     font-size: 14px;
@@ -127,18 +127,18 @@
     padding: 8px 15px;
 }
 
-#activity .page{
+#activity .page {
     width: 100px;
-    margin : 0 auto;
-    padding : 50px 0;
+    margin: 0 auto;
+    padding: 50px 0;
 }
 
-#activity .page ul li{
+#activity .page ul li {
     float: left;
     text-align: center;
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
-#activity .page .page_num{
-    color : #6B5AE4;
+#activity .page .page_num {
+    color: #6B5AE4;
 }

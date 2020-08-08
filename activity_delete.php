@@ -1,20 +1,20 @@
 <?php
-session_start();
-require_once("./dbconfig.php");
+	session_start();
+	require_once("./dbconfig.php");
 
-$sql = "DELETE FROM activity WHERE a_no='".$_GET['a_no']."'";
-$result = mysqli_query($con, $sql);
-if (mysqli_connect_errno()){
-	echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+	$sql = "DELETE FROM activity WHERE a_no='".$_GET['a_no']."'";
+	$result = mysqli_query($con, $sql);
+	if (mysqli_connect_errno()){
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
 
-if($result){ 
-	echo "<script>alert('정상적으로 삭제되었습니다.');
-	location.href='./activity.php'; 
-	</script>";
-} else{
-	echo "<script>alert('글을 삭제하지 못했습니다.'); 
-	history.back();
-	</script>";	
-} 
+	if($result){ 
+		echo "<script>alert('정상적으로 삭제되었습니다.');
+		location.href='./activity.php'; 
+		</script>";
+	} else{
+		echo "<script>alert('글을 삭제하지 못했습니다.'); 
+		history.back();
+		</script>";	
+	} 
 ?>

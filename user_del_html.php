@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+<!DOCTYPE html>
 <html>
 
 <meta charset="UTF-8">
@@ -12,36 +16,35 @@
     <link rel="stylesheet" href="./public/css/base_css/header.css">
     <link rel="stylesheet" href="./public/css/base_css/footer.css">
     <link rel="stylesheet" href="./public/fonts/font.css">
-    <link rel="stylesheet" href="./public/css/login_css/change_pw.css">
+    <link rel="stylesheet" href="./public/css/login_css/user_del.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./src/js/includeHtml.js"></script>
-    <script type="text/javascript" src="./src/js/completed.js"></script>
+    <script type="text/javascript" src="./public/js/completed.js"></script>
 </head>
 
 <body>
-    <include-html target=".\header.php" completed="headerCompleted"></include-html>
-
-    <div id="change_pw">
-        <h1>비밀번호 변경</h1>
+    <?php 
+        require "./header.php"; 
+    ?>
+    <div id="user_del">
+        <h1>회원탈퇴</h1>
         <hr>
-        <p>기존 비밀번호를 확인합니다.</p>
+        <p>탈퇴한 후에 복구할 수 없습니다. 신중히 선택해주세요.</p>
 
-        <form method="post" action="./change_chk_pw.php">
+        <form method="post" action="./user_del.php">
             <table>
                 <tr>
                     <td>비밀번호</td>
                 </tr>
                 <tr>
-                    <td class="table_row"><input type="password" class="pw1" name="pw1" required placeholder="비밀번호">
+                    <td class="table_row"><input type="password" class="pw1" required placeholder="비밀번호">
                     </td>
                 </tr>
                 <tr>
                     <td>비밀번호 확인</td>
                 </tr>
                 <tr>
-                    <td class="table_row">
-                        <input type="password" class="pw2" name="pw2" required placeholder="비밀번호 확인">
+                    <td><input type="password" class="pw2" name="pw" required placeholder="비밀번호 확인">
                     </td>
                 </tr>
                 <tr>
@@ -51,19 +54,19 @@
                 </tr>
                 <tr>
                     <td>
-                        <button class="change_pw_btn">입력 완료</button>
+                        <button class="user_del_btn">회원탈퇴 하기</button>
                     </td>
                 </tr>
             </table>
         </form>
     </div>
-
-    <include-html target="./footer.html" completed="footerCompleted"></include-html>
+    <?php 
+        require "./footer.php"; 
+    ?>
 
     <script>
-        includeHtml();
-        console.log("%c안녕하세요:) 혹시 오류를 발견하거나 피드백을 주고 싶으시다면, sskkanji@gmail.com로 메일을 주시면 정말 감사합니다! 많이 미숙하지만, 저의 Github는 https://github.com/sokkanji 입니다@.@", "font-size: 15px; font-weight: 700; font-family: 'NotoSansKR-Bold'; color: #6B5AE4;");
-        $('.pw2').blur(function () {
+        headerCompleted();
+        $(".pw2").blur(() => {
             const pw1 = $(".pw1").val();
             const pw2 = $(".pw2").val();
             if (pw1 != pw2) {

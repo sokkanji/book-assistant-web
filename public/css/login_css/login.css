@@ -1,12 +1,10 @@
-#login{
+#login {
     max-width: 445px;
     margin: 0 auto;
     padding: 230px 0 110px 0;
 }
 
-
-
-#login h1{
+#login h1 {
     font-family: "NotoSansKR-Regular";
     font-size: 32px;
     font-weight: 700;
@@ -16,11 +14,11 @@
     padding-bottom: 40px;
 }
 
-#login form table{
+#login form table {
     margin: 0 auto;
 }
 
-#login form table tr .name_row{
+#login form table tr .name_row {
     font-family: "NotoSansKR-Regular";
     font-size: 17px;
     color: #333;
@@ -28,11 +26,12 @@
     padding: 4px;
 }
 
-#login form table tr .table_row{
+#login form table tr .table_row {
     padding-bottom: 15px;
 }
 
-#login form table tr td .email, #login form table tr td .pw{
+#login form table tr td .email,
+#login form table tr td .pw {
     width: 290px;
     height: 40px;
     padding: 4px;
@@ -41,7 +40,7 @@
     background-color: #F2F2F2;
 }
 
-#login form table tr td .login_btn{
+#login form table tr td .login_btn {
     height: 135px;
     width: 120px;
     cursor: pointer;
@@ -56,11 +55,11 @@
     border-radius: 5px;
 }
 
-#login form table tr td .find_pw{
+#login form table tr td .find_pw {
     text-decoration: underline;
 }
 
-#login form table tr td .signup_btn{
+#login form table tr td .signup_btn {
     height: 42px;
     font-family: "NotoSansKR-Regular";
     font-size: 16px;
@@ -73,8 +72,8 @@
     padding: 10px 104px;
 }
 
-@media screen and (max-width: 1920px) { 
+@media screen and (max-width: 1920px) {
     #login {
-            padding-bottom: 210px;
-    } 
+        padding-bottom: 210px;
+    }
 }

@@ -1,10 +1,10 @@
-#signup{
+#signup {
     max-width: 445px;
     margin: 0 auto;
     padding: 230px 0 110px 0;
 }
 
-#signup h1{
+#signup h1 {
     font-family: "NotoSansKR-Regular";
     font-size: 32px;
     font-weight: 700;
@@ -14,28 +14,28 @@
     padding-bottom: 22px;
 }
 
-#signup hr{
+#signup hr {
     width: 80px;
     background: #6B5AE4;
     border: 1px solid #6B5AE4;
 }
 
-#signup p{
+#signup p {
     font-size: 16px;
     text-align: center;
     padding: 20px 0 40px;
 }
 
-#signup a{
+#signup a {
     color: #6B5AE4;
     text-decoration: underline;
 }
 
-#signup form table{
+#signup form table {
     margin: 0 auto;
 }
 
-#signup form table tr td{
+#signup form table tr td {
     font-family: "NotoSansKR-Regular";
     font-size: 17px;
     color: #333;
@@ -43,18 +43,22 @@
     padding: 5px;
 }
 
-#signup form table tr .name, #signup form table tr .email, #signup form table tr .pw1, #signup form table tr .pw2{
+#signup form table tr .name,
+#signup form table tr .email,
+#signup form table tr #pw {
     width: 350px;
     height: 25px;
     padding: 4px;
 }
 
-#signup .result_div, #signup .result2_div, #signup .result3_div{
+#signup .result_div,
+#signup .result2_div,
+#signup .result3_div {
     font-size: 13px;
     color: red;
 }
 
-#signup form table tr td .signOk_btn{
+#signup form table tr td .signOk_btn {
     width: 360px;
     height: 42px;
     font-family: "NotoSansKR-Regular";

@@ -1,15 +1,15 @@
-#header{
+#header {
     width: 100%;
     height: 90px;
-    position: fixed;    
+    position: fixed;
     z-index: 30002;
     background-color: #FFFFFF;
     border-bottom: 1px solid #E6E6E6;
-    box-shadow : 0px 1.4px 0px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 1.4px 0px 0px rgba(0, 0, 0, 0.08);
 }
 
-#header .menubar{
-    position : relative;
+#header .menubar {
+    position: relative;
     display: flex;
     width: 1000px;
     height: 90px;
@@ -17,23 +17,23 @@
     padding: 25px;
 }
 
-#header #logo-img>img{
+#header #logo-img>img {
     width: 150px;
     height: 52px;
 }
 
-#header #login-img{
+#header #login-img {
     position: absolute;
     right: 0;
     padding: 5px 50px 0;
 }
 
-#header #login-img>img{
+#header #login-img>img {
     width: 30px;
     height: 30px;
 }
 
-#header .menubar .gnb{
+#header .menubar .gnb {
     width: 690px;
     height: 170px;
     position: absolute;
@@ -43,15 +43,16 @@
     padding-top: 5px;
 }
 
-#header .menubar .gnb .dropdown{
+#header .menubar .gnb .dropdown {
     overflow: hidden;
 }
-#header .menubar .gnb .dropdown li{
+
+#header .menubar .gnb .dropdown li {
     width: 145px;
     float: left;
 }
 
-#header .menubar .gnb .dropdown li .m1{
+#header .menubar .gnb .dropdown li .m1 {
     font-family: "NotoSansKR-Medium";
     color: #000000;
     font-size: 20px;
@@ -59,7 +60,7 @@
     padding: 0 40px 10px 40px;
 }
 
-#header .menubar .gnb .dropdown li .m2{
+#header .menubar .gnb .dropdown li .m2 {
     display: none;
     font-family: "NotoSansKR-Light";
     font-size: 16px;
@@ -67,11 +68,11 @@
     padding-top: 23px;
 }
 
-#header .menubar .gnb .dropdown li:hover .m1{
+#header .menubar .gnb .dropdown li:hover .m1 {
     color: #6B5AE4;
     border-bottom: 1.5px solid #6B5AE4;
 }
 
-#header .menubar .gnb .dropdown .mb01>ul{
-    display : none;
+#header .menubar .gnb .dropdown .mb01>ul {
+    display: none;
 }

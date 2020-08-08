@@ -1,11 +1,11 @@
-#book_test{
+#book_test {
     max-width: 900px;
     min-height: 650px;
     margin: 0 auto;
     padding: 180px 0 110px 0;
 }
 
-#book_test h1{
+#book_test h1 {
     font-family: "NotoSansKR-Regular";
     font-size: 33px;
     font-weight: 700;
@@ -15,19 +15,19 @@
     padding: 0 0 22px 0;
 }
 
-#book_test hr{
+#book_test hr {
     width: 80px;
     border: 1px solid #6B5AE4;
     background-color: #6B5AE4;
     margin-bottom: 50px;
 }
 
-#book_test .wrap{
+#book_test .wrap {
     width: 600px;
     margin: 0 auto;
 }
 
-#book_test .progressBar{
+#book_test .progressBar {
     display: none;
     padding: 0;
     margin: 0 auto;
@@ -40,7 +40,7 @@
     box-sizing: border-box;
 }
 
-#book_test .bar{
+#book_test .bar {
     width: 0%;
     height: 4px;
     border-radius: 30px;
@@ -53,20 +53,20 @@
     text-align: left
 }
 
-#book_test .test-img{
+#book_test .test-img {
     width: 480px;
     float: right;
     padding-top: 80px;
 }
 
-#book_test .test-img2{
+#book_test .test-img2 {
     display: none;
     width: 50px;
     margin: 0 auto;
     padding-top: 50px;
 }
 
-#book_test .startQuestion{
+#book_test .startQuestion {
     font-family: "NotoSansKR-Regular";
     text-align: left;
     font-size: 20px;
@@ -74,7 +74,7 @@
     margin-bottom: 70px;
 }
 
-#book_test .startbtn{
+#book_test .startbtn {
     display: block;
     width: 120px;
     border: 1px solid #b6b6b6;
@@ -86,7 +86,7 @@
     cursor: pointer;
 }
 
-#book_test .question{
+#book_test .question {
     display: none;
     height: 100px;
     font-family: "NotoSansKR-Regular";
@@ -94,44 +94,45 @@
     padding: 50px 0 0 50px;
 }
 
-#book_test ul{
+#book_test ul {
     display: none;
     padding: 40px 0 0 50px;
 }
 
-#book_test ul li label{
+#book_test ul li label {
     font-size: 20px;
     padding-left: 10px;
 }
 
-#book_test .options .op1, #book_test .options .op2{
+#book_test .options .op1,
+#book_test .options .op2 {
     cursor: pointer;
     padding-left: 10px;
     font-size: 20px;
 }
 
-#book_test .options .op2{
+#book_test .options .op2 {
     left: 120px;
     bottom: 190px;
 }
 
-#book_test .editbtn{
+#book_test .editbtn {
     display: inline-block;
 }
 
-#book_test .arrow{
+#book_test .arrow {
     margin: 0 auto;
     width: 500px;
 }
 
-#book_test .arrow_left{
+#book_test .arrow_left {
     width: 20px;
     cursor: pointer;
     position: relative;
     bottom: -100px;
 }
 
-#book_test .arrow_right{
+#book_test .arrow_right {
     width: 20px;
     cursor: pointer;
     float: right;
@@ -139,61 +140,32 @@
     bottom: -75px;
 }
 
-#book_test .mar{
+#book_test .mar {
     margin-bottom: 150px;
 }
 
-.slide-out-left {
-	-webkit-animation: slide-out-left 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: slide-out-left 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-}
-
-@-webkit-keyframes slide-out-left {
-0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      opacity: 1;
-    }
-100% {
-      -webkit-transform: translateX(-1000px);
-              transform: translateX(-1000px);
-      opacity: 0;
-    }
-}
-
-@keyframes slide-out-left {
-0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      opacity: 1;
-    }
-100% {
-      -webkit-transform: translateX(-1000px);
-              transform: translateX(-1000px);
-      opacity: 0;
-    }
-}
-#book_test .result-img{
+#book_test .result-img {
     width: 600px;
     text-align: center;
 }
-#book_test .test-wrap .wrap .result{
+
+#book_test .test-wrap .wrap .result {
     font-size: 16px;
 }
 
-#book_test .test-wrap .wrap .result #img{
+#book_test .test-wrap .wrap .result #img {
     width: 400px;
     margin: 0 auto;
     display: block;
 }
 
-#book_test .test-wrap .wrap .result div>img{
+#book_test .test-wrap .wrap .result div>img {
     width: 150px;
     margin-top: 15px;
     float: left;
 }
 
-#book_test .test-wrap .wrap .result #hashtag{
+#book_test .test-wrap .wrap .result #hashtag {
     display: block;
     font-size: 18px;
     margin-bottom: 30px;
@@ -201,19 +173,15 @@
     clear: both;
 }
 
-#book_test .test-wrap .wrap .result #txt{
+#book_test .test-wrap .wrap .result #txt {
     display: block;
     margin-bottom: 30px;
 }
 
-#book_test .recoomend{
+#book_test .recoomend {
     overflow: hidden;
 }
 
-#book_test .recoomend>div{
+#book_test .recoomend>div {
     padding: 20px 0 0 160px;
-}
-
-#book_test .recoomend #book-tit{
-    
 }
