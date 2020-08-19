@@ -30,9 +30,10 @@ https://bookasst.emirim.kr/
 > ![인생책 찾기 테스트](https://user-images.githubusercontent.com/48242362/89734615-29d60f00-da98-11ea-99c8-1d14bfffa080.png)
 **인생책 찾기 테스트**
 
+> ![독립출판물 추천](https://user-images.githubusercontent.com/48242362/90579222-55779880-e200-11ea-9563-12ad26b9ed07.png)
+**독립출판물 추천**
 
 ## Built With
-
 * PHP - Back-end Development
 * HTML/CSS/JavaScript/JQuery - Front-end Development
 * Mysql - DataBase
