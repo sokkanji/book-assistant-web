@@ -62,12 +62,12 @@
                 </td>
                 <td>
                     <a href="./recommend_read.php?b_no=6">
-                        <img src="./public/img/book4.jpg" class="web" alt="이슬아수필집">
+                        <img src="./public/img/book6.jpg" class="web" alt="이슬아수필집">
                     </a>
                 </td>
                 <td>
                     <a href="./recommend_read.php?b_no=7">
-                        <img src="./public/img/book6.jpg" class=" web" alt="저 청소일 하는데요.">
+                        <img src="./public/img/book4.jpg" class=" web" alt="저 청소일 하는데요.">
                     </a>
                 </td>
             </tr>
